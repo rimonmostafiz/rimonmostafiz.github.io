@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Sieve of Eratosthenes (Memory Efficient Implementation) - cat /var/log/web</title><meta name="Description" content="A memory efficient technique for prime number generation"><meta property="og:title" content="Sieve of Eratosthenes (Memory Efficient Implementation)" />
+<meta property="og:description" content="A memory efficient technique for prime number generation" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="rimonmostafiz.github.io/2017-08-16-sieve-of-eratosthenes-memory-efficient-implementation/" />
+<meta property="article:published_time" content="2017-08-16T00:30:00+00:00" />
+<meta property="article:modified_time" content="2017-08-16T00:30:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sieve of Eratosthenes (Memory Efficient Implementation)"/>
+<meta name="twitter:description" content="A memory efficient technique for prime number generation"/>
+<meta name="application-name" content="cat /var/log/web">
+<meta name="apple-mobile-web-app-title" content="cat /var/log/web"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="rimonmostafiz.github.io/2017-08-16-sieve-of-eratosthenes-memory-efficient-implementation/" /><link rel="prev" href="rimonmostafiz.github.io/2017-08-15-least-common-multiple-lcm/" /><link rel="next" href="rimonmostafiz.github.io/2017-08-16-google-drive-in-ubuntu/" /><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/css/style.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Sieve of Eratosthenes (Memory Efficient Implementation)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "rimonmostafiz.github.io\/2017-08-16-sieve-of-eratosthenes-memory-efficient-implementation\/"
+        },"genre": "posts","keywords": "algorithms, math, prime-number, number-theory","wordcount":  585 ,
+        "url": "rimonmostafiz.github.io\/2017-08-16-sieve-of-eratosthenes-memory-efficient-implementation\/","datePublished": "2017-08-16T00:30:00+00:00","dateModified": "2017-08-16T00:30:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Rimon Mostafiz"
+            },"description": "A memory efficient technique for prime number generation"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="rimonmostafiz.github.io/" title="cat /var/log/web"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/rimonmostafiz.github.io/posts/"> Posts </a><a class="menu-item" href="/rimonmostafiz.github.io/pages/about"> About </a><a class="menu-item" href="/rimonmostafiz.github.io/tags/"> Tags </a><a class="menu-item" href="/rimonmostafiz.github.io/categories/"> Categories </a><a class="menu-item" href="https://github.com/rimonmostafiz/weblog" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Oh come on, not again" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="rimonmostafiz.github.io/" title="cat /var/log/web"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Oh come on, not again" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/rimonmostafiz.github.io/posts/" title="">Posts</a><a class="menu-item" href="/rimonmostafiz.github.io/pages/about" title="">About</a><a class="menu-item" href="/rimonmostafiz.github.io/tags/" title="">Tags</a><a class="menu-item" href="/rimonmostafiz.github.io/categories/" title="">Categories</a><a class="menu-item" href="https://github.com/rimonmostafiz/weblog" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Sieve of Eratosthenes (Memory Efficient Implementation)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="rimonmostafiz.github.io/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Rimon Mostafiz</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2017-08-16">2017-08-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;585 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#explanation">Explanation:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Say we want to find all prime numbers up to an integer <strong>N</strong> where <strong>N</strong> is <strong>10<sup>8</sup></strong>. If we write a regular implementation of <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="noopener noreffer">Sieve Of Eratosthenes</a> using a bool array for each integer in the range <code>[1:N]</code> then we could end up using <strong>N</strong> bytes of memory, which would roughly be <strong>95 MB</strong> which is a not a very small memory.</p>
+<p>Lets see how can we reduce the memory, the main idea here is we can store a Boolean value in a single bit, so we can store <strong>8 Boolean</strong> values in a single byte. Yet another idea is we know there is only one even prime number which is <strong>2</strong> so we don&rsquo;t need to calculate for other even numbers. With this in mind we can reduce the memory requirement half by simply not storing information for even numbers, but obviously we need to handle this only even number <strong>2</strong> on our own.</p>
+<p>With these If we store this information in <strong>4-byte</strong> integers, then we require only <strong>N/32</strong> integers.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+
+using namespace std;
+
+#define MAX 100000000  // 10^8
+#define LMT 10000      // sqrt of MAX
+#define LEN 5800032    // maximum possible different primes
+
+unsigned flag[MAX&gt;&gt;6], primes[LEN];
+
+#define ifc(n) (flag[n&gt;&gt;6]&amp;(1&lt;&lt;((n&gt;&gt;1)&amp;31)))
+#define isc(n) (flag[n&gt;&gt;6]|=(1&lt;&lt;((n&gt;&gt;1)&amp;31)))
+
+void sieve() {
+    unsigned i, j, k;
+    for(i=3; i&lt;LMT; i+=2)
+        if(!ifc(i))
+            for(j=i*i, k=(i&lt;&lt;1); j&lt;MAX; j+=k)
+                isc(j);
+    primes[0] = 2;
+    for(i=3, k=1; i&lt;MAX; i+=2)
+        if(!ifc(i))
+            primes[k++] = i;
+}
+
+int main() {
+    sieve();
+    return 0;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="explanation">Explanation:</h3>
+<p>Lets talk about the these macros first</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#define MAX 100000000 // 10^8
+#define LMT 10000 // sqrt of MAX
+#define LEN 5800032 // maximum possible different primes
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>MAX</strong> is the maximum range <strong>(10<sup>8</sup>)</strong>, we need to calculate our prime numbers up to MAX
+<strong>LMT</strong> is the <code>sqrt</code> of MAX, a number <strong>X</strong> is prime if it is not divisible by any prime number up to sqrt of <strong>X</strong>. this is the main idea of  <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="noopener noreffer">Sieve Of Eratosthenes</a>.
+<strong>LEN</strong> is size of Array we store out primes.</p>
+<p>The variable declaration </p>
+<pre><code>unsigned flag[MAX&gt;&gt;6], primes[LEN];
+</code></pre>
+<p><strong>flag[MAX&raquo;6]</strong> is actually <strong>flag[MAX/64]</strong> and And why we divide <strong>MAX</strong> by <strong>64</strong> ? <br>
+Next the <strong>primes</strong> Array for storing all primes up to <strong>MAX</strong></p>
+<p>Now the super macro, which is doing all the things for us</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#define ifc(n) (flag[n&gt;&gt;6]&amp;(1&lt;&lt;((n&gt;&gt;1)&amp;31)))
+#define isc(n) (flag[n&gt;&gt;6]|=(1&lt;&lt;((n&gt;&gt;1)&amp;31)))
+</code></pre></td></tr></table>
+</div>
+</div><p><code>ifc</code> checks if a specific bit is 1 or 0 <br>
+<code>isc</code> sets a specific bit 1 to mark it as composite in flag array.</p>
+<p>In bit-wise sieve a specific value <strong>N</strong> located in
+<strong>[N/32]<sup>th</sup></strong> index, and on that index <strong>[N%32]<sup>th</sup></strong> bit from <strong>LSB</strong>(Right to left). But as we are considering the odd numbers only, we can map <strong>N</strong> with <strong>N/2</strong>.</p>
+<p>Now if we replace <strong>N</strong> with <strong>N/2</strong>,</p>
+<p>The  <strong>[N/32]th</strong> index now becomes <strong>[N/2/32] = [N/64] = [N&raquo;6]</strong> <br></p>
+<p>And <strong>[N%32]th</strong> bit position becomes <strong>((N/2)%32) = (N&raquo;1)&amp;31</strong></p>
+<p>We know, modding with a power of <strong>2</strong> is same as <strong>AND</strong> ing <strong>(&amp;)</strong> with <strong>(same power of 2)-1</strong>.</p>
+<p>But why we are using bit shifting/Operations? 😕 <br>  Because bit is fun and faster. 😉</p>
+<p>This implementation reserves about <strong>[10<sup>8</sup>/64] = [MAX&raquo;64]</strong> integers for the flag array, which is about <strong>6MB</strong> of memory. Since there are <strong>5.8 Million</strong> primes under <strong>10<sup>8</sup></strong>, this would require an extra <strong>4 x 5.8 x 10<sup>6</sup></strong> bytes of array(primes array) which is roughly <strong>22 MB</strong> which is obviously far better than <strong>95 MB</strong> 😃</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2017-08-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="rimonmostafiz.github.io/2017-08-16-sieve-of-eratosthenes-memory-efficient-implementation/" data-title="Sieve of Eratosthenes (Memory Efficient Implementation)" data-via="rimonmostafiz" data-hashtags="algorithms,math,prime-number,number-theory"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="rimonmostafiz.github.io/2017-08-16-sieve-of-eratosthenes-memory-efficient-implementation/" data-hashtag="algorithms"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="rimonmostafiz.github.io/2017-08-16-sieve-of-eratosthenes-memory-efficient-implementation/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="rimonmostafiz.github.io/tags/algorithms/">algorithms</a>,&nbsp;<a href="rimonmostafiz.github.io/tags/math/">math</a>,&nbsp;<a href="rimonmostafiz.github.io/tags/prime-number/">prime-number</a>,&nbsp;<a href="rimonmostafiz.github.io/tags/number-theory/">number-theory</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="rimonmostafiz.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="rimonmostafiz.github.io/2017-08-15-least-common-multiple-lcm/" class="prev" rel="prev" title="Least Common Multiple (LCM)"><i class="fas fa-angle-left fa-fw"></i>Least Common Multiple (LCM)</a>
+            <a href="rimonmostafiz.github.io/2017-08-16-google-drive-in-ubuntu/" class="next" rel="next" title="Google Drive in Ubuntu">Google Drive in Ubuntu<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="rimonmostafiz.github.io/2017-08-16-sieve-of-eratosthenes-memory-efficient-implementation/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Made with <i class="fas fa-heart"></i> & <a href="https://gohugo.io/" target="_blank">Hugo</a>. Proudly hosted to <a href="https://www.netlify.com/" target="_blank">netlify</a> for free</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="rimonmostafiz.github.io/" target="_blank">Rimon Mostafiz</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/katex/katex.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://rimonmostafiz.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"cat /var/log/web","id-2":"cat /var/log/web"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"rimonmostafiz.github.io/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true,"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script type="text/javascript" src="/rimonmostafiz.github.io/js/theme.min.js"></script></body>
+</html>

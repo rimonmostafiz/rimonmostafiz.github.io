@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>tomcat - Tag - cat /var/log/web</title>
+        <link>rimonmostafiz.github.io/tags/tomcat/</link>
+        <description>tomcat - Tag - cat /var/log/web</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 12 Dec 2017 16:57:27 &#43;0000</lastBuildDate><atom:link href="rimonmostafiz.github.io/tags/tomcat/" rel="self" type="application/rss+xml" /><item>
+    <title>Up and Running With Servlet in Tomcat</title>
+    <link>rimonmostafiz.github.io/2017-12-12-up-and-running-with-servlet-in-tomcat/</link>
+    <pubDate>Tue, 12 Dec 2017 16:57:27 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>rimonmostafiz.github.io/2017-12-12-up-and-running-with-servlet-in-tomcat/</guid>
+    <description><![CDATA[First, let&rsquo;s create a maven project and add the dependency. As a prerequisite, JDK 8 will be needed. If you are using Linux based operating system then I have written a post on how to install and manage different versions of JDK in your system. You can visit this post if JDK 8 is not installed on your system.
+Maven Dependency &lt;dependency&gt; &lt;groupId&gt;javax.servlet&lt;/groupId&gt; &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt; &lt;version&gt;3.1.0&lt;/version&gt; &lt;scope&gt;provided&lt;/scope&gt; &lt;/dependency&gt;  Creating a servlet Class In Java, a Servlet is what receives and responds to requests from the end user.]]></description>
+</item></channel>
+</rss>

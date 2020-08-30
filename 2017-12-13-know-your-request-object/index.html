@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Know Your Request Object - cat /var/log/web</title><meta name="Description" content=""><meta property="og:title" content="Know Your Request Object" />
+<meta property="og:description" content="HTTPServletRequest The HServletRequestttp interface is an extension of ServletRequest that provides additional HTTP protocol-specific information about a received request. It specifies dozens of methods that you can use to obtain details about an HTTP request. It also permits you to set request attributes (different from request parameters).
+Request Param Request parameters come in two different forms:
+ Query parameters (also called URI parameters) An application/x-www-form-urlencoded or multipart/form-data encoded request body(typically called post variables or form variables)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="rimonmostafiz.github.io/2017-12-13-know-your-request-object/" />
+<meta property="article:published_time" content="2017-12-13T05:30:10+00:00" />
+<meta property="article:modified_time" content="2017-12-13T05:30:10+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Know Your Request Object"/>
+<meta name="twitter:description" content="HTTPServletRequest The HServletRequestttp interface is an extension of ServletRequest that provides additional HTTP protocol-specific information about a received request. It specifies dozens of methods that you can use to obtain details about an HTTP request. It also permits you to set request attributes (different from request parameters).
+Request Param Request parameters come in two different forms:
+ Query parameters (also called URI parameters) An application/x-www-form-urlencoded or multipart/form-data encoded request body(typically called post variables or form variables)."/>
+<meta name="application-name" content="cat /var/log/web">
+<meta name="apple-mobile-web-app-title" content="cat /var/log/web"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="rimonmostafiz.github.io/2017-12-13-know-your-request-object/" /><link rel="prev" href="rimonmostafiz.github.io/2017-12-12-up-and-running-with-servlet-in-tomcat/" /><link rel="next" href="rimonmostafiz.github.io/2018-01-09-know-your-response-object/" /><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/css/style.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Know Your Request Object",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "rimonmostafiz.github.io\/2017-12-13-know-your-request-object\/"
+        },"genre": "posts","keywords": "javaee, web-application, servlet, request","wordcount":  756 ,
+        "url": "rimonmostafiz.github.io\/2017-12-13-know-your-request-object\/","datePublished": "2017-12-13T05:30:10+00:00","dateModified": "2017-12-13T05:30:10+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Rimon Mostafiz"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="rimonmostafiz.github.io/" title="cat /var/log/web"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/rimonmostafiz.github.io/posts/"> Posts </a><a class="menu-item" href="/rimonmostafiz.github.io/pages/about"> About </a><a class="menu-item" href="/rimonmostafiz.github.io/tags/"> Tags </a><a class="menu-item" href="/rimonmostafiz.github.io/categories/"> Categories </a><a class="menu-item" href="https://github.com/rimonmostafiz/weblog" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Oh come on, not again" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="rimonmostafiz.github.io/" title="cat /var/log/web"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Oh come on, not again" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/rimonmostafiz.github.io/posts/" title="">Posts</a><a class="menu-item" href="/rimonmostafiz.github.io/pages/about" title="">About</a><a class="menu-item" href="/rimonmostafiz.github.io/tags/" title="">Tags</a><a class="menu-item" href="/rimonmostafiz.github.io/categories/" title="">Categories</a><a class="menu-item" href="https://github.com/rimonmostafiz/weblog" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Know Your Request Object</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="rimonmostafiz.github.io/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Rimon Mostafiz</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2017-12-13">2017-12-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;756 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#httpservletrequest">HTTPServletRequest</a>
+      <ul>
+        <li><a href="#request-param">Request Param</a>
+          <ul>
+            <li><a href="#-query-parameters">➤ Query Parameters</a></li>
+            <li><a href="#-post-variables">➤ POST Variables</a></li>
+          </ul>
+        </li>
+        <li><a href="#get-params">Get Params</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#-note-to-remember">➤➤ Note To Remember</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#know-request-content">Know Request Content</a></li>
+        <li><a href="#know-request-characteristics">Know Request Characteristics</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="httpservletrequest">HTTPServletRequest</h2>
+<p>The <code>HServletRequestttp</code> interface is an extension of <code>ServletRequest</code> that provides additional HTTP protocol-specific information about a received request.
+It specifies dozens of methods that you can use to obtain details about an HTTP request. It also permits you to set request attributes (different from request parameters).</p>
+<h3 id="request-param">Request Param</h3>
+<p>Request parameters come in two different forms:</p>
+<ol>
+<li>Query parameters (also called URI parameters)</li>
+<li>An application/x-www-form-urlencoded or multipart/form-data encoded request body(typically called post variables or form variables).</li>
+</ol>
+<h4 id="-query-parameters">➤ Query Parameters</h4>
+<p>Query parameters are supported with all request methods and are contained in the first line of data in an HTTP request
+<em><strong>Example:</strong></em></p>
+<pre><code>GET /index.jsp?productId=9854521&amp;category=Book HTTP/1.1
+</code></pre>
+<p>In the above example there are two query parameters one is <code>productId</code> and another one is the category.</p>
+<h4 id="-post-variables">➤ POST Variables</h4>
+<p>If we want to pass the same parameters in the request body as post variables
+<em>**Example: **</em></p>
+<pre><code>POST /index.jsp?returnTo=productPage HTTP/1.1
+HSOT: www.example.com
+Content-Length: 48
+Contest-Type: application/x-www-form-urlencoded
+
+addToCart&amp;productId=9854521&amp;category=Book
+</code></pre>
+<p>This post request has post variables and query parameter both.</p>
+<p>The Servlet API does not differentiate between the two types of parameters.
+If we call the parameter-related methods on a request object returns parameters whether they were delivered as query parameters or post variables.</p>
+<h3 id="get-params">Get Params</h3>
+<ul>
+<li>
+<p>The <code>getParameter</code> method returns a single value for a parameter. If the parameter has multiple values, it returns the first value</p>
+</li>
+<li>
+<p>The <code>getParameterValues</code> returns an array of values for a parameter.</p>
+</li>
+<li>
+<p>The <code>getParameterMap</code> method returns a <code>java.util.Map&lt;String, String[]&gt;</code> containing all the parameter names mapped to their values</p>
+</li>
+<li>
+<p>The <code>getParameterNames</code> method returns an enumeration of the names of all the available parameters</p>
+</li>
+</ul>
+<h5 id="-note-to-remember">➤➤ Note To Remember</h5>
+<p>When we call <code>getParameter</code>, <code>getParameterValues</code>, <code>getParameterMap</code> or <code>getParameterNames</code> for the first time on a request object, the web container determines whether the request contains post variables by obtaining the request&rsquo;s <code>InputStream</code>.
+Remember that the Request&rsquo;s <code>InputStream</code> can be read only once. If you call <code>getInputStream</code> or <code>getReader</code> request containing post variables and then later attempt to retrieve parameters in that request, the attempt to retrieve the parameters results in an <code>IllegalStateException</code>.
+Likewise, if you retrieve parameters on a request containing post variables and then later call <code>getInputStream</code> or <code>getReader</code>, IT will fail with an <code>IllegalStateException</code>.</p>
+<h3 id="know-request-content">Know Request Content</h3>
+<p>There are several methods that come in handy when you need help determine the type, length, and encoding of the content of the HTTP request.</p>
+<ul>
+<li>
+<p>The <code>getContentType</code> method returns the MIME content type of the request such as_ application/x-www-form-urlencoded_ , _application/json_ , _text/plain_.</p>
+</li>
+<li>
+<p>The <code>getContentLength</code>  method both return the number of bytes in the request body(the content length).</p>
+</li>
+<li>
+<p>The <code>getContentLengthLong</code>(Minimum servlet 3.1 specification in Java EE 7) method being useful for requests whose content might exceed gigabytes.</p>
+</li>
+<li>
+<p>The <code>getCharacterEncoding</code> method returns the character encoding (such as <em>UTF-8</em> or <em>ISO-8859-1</em>) of the request contents whenever the request contains character-type content.</p>
+</li>
+</ul>
+<h3 id="know-request-characteristics">Know Request Characteristics</h3>
+<ul>
+<li>
+<p>The <code>getRequestURL</code>: Returns the entire URL that the client used to make the request, including protocol( HTTP or HTTPS ), server name, port number, and server path but not including the
+query string.
+So, in a request to _<a href="http://www.example.org/application/index.jsp?category=Books_">http://www.example.org/application/index.jsp?category=Books_</a>
+<code>getRequestURL</code> returns _<a href="http://www.example.org/application/index.jsp_">http://www.example.org/application/index.jsp_</a></p>
+</li>
+<li>
+<p>The <code>getRequestURI</code>: This is slightly different from <code>getRequestURL</code> in that it returns only the server path part of the URL.
+As previous example, that would be <em>/application/index.jsp</em></p>
+</li>
+<li>
+<p>The <code>getServletPath</code>: Similar to <code>getRequestURI</code>, this returns even less of the URL.
+If the request is <em>/hello-world/greeting? foo=world</em>, the application is deployed as <em>/hello-world</em> on Tomcat, and the servlet-mappings are <em>/greeting</em>, <em>/hello</em>, and <em>/thank</em>, <code>getServletPath</code> returns only the part of the URL used to match the servlet mapping:_ /greeting._</p>
+</li>
+<li>
+<p>The <code>getHeader</code>: Returns the value of a header with the given name. The case of the header does not have to match the case of the string passed into the method, so <code>getHeader</code>( &quot; content-type &quot; ) can match the Content-Type header. If there are multiple headers with the same name, this returns only the first value. In such cases, you would want to use the <code>getHeaders</code> method to return an enumeration of all the values.</p>
+</li>
+<li>
+<p>The <code>getHeaderNames</code>: Returns an enumeration of the names of all the headers in the request. A great way to iterate over the available headers.</p>
+</li>
+<li>
+<p>The <code>getIntHeader</code>: If you have a particular header that you know is always a number, you can call this to return the value already converted to a number. It throws a <code>NumberFormatException</code> if the header cannot be converted to an integer.</p>
+</li>
+<li>
+<p>The <code>getDateHeader</code>: You can call this to return the (millisecond) Unix timestamp-equivalent of a header value that represents a valid timestamp. It throws an <code>IllegalArgumentException</code> if the header value is not recognized as a date.</p>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2017-12-13</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="rimonmostafiz.github.io/2017-12-13-know-your-request-object/" data-title="Know Your Request Object" data-via="rimonmostafiz" data-hashtags="javaee,web-application,servlet,request"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="rimonmostafiz.github.io/2017-12-13-know-your-request-object/" data-hashtag="javaee"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="rimonmostafiz.github.io/2017-12-13-know-your-request-object/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="rimonmostafiz.github.io/tags/javaee/">javaee</a>,&nbsp;<a href="rimonmostafiz.github.io/tags/web-application/">web-application</a>,&nbsp;<a href="rimonmostafiz.github.io/tags/servlet/">servlet</a>,&nbsp;<a href="rimonmostafiz.github.io/tags/request/">request</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="rimonmostafiz.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="rimonmostafiz.github.io/2017-12-12-up-and-running-with-servlet-in-tomcat/" class="prev" rel="prev" title="Up and Running With Servlet in Tomcat"><i class="fas fa-angle-left fa-fw"></i>Up and Running With Servlet in Tomcat</a>
+            <a href="rimonmostafiz.github.io/2018-01-09-know-your-response-object/" class="next" rel="next" title="Know Your Response Object">Know Your Response Object<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="rimonmostafiz.github.io/2017-12-13-know-your-request-object/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Made with <i class="fas fa-heart"></i> & <a href="https://gohugo.io/" target="_blank">Hugo</a>. Proudly hosted to <a href="https://www.netlify.com/" target="_blank">netlify</a> for free</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="rimonmostafiz.github.io/" target="_blank">Rimon Mostafiz</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/katex/katex.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://rimonmostafiz.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"cat /var/log/web","id-2":"cat /var/log/web"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"rimonmostafiz.github.io/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true,"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script type="text/javascript" src="/rimonmostafiz.github.io/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>alias - Tag - cat /var/log/web</title>
+        <link>rimonmostafiz.github.io/tags/alias/</link>
+        <description>alias - Tag - cat /var/log/web</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 30 Nov 2017 11:50:41 &#43;0000</lastBuildDate><atom:link href="rimonmostafiz.github.io/tags/alias/" rel="self" type="application/rss+xml" /><item>
+    <title>Command Aliases in Ubuntu Linux</title>
+    <link>rimonmostafiz.github.io/2017-11-30-command-aliases-in-linux/</link>
+    <pubDate>Thu, 30 Nov 2017 11:50:41 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>rimonmostafiz.github.io/2017-11-30-command-aliases-in-linux/</guid>
+    <description><![CDATA[How to set up alias in Linux Every time I need to see different projects logs from application servers logs folder from different terminal window, I have to go to Weblogic&rsquo;s logs folder and then open the log file using less or tail -f project-name.log 
+cd /home/rimonmostafiz/Applications/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain/logs/ less project-name.log or tail -f project-name.log  I don&rsquo;t want to write this long string Everytime, Wouldn’t it be easier to just type something like the following?]]></description>
+</item></channel>
+</rss>

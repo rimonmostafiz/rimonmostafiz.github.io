@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>lcm - Tag - cat /var/log/web</title>
+        <link>rimonmostafiz.github.io/tags/lcm/</link>
+        <description>lcm - Tag - cat /var/log/web</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 15 Aug 2017 18:00:00 &#43;0000</lastBuildDate><atom:link href="rimonmostafiz.github.io/tags/lcm/" rel="self" type="application/rss+xml" /><item>
+    <title>Least Common Multiple (LCM)</title>
+    <link>rimonmostafiz.github.io/2017-08-15-least-common-multiple-lcm/</link>
+    <pubDate>Tue, 15 Aug 2017 18:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>rimonmostafiz.github.io/2017-08-15-least-common-multiple-lcm/</guid>
+    <description><![CDATA[Least Common Multiple (LCM) of two number a and b is the smallest positive integer that is divisible by both a and b. Since division of integers by zero is undefined, this definition has meaning only if a and b are both different from zero.
+1 2 3 4 5 6 7  int lcm(int a, int b) { for ( int i = 1; ; i ) { if ( i % a == 0 &amp;&amp; i % b == 0 ) { return i; } } }   There is an another technique for LCM finding called Reduction by the greatest common divisor]]></description>
+</item></channel>
+</rss>

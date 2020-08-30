@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>ioc - Tag - cat /var/log/web</title>
+        <link>rimonmostafiz.github.io/tags/ioc/</link>
+        <description>ioc - Tag - cat /var/log/web</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 15 Mar 2018 11:00:47 &#43;0000</lastBuildDate><atom:link href="rimonmostafiz.github.io/tags/ioc/" rel="self" type="application/rss+xml" /><item>
+    <title>The Spring IoC Container</title>
+    <link>rimonmostafiz.github.io/2018-03-15-the-spring-ioc-container/</link>
+    <pubDate>Thu, 15 Mar 2018 11:00:47 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>rimonmostafiz.github.io/2018-03-15-the-spring-ioc-container/</guid>
+    <description><![CDATA[There is some confusion these days over the meaning of inversion of control due to the rise of IoC containers.
+An IoC container is a common characteristic of frameworks that implement Inversion of Control (IoC).
+Some people confuse the general principle here with the specific styles of inversion of control (such as dependency injection) that these containers use. It is a process whereby objects define their dependencies, that is, the other objects they work with, only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method.]]></description>
+</item><item>
+    <title>Inversion of Control and Dependency Injection</title>
+    <link>rimonmostafiz.github.io/2018-03-14-inversion-of-control-and-dependency-injection/</link>
+    <pubDate>Wed, 14 Mar 2018 10:36:12 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>rimonmostafiz.github.io/2018-03-14-inversion-of-control-and-dependency-injection/</guid>
+    <description><![CDATA[Inversion of control (IoC) In software engineering, inversion of control (IoC) is a design principle. It is used to invert different kinds of controls. More Specifically invert the control of your custom written program or objects of a program is transferred to a container or framework.
+In traditional programming, our custom code that expresses the purpose of the program calls reusable libraries to take care of generic tasks, but with inversion of control, it is the framework that calls into the custom, or task-specific, code.]]></description>
+</item></channel>
+</rss>

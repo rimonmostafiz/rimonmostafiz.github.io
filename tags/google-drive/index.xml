@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>google-drive - Tag - cat /var/log/web</title>
+        <link>rimonmostafiz.github.io/tags/google-drive/</link>
+        <description>google-drive - Tag - cat /var/log/web</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 16 Aug 2017 22:00:00 &#43;0000</lastBuildDate><atom:link href="rimonmostafiz.github.io/tags/google-drive/" rel="self" type="application/rss+xml" /><item>
+    <title>Google Drive in Ubuntu</title>
+    <link>rimonmostafiz.github.io/2017-08-16-google-drive-in-ubuntu/</link>
+    <pubDate>Wed, 16 Aug 2017 22:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>rimonmostafiz.github.io/2017-08-16-google-drive-in-ubuntu/</guid>
+    <description><![CDATA[At the time of writing, there is no official Google Drive client for Ubuntu or Linux Mint but if you need to use it then there is an unofficial client called Grive2. Grive is a Google Drive client for GNU/Linux systems. It allows the synchronization of all your files on the cloud with a directory of your choice and the upload of new files to Google Drive.
+Those of you used Google Drive client on Windows or Mac, Grive2 will do the same for you in Ubuntu or Linux Mint.]]></description>
+</item></channel>
+</rss>

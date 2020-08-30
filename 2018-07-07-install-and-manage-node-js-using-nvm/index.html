@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Install and Manage Node JS Using NVM - cat /var/log/web</title><meta name="Description" content="Manage ifferent version of node in your development environment using NVM"><meta property="og:title" content="Install and Manage Node JS Using NVM" />
+<meta property="og:description" content="Manage ifferent version of node in your development environment using NVM" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="rimonmostafiz.github.io/2018-07-07-install-and-manage-node-js-using-nvm/" />
+<meta property="article:published_time" content="2018-07-07T04:17:09+00:00" />
+<meta property="article:modified_time" content="2018-07-07T04:17:09+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install and Manage Node JS Using NVM"/>
+<meta name="twitter:description" content="Manage ifferent version of node in your development environment using NVM"/>
+<meta name="application-name" content="cat /var/log/web">
+<meta name="apple-mobile-web-app-title" content="cat /var/log/web"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="rimonmostafiz.github.io/2018-07-07-install-and-manage-node-js-using-nvm/" /><link rel="prev" href="rimonmostafiz.github.io/2018-05-29-spring-bean-wiring-using-javaconfig/" /><link rel="next" href="rimonmostafiz.github.io/2018-07-27-goodbye-wordpress-welcome-to-hugo/" /><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/css/style.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Install and Manage Node JS Using NVM",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "rimonmostafiz.github.io\/2018-07-07-install-and-manage-node-js-using-nvm\/"
+        },"genre": "posts","keywords": "nodejs, npm, nvm","wordcount":  762 ,
+        "url": "rimonmostafiz.github.io\/2018-07-07-install-and-manage-node-js-using-nvm\/","datePublished": "2018-07-07T04:17:09+00:00","dateModified": "2018-07-07T04:17:09+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Rimon Mostafiz"
+            },"description": "Manage ifferent version of node in your development environment using NVM"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="rimonmostafiz.github.io/" title="cat /var/log/web"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/rimonmostafiz.github.io/posts/"> Posts </a><a class="menu-item" href="/rimonmostafiz.github.io/pages/about"> About </a><a class="menu-item" href="/rimonmostafiz.github.io/tags/"> Tags </a><a class="menu-item" href="/rimonmostafiz.github.io/categories/"> Categories </a><a class="menu-item" href="https://github.com/rimonmostafiz/weblog" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Oh come on, not again" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="rimonmostafiz.github.io/" title="cat /var/log/web"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Oh come on, not again" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/rimonmostafiz.github.io/posts/" title="">Posts</a><a class="menu-item" href="/rimonmostafiz.github.io/pages/about" title="">About</a><a class="menu-item" href="/rimonmostafiz.github.io/tags/" title="">Tags</a><a class="menu-item" href="/rimonmostafiz.github.io/categories/" title="">Categories</a><a class="menu-item" href="https://github.com/rimonmostafiz/weblog" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Install and Manage Node JS Using NVM</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="rimonmostafiz.github.io/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Rimon Mostafiz</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2018-07-07">2018-07-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;762 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#install-nvm">Install NVM</a>
+      <ul>
+        <li><a href="#verify-installation">Verify installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#removing-nodejs">Removing Node.js</a></li>
+    <li><a href="#manual-uninstall">Manual Uninstall</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Node Version Manager (NVM) is a simple bash script to manage multiple active node.js versions.</p>
+<h2 id="install-nvm">Install NVM</h2>
+<p>To install or update nvm, you can use the install script using cURL or Wget</p>
+<pre><code>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+</code></pre>
+<p>The script clones the nvm repository to <code>~/.nvm</code> and adds the source line to your profile (<code>~/.bash_profile</code>, <code>~/.zshrc</code>,<code>~/.profile</code>, or <code>~/.bashrc</code>).</p>
+<pre><code>export NVM_DIR=&quot;$HOME/.nvm&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm
+</code></pre>
+<h3 id="verify-installation">Verify installation</h3>
+<p>To verify that nvm has been installed, do:</p>
+<pre><code>$ command -v nvm
+</code></pre>
+<p>which should output <code>nvm</code> if the installation was successful.</p>
+<p>Please note that will<code>which nvm</code> not work, since <code>nvm</code> is a sourced shell function, not an executable binary.
+After running the install script, if you get <code>nvm: command not found</code> or see no feedback from your terminal, simply close your current terminal, open a new terminal, and try verifying again.</p>
+<h2 id="usage">Usage</h2>
+<p>With <code>nvm</code> installed, you can install isolated Node.js versions. For information about the versions of Node.js that are available, type:</p>
+<pre><code>$ nvm ls-remote
+</code></pre>
+<p>Which will give you something like</p>
+<pre><code> ...
+ v8.0.0
+ v8.1.0
+ v8.1.1
+ v8.1.2
+ v8.1.3
+ v8.1.4
+ v8.2.0
+ v8.2.1
+ v8.3.0
+ v8.4.0
+ v8.5.0
+ v8.6.0
+ v8.7.0
+ v8.8.0
+ v8.8.1
+ v8.9.0   (LTS: Carbon)
+ v8.9.1   (LTS: Carbon)
+ v8.9.2   (LTS: Carbon)
+ v8.9.3   (LTS: Carbon)
+ v8.9.4   (LTS: Carbon)
+v8.10.0   (LTS: Carbon)
+v8.11.0   (LTS: Carbon)
+v8.11.1   (LTS: Carbon)
+v8.11.2   (LTS: Carbon)
+v8.11.3   (Latest LTS: Carbon)
+ v9.0.0
+ v9.1.0
+ v9.2.0
+ v9.2.1
+ v9.3.0
+ v9.4.0
+ v9.5.0
+ v9.6.0
+ v9.6.1
+ v9.7.0
+ v9.7.1
+ v9.8.0
+ v9.9.0
+v9.10.0
+v9.10.1
+v9.11.0
+v9.11.1
+v9.11.2
+v10.0.0
+v10.1.0
+v10.2.0
+v10.2.1
+v10.3.0
+v10.4.0
+v10.4.1
+v10.5.0
+v10.6.0
+</code></pre>
+<p>As you can see, at the time of writing this article the current LTS version of <code>node</code> is <code>v8.11.3</code>. You can install that by typing:</p>
+<pre><code>$ nvm install 8.11.3
+</code></pre>
+<p>Usually, <code>nvm</code> will switch to use the most recently installed version. You can tell <code>nvm</code> to use the version you just downloaded by typing:</p>
+<pre><code>$ nvm use 8.11.3
+</code></pre>
+<p>To download, compile, and install the latest release of node, You can simply do this:</p>
+<pre><code>$ nvm install node
+</code></pre>
+<p>And then in any new shell just use the installed version:</p>
+<pre><code>$ nvm use node
+</code></pre>
+<p>Or you can just run it:</p>
+<pre><code>$ nvm run node --version
+</code></pre>
+<p>Or, you can run any arbitrary command in a sub shell with the desired version of node:</p>
+<pre><code>$ nvm 4.2 node --version
+</code></pre>
+<p>When you install Node.js using <code>nvm</code>, the executable is called <code>node</code>. You can see the version currently being used by the shell by typing:</p>
+<pre><code>$ node -v
+</code></pre>
+<p>If you have multiple Node.js versions, you can see what is installed by typing:</p>
+<pre><code>$ node ls
+</code></pre>
+<p>If you wish to default one of the versions, type:</p>
+<pre><code>$ nvm alias default 8.11.3
+</code></pre>
+<p>This version will be automatically selected when a new session spawns. You can also reference it by the alias like this:</p>
+<pre><code>$ nvm use default
+</code></pre>
+<p>Each version of Node.js will keep track of its own packages and has <code>npm</code> available to manage these.</p>
+<p>You can have <code>npm</code> install packages to the Node.js project&rsquo;s <code>./node_modules</code> directory. Use the following syntax to install the <code>express</code> module:</p>
+<pre><code>$ npm install express
+</code></pre>
+<p>If you&rsquo;d like to install the module globally, making it available to other projects using the same version of Node.js, you can add the <code>-g</code> flag:</p>
+<pre><code>$ npm install -g express
+</code></pre>
+<p>This will install the package in:</p>
+<pre><code>~/.nvm/versions/node/node_version/lib/node_modules/express
+</code></pre>
+<p>Installing the module globally will let you run the commands from the command line, but you&rsquo;ll have to link the package into your local sphere to require it from within a program:</p>
+<pre><code>$ npm link express
+</code></pre>
+<p>You can learn more about the options available to you with nvm by typing:</p>
+<pre><code>$ nvm help
+</code></pre>
+<h2 id="removing-nodejs">Removing Node.js</h2>
+<p>To uninstall a version of Node.js that you have enabled using <code>nvm</code>, first determine whether or not the version you would like to remove is the currently active version:</p>
+<pre><code>$ nvm current
+</code></pre>
+<p>If the version you are targeting is <strong>not</strong> the currently active version, you can run:</p>
+<pre><code>$ nvm uninstall node_version
+</code></pre>
+<p>This command will uninstall the selected version of Node.js.</p>
+<p>If the version you would like to remove <strong>is</strong> the currently active version, you must first deactivate <code>nvm</code> to enable your changes:</p>
+<pre><code>$ nvm deactivate
+</code></pre>
+<p>You can now uninstall the current version using the uninstall command above, which will remove all files associated with the targeted version of Node.js except the cached files that can be used for re-installment.</p>
+<h2 id="manual-uninstall">Manual Uninstall</h2>
+<p>To remove nvm manually, execute the following:</p>
+<pre><code>$ rm -rf &quot;$NVM_DIR&quot;
+</code></pre>
+<p>Edit <code>~/.bashrc</code> (or other shell resource configuration) and remove the lines below:</p>
+<pre><code>export NVM_DIR=&quot;$HOME/.nvm&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] &amp;&amp; \. $NVM_DIR/bash_completion
+</code></pre>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2018-07-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="rimonmostafiz.github.io/2018-07-07-install-and-manage-node-js-using-nvm/" data-title="Install and Manage Node JS Using NVM" data-via="rimonmostafiz" data-hashtags="nodejs,npm,nvm"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="rimonmostafiz.github.io/2018-07-07-install-and-manage-node-js-using-nvm/" data-hashtag="nodejs"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="rimonmostafiz.github.io/2018-07-07-install-and-manage-node-js-using-nvm/"><i class="fab fa-linkedin fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="rimonmostafiz.github.io/tags/nodejs/">nodejs</a>,&nbsp;<a href="rimonmostafiz.github.io/tags/npm/">npm</a>,&nbsp;<a href="rimonmostafiz.github.io/tags/nvm/">nvm</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="rimonmostafiz.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="rimonmostafiz.github.io/2018-05-29-spring-bean-wiring-using-javaconfig/" class="prev" rel="prev" title="Spring Bean Wiring Using Javaconfig"><i class="fas fa-angle-left fa-fw"></i>Spring Bean Wiring Using Javaconfig</a>
+            <a href="rimonmostafiz.github.io/2018-07-27-goodbye-wordpress-welcome-to-hugo/" class="next" rel="next" title="Goodbye Wordpress, Welcome to HUGO">Goodbye Wordpress, Welcome to HUGO<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="rimonmostafiz.github.io/2018-07-07-install-and-manage-node-js-using-nvm/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Made with <i class="fas fa-heart"></i> & <a href="https://gohugo.io/" target="_blank">Hugo</a>. Proudly hosted to <a href="https://www.netlify.com/" target="_blank">netlify</a> for free</div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="rimonmostafiz.github.io/" target="_blank">Rimon Mostafiz</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/katex/katex.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/rimonmostafiz.github.io/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://rimonmostafiz.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/katex.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/rimonmostafiz.github.io/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"cat /var/log/web","id-2":"cat /var/log/web"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"rimonmostafiz.github.io/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true,"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script type="text/javascript" src="/rimonmostafiz.github.io/js/theme.min.js"></script></body>
+</html>

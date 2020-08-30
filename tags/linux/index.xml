@@ -1,0 +1,43 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>linux - Tag - cat /var/log/web</title>
+        <link>rimonmostafiz.github.io/tags/linux/</link>
+        <description>linux - Tag - cat /var/log/web</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 30 Jul 2018 14:35:07 &#43;0600</lastBuildDate><atom:link href="rimonmostafiz.github.io/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>Get Insulted by sudo</title>
+    <link>rimonmostafiz.github.io/2018-07-30-get-insulted-by-sudo/</link>
+    <pubDate>Mon, 30 Jul 2018 14:35:07 &#43;0600</pubDate>
+    <author>Author</author>
+    <guid>rimonmostafiz.github.io/2018-07-30-get-insulted-by-sudo/</guid>
+    <description><![CDATA[Do you know sudo can insult you? wait, what ❓ 😕
+Take a look at what I&rsquo;m talking about. sudo can insult you for typing incorrect password. 💥
+Enable insults in sudo Open a terminal and type:
+$ sudo visudo  This should open the configuration file in your default editor. In ubuntu like distros, it will be opened in nano.
+Now you will have to find the section where the defaults are listed.]]></description>
+</item><item>
+    <title>Command Aliases in Ubuntu Linux</title>
+    <link>rimonmostafiz.github.io/2017-11-30-command-aliases-in-linux/</link>
+    <pubDate>Thu, 30 Nov 2017 11:50:41 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>rimonmostafiz.github.io/2017-11-30-command-aliases-in-linux/</guid>
+    <description><![CDATA[How to set up alias in Linux Every time I need to see different projects logs from application servers logs folder from different terminal window, I have to go to Weblogic&rsquo;s logs folder and then open the log file using less or tail -f project-name.log 
+cd /home/rimonmostafiz/Applications/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain/logs/ less project-name.log or tail -f project-name.log  I don&rsquo;t want to write this long string Everytime, Wouldn’t it be easier to just type something like the following?]]></description>
+</item><item>
+    <title>Oracle SQL Developer in Ubuntu</title>
+    <link>rimonmostafiz.github.io/2017-08-28-oracle-sql-developer-in-ubuntu/</link>
+    <pubDate>Mon, 28 Aug 2017 15:13:24 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>rimonmostafiz.github.io/2017-08-28-oracle-sql-developer-in-ubuntu/</guid>
+    <description><![CDATA[You will need a free Oracle account to log in and download SQL Developer from Oracle Technology Network site. For ubuntu download the Other Platforms version.
+At the time of writing this post, I download version is sqldeveloper-17.2.0.188.1159-no-jre.zip. You will also need Java to run Oracle SQL developer. After download, I moved the download file to /home/rimonmostafiz/Applications (you can choose any other location you prefer).
+Move the download file to /home/rimonmostafiz/Applications.]]></description>
+</item><item>
+    <title>Google Drive in Ubuntu</title>
+    <link>rimonmostafiz.github.io/2017-08-16-google-drive-in-ubuntu/</link>
+    <pubDate>Wed, 16 Aug 2017 22:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>rimonmostafiz.github.io/2017-08-16-google-drive-in-ubuntu/</guid>
+    <description><![CDATA[At the time of writing, there is no official Google Drive client for Ubuntu or Linux Mint but if you need to use it then there is an unofficial client called Grive2. Grive is a Google Drive client for GNU/Linux systems. It allows the synchronization of all your files on the cloud with a directory of your choice and the upload of new files to Google Drive.
+Those of you used Google Drive client on Windows or Mac, Grive2 will do the same for you in Ubuntu or Linux Mint.]]></description>
+</item></channel>
+</rss>
