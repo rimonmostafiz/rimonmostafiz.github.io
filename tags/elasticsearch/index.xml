@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>elasticsearch on Rimon&#39;s Weblog</title>
+    <link>https://rimonmostafiz.github.io/tags/elasticsearch/</link>
+    <description>Recent content in elasticsearch on Rimon&#39;s Weblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
+    <lastBuildDate>Sat, 16 Sep 2017 09:19:51 +0000</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing and Running Kibana</title>
+      <link>https://rimonmostafiz.github.io/posts/installing-and-running-kibana/</link>
+      <pubDate>Sat, 16 Sep 2017 09:19:51 +0000</pubDate>
+      
+      <guid>https://rimonmostafiz.github.io/posts/installing-and-running-kibana/</guid>
+      <description>Installing Kibana and Console Kibana is an open source analytics and visualization platform designed to work with Elasticsearch and Console (Previously its name was Sence, Sence was renamed to Console and it is available on Kibana 5) Kibana provides an interactive console for submitting requests to Elasticsearch directly from your browser.
+The Console plugin provides a UI to interact with the REST API of Elasticsearch. The console has two main areas: the editor, where you compose requests to Elasticsearch, and the response pane, which displays the responses to the request.</description>
+    </item>
+    
+    <item>
+      <title>Installing and Running Elasticsearch</title>
+      <link>https://rimonmostafiz.github.io/posts/installing-and-running-elasticsearch/</link>
+      <pubDate>Fri, 15 Sep 2017 12:36:35 +0000</pubDate>
+      
+      <guid>https://rimonmostafiz.github.io/posts/installing-and-running-elasticsearch/</guid>
+      <description>The easiest way to understand what Elasticsearch is to play with it, so let’s get started. Elastic search is easy to install. In this tutorial, I will walk you through the elasticsearch installation process in Ubuntu 16.04. Elasticsearch requires a recent version of java. Oracle JDK version 1.8 is recommended. I am using JDK 1.8.0_131.
+Before you install Elasticsearch, please check your Java version first by running:
+java -version echo $JAVA_HOME  We can download Elasticsearch from www.</description>
+    </item>
+    
+    <item>
+      <title>Basics and Key Concepts of Elasticsearch</title>
+      <link>https://rimonmostafiz.github.io/posts/basics-and-key-concepts-of-elasticsearch/</link>
+      <pubDate>Fri, 15 Sep 2017 10:26:28 +0000</pubDate>
+      
+      <guid>https://rimonmostafiz.github.io/posts/basics-and-key-concepts-of-elasticsearch/</guid>
+      <description>Getting Started with Elasticsearch Basics This week finally I started learning Elasticsearch, I decided to keep some notes and share my concepts and understanding on this blog. So that if anyone wants to learn Elasticsearch he/she can learn with me.
+In this part, I will write about the some Elasticsearch theory and basic concepts anyone needs to understand. Most of them I learned form Elasticsearch official site and some videos on youtube.</description>
+    </item>
+    
+  </channel>
+</rss>

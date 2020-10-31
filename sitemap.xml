@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/get-insulted-by-sudo/</loc>
+    <lastmod>2018-07-30T14:35:07+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/linux/</loc>
+    <lastmod>2018-07-30T14:35:07+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/</loc>
+    <lastmod>2018-07-30T14:35:07+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/</loc>
+    <lastmod>2018-07-30T14:35:07+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/</loc>
+    <lastmod>2018-07-30T14:35:07+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/terminal/</loc>
+    <lastmod>2018-07-30T14:35:07+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/manage-npm-global-packages/</loc>
+    <lastmod>2018-07-29T15:35:41+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/nodejs/</loc>
+    <lastmod>2018-07-29T15:35:41+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/npm/</loc>
+    <lastmod>2018-07-29T15:35:41+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/goodbye-wordpress-welcome-to-hugo/</loc>
+    <lastmod>2018-07-27T20:01:41+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/hugo/</loc>
+    <lastmod>2018-07-27T20:01:41+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/smart-and-simple/</loc>
+    <lastmod>2018-07-27T20:01:41+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/static-site/</loc>
+    <lastmod>2018-07-27T20:01:41+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/install-and-manage-node-js-using-nvm/</loc>
+    <lastmod>2018-07-07T04:17:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/nvm/</loc>
+    <lastmod>2018-07-07T04:17:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/java/</loc>
+    <lastmod>2018-05-29T10:19:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/spring/</loc>
+    <lastmod>2018-05-29T10:19:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/spring-bean-wiring-using-javaconfig/</loc>
+    <lastmod>2018-05-29T10:19:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/auto-bean-wiring-of-spring/</loc>
+    <lastmod>2018-05-28T07:44:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/spring-application-context-and-configuration-metadata/</loc>
+    <lastmod>2018-05-26T06:42:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/ioc/</loc>
+    <lastmod>2018-03-15T11:00:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/the-spring-ioc-container/</loc>
+    <lastmod>2018-03-15T11:00:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/dependency-injection/</loc>
+    <lastmod>2018-03-14T10:36:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/inversion-of-control-and-dependency-injection/</loc>
+    <lastmod>2018-03-14T10:36:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/javaee/</loc>
+    <lastmod>2018-01-09T06:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/know-your-response-object/</loc>
+    <lastmod>2018-01-09T06:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/response/</loc>
+    <lastmod>2018-01-09T06:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/servlet/</loc>
+    <lastmod>2018-01-09T06:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/web-application/</loc>
+    <lastmod>2018-01-09T06:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/know-your-request-object/</loc>
+    <lastmod>2017-12-13T05:30:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/request/</loc>
+    <lastmod>2017-12-13T05:30:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/tomcat/</loc>
+    <lastmod>2017-12-12T16:57:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/</loc>
+    <lastmod>2017-12-12T16:57:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/web-application-directory-structure-and-war-files/</loc>
+    <lastmod>2017-12-12T11:30:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/basic-web-application-structure-of-javaee/</loc>
+    <lastmod>2017-12-12T10:08:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/alias/</loc>
+    <lastmod>2017-11-30T11:50:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/command-aliases-in-linux/</loc>
+    <lastmod>2017-11-30T11:50:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/a-bit-of-spring-part-one/</loc>
+    <lastmod>2017-10-30T09:19:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/jdk/</loc>
+    <lastmod>2017-10-20T18:39:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/manage-jdk-using-sdkman/</loc>
+    <lastmod>2017-10-20T18:39:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/sdkman/</loc>
+    <lastmod>2017-10-20T18:39:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/elasticsearch/</loc>
+    <lastmod>2017-09-16T09:19:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/installing-and-running-kibana/</loc>
+    <lastmod>2017-09-16T09:19:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/kibana/</loc>
+    <lastmod>2017-09-16T09:19:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/installing-and-running-elasticsearch/</loc>
+    <lastmod>2017-09-15T12:36:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/basics-and-key-concepts-of-elasticsearch/</loc>
+    <lastmod>2017-09-15T10:26:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/nosql/</loc>
+    <lastmod>2017-09-15T10:26:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/restful/</loc>
+    <lastmod>2017-09-15T10:26:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/prime-number/</loc>
+    <lastmod>2017-09-03T00:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/problem-solving/</loc>
+    <lastmod>2017-09-03T00:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/uva/</loc>
+    <lastmod>2017-09-03T00:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/uva-10311-goldbach-and-euler/</loc>
+    <lastmod>2017-09-03T00:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/uva-406-prime-cuts/</loc>
+    <lastmod>2017-08-29T21:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/oracle/</loc>
+    <lastmod>2017-08-28T15:13:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/oracle-sql-developer-in-ubuntu/</loc>
+    <lastmod>2017-08-28T15:13:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/sqldeveloper/</loc>
+    <lastmod>2017-08-28T15:13:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/ubuntu/</loc>
+    <lastmod>2017-08-28T15:13:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/command/</loc>
+    <lastmod>2017-08-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/git/</loc>
+    <lastmod>2017-08-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/git-notes/</loc>
+    <lastmod>2017-08-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/notes/</loc>
+    <lastmod>2017-08-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/google-drive-in-ubuntu/</loc>
+    <lastmod>2017-08-16T22:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/google-drive/</loc>
+    <lastmod>2017-08-16T22:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/algorithms/</loc>
+    <lastmod>2017-08-16T00:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/math/</loc>
+    <lastmod>2017-08-16T00:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/number-theory/</loc>
+    <lastmod>2017-08-16T00:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/sieve-of-eratosthenes-memory-efficient-implementation/</loc>
+    <lastmod>2017-08-16T00:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/gcd/</loc>
+    <lastmod>2017-08-15T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/tags/lcm/</loc>
+    <lastmod>2017-08-15T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/least-common-multiple-lcm/</loc>
+    <lastmod>2017-08-15T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/posts/greatest-common-divisor-gcd/</loc>
+    <lastmod>2017-08-15T16:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/pages/about/</loc>
+    <lastmod>2017-08-15T15:31:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/pages/</loc>
+    <lastmod>2017-08-15T15:31:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rimonmostafiz.github.io/categories/</loc>
+  </url>
+  
+</urlset>

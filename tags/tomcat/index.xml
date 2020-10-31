@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tomcat on Rimon&#39;s Weblog</title>
+    <link>https://rimonmostafiz.github.io/tags/tomcat/</link>
+    <description>Recent content in tomcat on Rimon&#39;s Weblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
+    <lastBuildDate>Tue, 12 Dec 2017 16:57:27 +0000</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/tomcat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Up and Running With Servlet in Tomcat</title>
+      <link>https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/</link>
+      <pubDate>Tue, 12 Dec 2017 16:57:27 +0000</pubDate>
+      
+      <guid>https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/</guid>
+      <description>First, let&amp;rsquo;s create a maven project and add the dependency. As a prerequisite, JDK 8 will be needed. If you are using Linux based operating system then I have written a post on how to install and manage different versions of JDK in your system. You can visit this post if JDK 8 is not installed on your system.
+Maven Dependency &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;  Creating a servlet Class In Java, a Servlet is what receives and responds to requests from the end user.</description>
+    </item>
+    
+  </channel>
+</rss>

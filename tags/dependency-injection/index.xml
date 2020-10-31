@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dependency-injection on Rimon&#39;s Weblog</title>
+    <link>https://rimonmostafiz.github.io/tags/dependency-injection/</link>
+    <description>Recent content in dependency-injection on Rimon&#39;s Weblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
+    <lastBuildDate>Wed, 14 Mar 2018 10:36:12 +0000</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/dependency-injection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inversion of Control and Dependency Injection</title>
+      <link>https://rimonmostafiz.github.io/posts/inversion-of-control-and-dependency-injection/</link>
+      <pubDate>Wed, 14 Mar 2018 10:36:12 +0000</pubDate>
+      
+      <guid>https://rimonmostafiz.github.io/posts/inversion-of-control-and-dependency-injection/</guid>
+      <description>Inversion of control (IoC) In software engineering, inversion of control (IoC) is a design principle. It is used to invert different kinds of controls. More Specifically invert the control of your custom written program or objects of a program is transferred to a container or framework.
+In traditional programming, our custom code that expresses the purpose of the program calls reusable libraries to take care of generic tasks, but with inversion of control, it is the framework that calls into the custom, or task-specific, code.</description>
+    </item>
+    
+  </channel>
+</rss>

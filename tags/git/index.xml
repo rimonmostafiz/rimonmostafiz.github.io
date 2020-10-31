@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Rimon&#39;s Weblog</title>
+    <link>https://rimonmostafiz.github.io/tags/git/</link>
+    <description>Recent content in git on Rimon&#39;s Weblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
+    <lastBuildDate>Thu, 17 Aug 2017 12:00:00 +0000</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Notes</title>
+      <link>https://rimonmostafiz.github.io/posts/git-notes/</link>
+      <pubDate>Thu, 17 Aug 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://rimonmostafiz.github.io/posts/git-notes/</guid>
+      <description>Git cheat sheet for everyday life. Will update this in future&amp;hellip;
+$ git init # transform the current directory into a Git repository. This adds a .git folder to the current directory and makes it possible to start recording revisions $ git config --global user.email &amp;quot;you@example.com&amp;quot; $ git config --global user.name &amp;quot;Your Name&amp;quot; $ git config --global color.status auto $ git config --global color.diff auto $ git config --global color.branch auto $ git clone &amp;lt;git host&amp;gt;:/repo/&amp;lt;project name&amp;gt;.</description>
+    </item>
+    
+  </channel>
+</rss>

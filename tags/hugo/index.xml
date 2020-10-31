@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Rimon&#39;s Weblog</title>
+    <link>https://rimonmostafiz.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on Rimon&#39;s Weblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
+    <lastBuildDate>Fri, 27 Jul 2018 20:01:41 +0600</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Goodbye Wordpress, Welcome to HUGO</title>
+      <link>https://rimonmostafiz.github.io/posts/goodbye-wordpress-welcome-to-hugo/</link>
+      <pubDate>Fri, 27 Jul 2018 20:01:41 +0600</pubDate>
+      
+      <guid>https://rimonmostafiz.github.io/posts/goodbye-wordpress-welcome-to-hugo/</guid>
+      <description>Do you notice anything new? Of course not. No one follows my blog and theme does not matter. 😒
+A weeks ago, I moved this site over from WordPress to HUGO(a static site generator). Also its now hosted to Netlify(🆓)
+This is my attempt to making everything more simple and content-focused. In this post, I will talk about some of my reasons for switching away from WordPress to a static site generator.</description>
+    </item>
+    
+  </channel>
+</rss>
