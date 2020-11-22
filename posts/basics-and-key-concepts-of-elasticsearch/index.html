@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Basics and Key Concepts of Elasticsearch"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Basics and Key Concepts of Elasticsearch &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/basics-and-key-concepts-of-elasticsearch/" />
+
+    
+        
+            <meta property="og:image" content="/images/pawn-mirror-chess-king.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-09-15T10:26:28Z" />
+
+    
+    <meta property="article:tag" content="elasticsearch" />
+    
+    <meta property="article:tag" content="nosql" />
+    
+    <meta property="article:tag" content="restful" />
+    
+    
+
+    <title>Basics and Key Concepts of Elasticsearch &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="Getting Started with Elasticsearch Basics This week finally I started learning Elasticsearch, I decided to keep some notes and share my concepts and understandi" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/basics-and-key-concepts-of-elasticsearch/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "Basics and Key Concepts of Elasticsearch",
+    "name": "Basics and Key Concepts of Elasticsearch",
+    "wordCount":  1006 ,
+    "timeRequired": "PT5M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/basics-and-key-concepts-of-elasticsearch/",
+    "datePublished": "2017-09-15T10:26Z",
+    "dateModified": "2017-09-15T10:26Z",
+    
+    "keywords": "elasticsearch, nosql, restful",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/basics-and-key-concepts-of-elasticsearch/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Basics and Key Concepts of Elasticsearch</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/elasticsearch/">#elasticsearch</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/nosql/">#nosql</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/restful/">#restful</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h3 id="getting-started-with-elasticsearch-basics">Getting Started with Elasticsearch Basics</h3>
+<p>This week finally I started learning Elasticsearch, I decided to keep some notes and share my concepts and understanding on this blog. So that if anyone wants to learn Elasticsearch he/she can learn with me.</p>
+<p>In this part, I will write about the some Elasticsearch theory and basic concepts anyone needs to understand. Most of them I learned form <a href="https://www.elastic.co/">Elasticsearch</a> official site and some videos on youtube.</p>
+<h5 id="_what-is-elasticsearch_"><em>What is Elasticsearch?</em></h5>
+<p><em>Elasticsearch</em> is a distributed, real-time, RESTful search and analytics engine. Its also a NoSQL database, which written in Java and built on top of <a href="https://lucene.apache.org/core/">Apache Lucene</a> technology like <a href="http://lucene.apache.org/solr/">Solr.</a>  It has Inverted indices and it is very easy to scale. You can speak to it using RESTful API with JSON over HTTP, using a web client from your favorite programming language, or even from the command line. It&rsquo;s also open-source, it is available under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2 license.</a></p>
+<p>Elastic Search comes with lots of buzzwords and some key concepts, let me explain some of them a little&hellip;</p>
+<p><strong>Near Real Time:</strong> A near real-time search platform means there is a slight latency. When you index a document normally within one second it becomes searchable.</p>
+<p><strong>Distributed:</strong> Elasticsearch is distributed by nature, I can start a node on my machine, and if you were to start nodes on your laptop&rsquo;s they&rsquo;d start talking to each other and form a cluster and they&rsquo;d be able to spread the load up between the cluster. Which makes it really scalable. You can give it more hardware and it knows how to spread all the loads across all of this hardware automatically.</p>
+<p><strong>Schema-less:</strong> A schema is a description of one or more fields that describe the document type and how to handle the different fields of a document.</p>
+<p>Elasticsearch is schema-less which not completely true, it has the ability to be schema-less, which means that documents can be indexed without explicitly providing a schema. If you do not specify a mapping, Elasticsearch will by default generate one dynamically for you when detecting new fields in documents during indexing.</p>
+<p><strong>Cluster:</strong> A cluster is a collection of one or more nodes (servers) that together holds your entire data and provide federated indexing and search capabilities across all the nodes. Every cluster has a unique name, by default it is <code>elasticsearch</code>. A node can be configured to join a specific cluster by the cluster name.</p>
+<p><strong>Nodes:</strong> A node is a single server that is part of your cluster, stores your data, and participates in the cluster’s indexing and search capabilities. A node also identified by a name which is by default is a random <em>Universally Unique IDentifier (UUID)</em> that is assigned to the node at startup.</p>
+<p>By default, each node is set up to join a cluster named <code>elasticsearch</code> which means that if you start up a number of nodes on your network and—assuming they can discover each other—they will all automatically form and join a single cluster named <code>elasticsearch</code>.</p>
+<p><strong>Index:</strong> An index is a collection of documents that have somewhat similar characteristics. An index is identified by a name (that must be all lowercase) and this name is used to refer to the index when performing indexing, search, update, and delete operations against the documents in it. In a single cluster, you can define as many indexes as you want.</p>
+<p><strong>Type:</strong> Within an index, you can define one or more types. A type is defined for documents that have a set of common fields. For example, let’s assume you run a blogging platform and store all your data in a single index. In this index, you may define a type of user data, another type of blog data, and yet another type of comments data.</p>
+<p><strong>Documents:</strong> A document is a basic unit of information that can be indexed. For example, you can have a document for a single customer, another document for a single product, and yet another for a single order. This document is expressed in <a href="http://json.org/">JSON</a> (JavaScript Object Notation) which is a ubiquitous internet data interchange format. Within an index/type, you can store as many documents as you want.
+[table id=1 /]</p>
+<p><strong>Shards &amp; Replicas:</strong> Let&rsquo;s say you have a 1 TB machine and your data is on it. If your data is growing really fast - at one point, you&rsquo;ll run out of that 1 TB and disk space may not fit on the disk of a single node or may be too slow to serve search requests from a single node alone. To solve this problem, Elasticsearch provides the ability to subdivide your index into multiple pieces called shards. When you create an index, you can simply define the number of shards that you want. Each shard is in itself a fully-functional and independent &ldquo;index&rdquo; that can be hosted on any node in the cluster.</p>
+<p>A shard is an unbreakable entity in Elasticsearch, in the sense that a shard can only stay on one machine (Node). An index which is a group of shards can spread across multiple machines (ES nodes) but shards can not.</p>
+<p>Now In a network/cloud environment where failures can be expected anytime, it is very useful and highly recommended to have a failover mechanism in case a shard/node somehow goes offline or disappears for whatever reason. To this end, Elasticsearch allows you to make one or more copies of your index’s shards into what are called replica shards, or replicas for short.</p>
+<p>To summarize, each index can be split into multiple shards. An index can also be replicated zero (meaning no replicas) or more times. Once replicated, each index will have primary shards (the original shards that were replicated from) and replica shards (the copies of the primary shards). The number of shards and replicas can be defined per index at the time the index is created. After the index is created, you may change the number of replicas dynamically anytime but you cannot change the number of shards after-the-fact.</p>
+<p>For today I will stop here, <a href="https://rimonmostafiz.com/post/installing-and-running-elasticsearch/">next part</a> is about Elasticsearch Installation.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Basics%20and%20Key%20Concepts%20of%20Elasticsearch&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fbasics-and-key-concepts-of-elasticsearch%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fbasics-and-key-concepts-of-elasticsearch%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fbasics-and-key-concepts-of-elasticsearch%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/basics-and-key-concepts-of-elasticsearch\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/basics-and-key-concepts-of-elasticsearch\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/posts/installing-and-running-elasticsearch/">
+          <section class="post">
+              <h2>Installing and Running Elasticsearch</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/posts/uva-10311-goldbach-and-euler/">
+          <section class="post">
+              <h2>Uva 10311 - Goldbach and Euler</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

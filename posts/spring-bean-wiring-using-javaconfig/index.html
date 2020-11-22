@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Spring Bean Wiring Using Javaconfig"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Spring Bean Wiring Using Javaconfig &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/spring-bean-wiring-using-javaconfig/" />
+
+    
+        
+            <meta property="og:image" content="/images/pawn-mirror-chess-king.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-05-29T10:19:29Z" />
+
+    
+    <meta property="article:tag" content="java" />
+    
+    <meta property="article:tag" content="spring" />
+    
+    
+
+    <title>Spring Bean Wiring Using Javaconfig &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="In the previous post, I wrote about how can we implicitly wire beans automatically in Spring container. In my previous post I created a new maven project and st" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/spring-bean-wiring-using-javaconfig/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "Spring Bean Wiring Using Javaconfig",
+    "name": "Spring Bean Wiring Using Javaconfig",
+    "wordCount":  893 ,
+    "timeRequired": "PT5M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/spring-bean-wiring-using-javaconfig/",
+    "datePublished": "2018-05-29T10:19Z",
+    "dateModified": "2018-05-29T10:19Z",
+    
+    "keywords": "java, spring",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/spring-bean-wiring-using-javaconfig/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Spring Bean Wiring Using Javaconfig</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/java/">#java</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/spring/">#spring</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>In the <a href="https://rimonmostafiz.com/post/auto-bean-wiring-of-spring/">previous post</a>, I wrote about how can we implicitly wire beans automatically in Spring container. In my previous post I created a new maven project and started writing code so that we can understand the topics more clearly. In this post, I am documenting my learning of how we can wire bean using Explicit Java Configuration. I will work on the same project I have created earlier.</p>
+<h3 id="explicit-wiring-using-java">Explicit wiring using Java</h3>
+<p>When an automatic configuration isn’t an option then we must configure Spring explicitly. Let’s say that we want to wire components from some third-party library into our application. Because we don’t have the source code for that library, there’s no opportunity to annotate its classes with <code>@Component</code> and <code>@Autowired</code> annotations. Therefore, automatic configuration isn’t an option.</p>
+<p>We have two choices for explicit configuration:</p>
+<ul>
+<li>Java</li>
+<li>XML</li>
+</ul>
+<p>JavaConfig is the preferred option for explicit configuration because it’s more powerful, type-safe, and refactor-friendly.</p>
+<h3 id="create-a-configuration-class">Create a configuration class</h3>
+<p>To wire bean in JavaConfig, we need to create a Configuration Class and mark that with <code>@Configuration</code> annotation.</p>
+<p>This annotation identifies this class as a configuration class, and it’s expected to contain details of beans that are to be created in the Spring application context.</p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StoreConfig { }
+</code></pre>
+<h3 id="declarea-bean">Declare A Bean</h3>
+<p>To declare a bean in JavaConfig, we should create a method in our configuration class and creates an instance of the desired class and annotate the method with <code>@Bean</code></p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StoreConfig {
+    @Bean
+    Item foodItem() {
+        return new FoodItem();
+    }
+}
+</code></pre>
+<p>Here the <code>@Bean</code> annotation tells spring that this method will return an object and that should be registered as a bean in the Spring application context.</p>
+<p>By default, the bean will be given an Id same as the method name annotated with <code>@Bean</code>. If we want to give the bean a different name then we can supply a name attribute in <code>@Bean</code> annotation like the example below</p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StoreConfig {
+    @Bean(name = &quot;myFoodItemBean&quot;)
+    Item foodItem() {
+        return new FoodItem();
+    }
+}
+</code></pre>
+<h3 id="inject-bean-in-javaconfig">Inject Bean in JavaConfig</h3>
+<p>So we Created a simple Item bean. It was simple and easy as It wasn&rsquo;t dependent on any other bean.<br>
+But now we are going to declare a Store bean which is dependent on Item bean. How to do it in JavaConfig?</p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StoreConfig {
+    @Bean(name = &quot;myFoodItemBean&quot;)
+    Item foodItem() {
+        return new FoodItem();
+    }
+
+    @Bean
+    Store store() {
+        return new Store(foodItem());
+    }
+}
+</code></pre>
+<p>Here our <code>store()</code>method is similarly annotated with <code>@Bean</code> to indicate that it will produce an instance of a bean to be registered in the Spring application context.
+As no name attribute is present in <code>@Bean</code> so by default the bean name will be store, the same as the method&rsquo;s name.</p>
+<p>The body of the method is different from the <code>foodItem()</code> method. The store instance is created by calling its constructor that takes a Item. It appears that the Item is provided by calling <code>foodItem</code> , but that’s not exactly true. Because the <code>foodItem()</code> method is annotated with <code>@Bean</code> , Spring will intercept any calls to it and ensure that the bean produced by that method is returned rather than allowing it to be invoked again.
+For example, we want to introduce another Store bean that is just like the first one.</p>
+<pre><code>@Bean
+Store store() {
+    return new Store(foodItem());
+}
+
+@Bean
+Store anotherStore() {
+    return new Store(foodItem());
+}
+</code></pre>
+<p>Now here things get little tricky. If the call to <code>foodItem()</code> was treated like any other call to a Java method, then each store would be given its own instance of <code>FoodItem</code>.
+If you have two Store, there’s no physical way for a single item to simultaneously be present in two stores. Right?
+In software, however, there’s no reason you couldn’t inject the same instance into as many other beans as you want. By default, all beans in Spring are singletons, and there’s no reason you need to create a duplicate instance for the second Store bean. So Spring intercepts the call to <code>foodItem()</code> and makes sure that what is returned is the Spring bean that was created when Spring itself called <code>foodItem()</code> to create the Store bean. Therefore, both our Store beans will be given the same instance of <code>FoodItem</code>.</p>
+<p>Referring to a bean by calling its method can be confusing. There’s another way that might be easier to digest:</p>
+<pre><code>@Bean
+Store store(Item foodItem) {
+    return new Store(foodItem);
+}
+</code></pre>
+<p>Here, the <code>store()</code> method asks for an Item as a parameter. When spring calls <code>sotre()</code> to create a Store bean, it autowire an Item into the configuration method. This approach is to refer to other beans is usually the best choice because it doesn&rsquo;t depend on the Item bean being declared in the same configuration class. In fact, you can even declare Item bean in XML configuration or automatically scanned and wired beans. No matter how its created spring will hand it to this configuration method to create the Store bean.</p>
+<h3 id="run-application">Run Application</h3>
+<p>Let&rsquo;s test all this java configuration by creating an <code>App</code> class.</p>
+<p><strong>App.class Code</strong></p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class App {
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(StoreConfig.class);
+        Store store = (Store) context.getBean(&quot;store&quot;);
+        store.showNotice();
+    }
+}
+</code></pre>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Spring%20Bean%20Wiring%20Using%20Javaconfig&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fspring-bean-wiring-using-javaconfig%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fspring-bean-wiring-using-javaconfig%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fspring-bean-wiring-using-javaconfig%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/spring-bean-wiring-using-javaconfig\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/spring-bean-wiring-using-javaconfig\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="background-image: url(/images/install-and-manage-node-js-using-nvm-cover.jpg)" href="/posts/install-and-manage-node-js-using-nvm/">
+          <section class="post">
+              <h2>Install and Manage Node JS Using NVM</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="background-image: url(/images/create-maven-project.gif)" href="/posts/auto-bean-wiring-of-spring/">
+          <section class="post">
+              <h2>Auto Bean Wiring of Spring</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

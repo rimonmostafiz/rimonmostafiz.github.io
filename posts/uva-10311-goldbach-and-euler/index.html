@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Uva 10311 - Goldbach and Euler"/>
+<meta name="twitter:description" content="Solution idea of Uva 10311 - Goldbach and Euler"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Uva 10311 - Goldbach and Euler &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/uva-10311-goldbach-and-euler/" />
+
+    
+        
+            <meta property="og:image" content="/images/pawn-mirror-chess-king.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="Solution idea of Uva 10311 - Goldbach and Euler" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-09-03T00:21:00Z" />
+
+    
+    <meta property="article:tag" content="uva" />
+    
+    <meta property="article:tag" content="prime-number" />
+    
+    <meta property="article:tag" content="problem-solving" />
+    
+    
+
+    <title>Uva 10311 - Goldbach and Euler &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="Solution idea of Uva 10311 - Goldbach and Euler" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/uva-10311-goldbach-and-euler/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "Uva 10311 - Goldbach and Euler",
+    "name": "Uva 10311 - Goldbach and Euler",
+    "wordCount":  596 ,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/uva-10311-goldbach-and-euler/",
+    "datePublished": "2017-09-03T00:21Z",
+    "dateModified": "2017-09-03T00:21Z",
+    
+    "keywords": "uva, prime-number, problem-solving",
+    "description": "Solution idea of Uva 10311 - Goldbach and Euler",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/uva-10311-goldbach-and-euler/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Uva 10311 - Goldbach and Euler</h1>
+        <small>Solution idea of Uva 10311 - Goldbach and Euler</small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/uva/">#uva</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/prime-number/">#prime-number</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/problem-solving/">#problem-solving</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h3 id="problem-statement">Problem Statement:</h3>
+<p><a href="https://uva.onlinejudge.org/external/103/p10311.pdf">UVa 10311 - Goldbach and Euler</a></p>
+<p>We can express the problem statement like: Given an integer <code>N (0 &lt; N ≤ 108)</code>.</p>
+<p>we have to find(if exists) two number P1 and P2 where,</p>
+<ul>
+<li>P1 and P2 both prime</li>
+<li>P1 + P2 = n</li>
+<li>P1 &lt; P2</li>
+<li>P2 - P1  is minimized</li>
+</ul>
+<h3 id="solution-idea">Solution Idea:</h3>
+<p>First of all we need to find prime numbers between <strong>[0:10<!-- raw HTML omitted -->8<!-- raw HTML omitted -->]</strong>. We can use memory efficient C++ implementation of <a href="http://rimonmostafiz.com/posts/sieve-of-eratosthenes-memory-efficient-implementation">Sieve Of Eratosthenes</a> to generate prime numbers up to 10<!-- raw HTML omitted -->8<!-- raw HTML omitted --> and store it in an Array.</p>
+<p>Now we have to find the <code>P1</code> and <code>P2</code>, first idea come to mind is though we have the prime list of all number up to N we can normally iterate throw the prime list and find <code>P1</code> and <code>P2 = N - P1</code> and check if <code>P2</code> is also a prime and if yes then we can calculate and minimized the <code>P2 - P1</code>. if couldn&rsquo;t manage to find some <code>P1</code> for that <code>P2</code> is a prime also we can say <code>N</code> is not the sum of two primes! Definitely this idea is going to work for finding <code>P1</code> and <code>P2</code> but you will end up with a <code>TLE</code> for this IDEA 😟</p>
+<p>Since the Time limit of the problem <code>10s</code>, we need to find <code>P1</code> and <code>P2</code> more efficiently.</p>
+<p>If we consider <code>N</code> is an Odd Number, can&rsquo;t we find <code>P1</code> and <code>P2</code> more efficiently? <!-- raw HTML omitted -->
+Well, it turns out that for odd numbers we can find <code>P1</code> and <code>P2</code> in <code>O(1)</code> ! 😁 <!-- raw HTML omitted -->
+If N is odd, then one of the two primes <code>P1</code> and <code>P2</code> has to be even, while the other one has to be odd. got it? <!-- raw HTML omitted -->
+we know <strong>ODD = ODD + EVEN</strong>. If one of the primes has to be even, then that prime would have to be <code>2</code>. So, if <code>N</code> is odd we simply check if <code>N - 2</code> is prime or not, and if it is, then we know that <code>P1 = 2</code> and <code>P2 = N - 2</code>, otherwise there is no solution.</p>
+<p>We have concluded that for Odd numbers we can found <code>P1</code> and <code>P2</code> easily, now we have one possible case remaining and that if <code>N</code> is Even. There’s one thing that we could do that would improve significantly the complexity of the algorithm we can iterate only over the prime numbers. Since we already have a array full of primes below 10<!-- raw HTML omitted -->8<!-- raw HTML omitted -->, we can binary search the location of <code>N/2</code> and go down from it. Since there are <strong>5.8 x 10<!-- raw HTML omitted -->6<!-- raw HTML omitted --></strong> primes up to <strong>10<!-- raw HTML omitted -->8<!-- raw HTML omitted --></strong>. That would make for a worse case of <strong>5.8 x 10<!-- raw HTML omitted -->6<!-- raw HTML omitted --></strong> iterations instead of <strong>10<!-- raw HTML omitted -->8<!-- raw HTML omitted -->/2</strong>.</p>
+<p>Now We have improved things but, can we do even better? The discussion found in the problem statement about Goldbach’s conjecture and Euler’s ideas that there is a conjecture that an even number can always be expressed as the sum of two primes, though its a conjecture but we can assume it’s true for our purposes. This means that we can be reasonably confident that the process of finding <code>P1</code> will succeed for most even numbers, hopefully quickly enough that it doesn’t have to check millions of primes. Note that I said most even numbers, because we need two distinct primes <code>P1</code> and <code>P2</code> remember? For example, <code>14</code> can be expressed as the sum of two primes <code>7 + 7</code> but not as the sum of two distinct primes.</p>
+<h3 id="code">Code</h3>
+<p>Try to code it yourself, if you can&rsquo;t code it or need any help let me know in the comments.</p>
+<p>Happy Coding 😃</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Uva%2010311%20-%20Goldbach%20and%20Euler&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fuva-10311-goldbach-and-euler%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fuva-10311-goldbach-and-euler%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fuva-10311-goldbach-and-euler%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/uva-10311-goldbach-and-euler\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/uva-10311-goldbach-and-euler\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/posts/basics-and-key-concepts-of-elasticsearch/">
+          <section class="post">
+              <h2>Basics and Key Concepts of Elasticsearch</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/posts/uva-406-prime-cuts/">
+          <section class="post">
+              <h2>Uva 406 - Prime Cuts</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="The Spring IoC Container"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="The Spring IoC Container &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/the-spring-ioc-container/" />
+
+    
+        
+            <meta property="og:image" content="/images/pawn-mirror-chess-king.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-03-15T11:00:47Z" />
+
+    
+    <meta property="article:tag" content="java" />
+    
+    <meta property="article:tag" content="spring" />
+    
+    <meta property="article:tag" content="ioc" />
+    
+    
+
+    <title>The Spring IoC Container &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="There is some confusion these days over the meaning of inversion of control due to the rise of IoC containers.
+An IoC container is a common characteristic of fr" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/the-spring-ioc-container/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "The Spring IoC Container",
+    "name": "The Spring IoC Container",
+    "wordCount":  526 ,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/the-spring-ioc-container/",
+    "datePublished": "2018-03-15T11:00Z",
+    "dateModified": "2018-03-15T11:00Z",
+    
+    "keywords": "java, spring, ioc",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/the-spring-ioc-container/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">The Spring IoC Container</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/java/">#java</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/spring/">#spring</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/ioc/">#ioc</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>There is some confusion these days over the meaning of <em><strong>inversion of control</strong></em> due to the rise of <em><strong>IoC containers</strong></em>.</p>
+<p><strong>An IoC container is a common characteristic of frameworks that implement Inversion of Control (IoC).</strong></p>
+<p>Some people confuse the general principle here with the specific styles of inversion of control (such as dependency injection) that these containers use. It is a process whereby objects define their dependencies, that is, the other objects they work with, only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method. The container then <strong>injects</strong> those dependencies when it creates the bean. This process is fundamentally the inverse, hence the name <em>Inversion of Control</em> (IoC), of the bean itself controlling the instantiation or location of its dependencies by using a direct construction of classes, or a mechanism such as the <em><strong>Service Locator</strong></em> pattern.</p>
+<h2 id="spring-ioc-container">Spring IoC Container</h2>
+<p>The container is at the core of the Spring Framework. Spring’s container uses DI to manage the components that make up an application. This container is responsible for instantiating, configuring and assembling objects known as <em>beans</em>, as well as managing their life-cycle.</p>
+<p>Spring comes with several container implementations of IoC Container.
+In Spring, <code>org.springframework.beans</code>and <code>org.springframework.context</code>packages are the basis of Spring&rsquo;s IoC Container.</p>
+<ul>
+<li>
+<p><strong>The <a href="https://docs.spring.io/spring-framework/docs/5.0.4.RELEASE/javadoc-api/org/springframework/beans/factory/BeanFactory.html"><code>BeanFactory</code></a></strong>: Defined by <code>org.springframework.beans.factory.BeanFactory</code> interface. It provides an advanced configuration mechanism capable of managing any type of object. It Provides the configuration framework and basic functionality.</p>
+</li>
+<li>
+<p><strong>The <a href="https://docs.spring.io/spring-framework/docs/5.0.4.RELEASE/javadoc-api/org/springframework/context/ApplicationContext.html"><code>ApplicationContext</code></a></strong>: Defined by <code>org.springframework.context.ApplicationContext</code> interface. Its a sub-interface of <code>BeanFactory</code> It adds more enterprise-specific functionality like easier integration with Spring’s AOP features; message resource handling (for use in internationalization), event publication; and application-layer specific contexts.</p>
+</li>
+</ul>
+<h2 id="overview-of-container">Overview of Container</h2>
+<p>The above interfaces represent the Spring IoC container and are responsible for instantiating, configuring, and assembling the aforementioned beans. The next question pop out from the brain, what the hack is a bean?</p>
+<p><strong>Bean</strong></p>
+<blockquote>
+<p>Object in the Spring framework that we initialize through Spring container is called Spring Bean.
+The objects that form the backbone of your application and that are managed by the <strong>Spring IoC container</strong> are called <strong>beans</strong>.</p>
+</blockquote>
+<blockquote>
+<p>A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. Otherwise, a bean is simply one of many objects in your application.Any normal <strong>Java POJO</strong> class can be a Spring Bean if it’s configured to be initialized via container by providing configuration metadata information.</p>
+</blockquote>
+<p>Now the questions are,</p>
+<ol>
+<li>How container loads the beans?</li>
+<li>How does the container know which beans to wire together?</li>
+<li>Is it happening magically?</li>
+</ol>
+<p>Nothing is happening magically inside the container, In order to assemble beans, the container uses configuration metadata.
+The container gets its instructions on what objects to instantiate, configure, and assemble by reading this configuration metadata. which can be represented in XML, Java annotations, or Java code. As an Application Developer, it&rsquo;s your job to write this configuration metadata.</p>
+<p><img src="https://docs.spring.io/spring/docs/current/spring-framework-reference/images/container-magic.png" alt="Container Magic"></p>
+<p>The diagram is a high-level view of how Spring Container works. Your application classes are combined with configuration metadata so that after the <code>ApplicationContext</code> is created and initialized, you have a fully configured and executable system or application.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=The%20Spring%20IoC%20Container&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fthe-spring-ioc-container%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fthe-spring-ioc-container%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fthe-spring-ioc-container%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/the-spring-ioc-container\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/the-spring-ioc-container\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/posts/spring-application-context-and-configuration-metadata/">
+          <section class="post">
+              <h2>Spring Application Context and Configuration Metadata</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/posts/inversion-of-control-and-dependency-injection/">
+          <section class="post">
+              <h2>Inversion of Control and Dependency Injection</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

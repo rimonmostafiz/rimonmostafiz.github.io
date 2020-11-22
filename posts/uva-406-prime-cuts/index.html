@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Uva 406 - Prime Cuts"/>
+<meta name="twitter:description" content="Solution idea of UVa 406 - Prime Cuts"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Uva 406 - Prime Cuts &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/uva-406-prime-cuts/" />
+
+    
+        
+            <meta property="og:image" content="/images/pawn-mirror-chess-king.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="Solution idea of UVa 406 - Prime Cuts" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-08-29T21:39:00Z" />
+
+    
+    <meta property="article:tag" content="uva" />
+    
+    <meta property="article:tag" content="prime-number" />
+    
+    <meta property="article:tag" content="problem-solving" />
+    
+    
+
+    <title>Uva 406 - Prime Cuts &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="Solution idea of UVa 406 - Prime Cuts" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/uva-406-prime-cuts/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "Uva 406 - Prime Cuts",
+    "name": "Uva 406 - Prime Cuts",
+    "wordCount":  227 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/uva-406-prime-cuts/",
+    "datePublished": "2017-08-29T21:39Z",
+    "dateModified": "2017-08-29T21:39Z",
+    
+    "keywords": "uva, prime-number, problem-solving",
+    "description": "Solution idea of UVa 406 - Prime Cuts",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/uva-406-prime-cuts/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Uva 406 - Prime Cuts</h1>
+        <small>Solution idea of UVa 406 - Prime Cuts</small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/uva/">#uva</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/prime-number/">#prime-number</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/problem-solving/">#problem-solving</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h3 id="problem-statement">Problem Statement:</h3>
+<p><a href="http://uva.onlinejudge.org/external/4/406.html">UVa 406 – Prime Cuts</a></p>
+<p>Before beginning I want to say the problem description seems quite awkward to me, for me it took a time to understand what is actually asked by the problem. but when I found out its very easy to code.</p>
+<h3 id="solution-idea">Solution Idea:</h3>
+<p>First of all use <a href="http://rimonmostafiz.com/posts/sieve-of-eratosthenes-memory-efficient-implementation">Sieve of Eratosthenes</a> to generate primes between 1000. You will be given two numbers N and C, then you need to make a list of primes between 1 to N(inclusive). <!-- raw HTML omitted --></p>
+<p>For this problem you need to consider <code>1</code> as a Prime. Now find out the size of the list. Let represent the size of the list with <code>S</code>. Now if size of the list is even then you need to print <code>C*2</code> items. If the size of the list is odd then you need to print <code>C*2 - 1</code> items. Consider <code>K</code> is the number of item you need to print.
+Here comes the question form where should start printing form the list. The condition is if <code>K &gt; S</code> then you need to print all primes form <code>1 to N</code>, otherwise you should start form <code>(S - K) / 2</code> th position of the list and print next <code>K</code> items.</p>
+<h3 id="code">Code</h3>
+<p>Try to code it yourself, if you can&rsquo;t code it or need any help let me know in the comments.</p>
+<p>Happy Coding 😃</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Uva%20406%20-%20Prime%20Cuts&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fuva-406-prime-cuts%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fuva-406-prime-cuts%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fuva-406-prime-cuts%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/uva-406-prime-cuts\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/uva-406-prime-cuts\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/posts/uva-10311-goldbach-and-euler/">
+          <section class="post">
+              <h2>Uva 10311 - Goldbach and Euler</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/posts/oracle-sql-developer-in-ubuntu/">
+          <section class="post">
+              <h2>Oracle SQL Developer in Ubuntu</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

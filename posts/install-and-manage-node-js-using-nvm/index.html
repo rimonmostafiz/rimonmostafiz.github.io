@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="/images/install-and-manage-node-js-using-nvm-cover.jpg"/>
+    
+
+
+
+<meta name="twitter:title" content="Install and Manage Node JS Using NVM"/>
+<meta name="twitter:description" content="Manage ifferent version of node in your development environment using NVM"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Install and Manage Node JS Using NVM &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/install-and-manage-node-js-using-nvm/" />
+
+    
+       <meta property="og:image" content="/images/install-and-manage-node-js-using-nvm-cover.jpg"/>
+    
+
+    
+    <meta property="og:description" content="Manage ifferent version of node in your development environment using NVM" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-07-07T04:17:09Z" />
+
+    
+    <meta property="article:tag" content="nodejs" />
+    
+    <meta property="article:tag" content="npm" />
+    
+    <meta property="article:tag" content="nvm" />
+    
+    
+
+    <title>Install and Manage Node JS Using NVM &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="Manage ifferent version of node in your development environment using NVM" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/install-and-manage-node-js-using-nvm/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "Install and Manage Node JS Using NVM",
+    "name": "Install and Manage Node JS Using NVM",
+    "wordCount":  762 ,
+    "timeRequired": "PT4M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/install-and-manage-node-js-using-nvm/",
+    "datePublished": "2018-07-07T04:17Z",
+    "dateModified": "2018-07-07T04:17Z",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://rimonmostafiz.github.io/images/install-and-manage-node-js-using-nvm-cover.jpg",
+        "width": 3000,
+        "height": 1445
+    },
+    
+    "keywords": "nodejs, npm, nvm",
+    "description": "Manage ifferent version of node in your development environment using NVM",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/install-and-manage-node-js-using-nvm/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+  
+  <header class="main-header post-head" style="background-image: url(/images/install-and-manage-node-js-using-nvm-cover.jpg)">
+  
+  <nav class="main-nav overlay clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Install and Manage Node JS Using NVM</h1>
+        <small>Manage ifferent version of node in your development environment using NVM</small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/nodejs/">#nodejs</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/npm/">#npm</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/nvm/">#nvm</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>Node Version Manager (NVM) is a simple bash script to manage multiple active node.js versions.</p>
+<h2 id="install-nvm">Install NVM</h2>
+<p>To install or update nvm, you can use the install script using cURL or Wget</p>
+<pre><code>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+</code></pre>
+<p>The script clones the nvm repository to <code>~/.nvm</code> and adds the source line to your profile (<code>~/.bash_profile</code>, <code>~/.zshrc</code>,<code>~/.profile</code>, or <code>~/.bashrc</code>).</p>
+<pre><code>export NVM_DIR=&quot;$HOME/.nvm&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm
+</code></pre>
+<h3 id="verify-installation">Verify installation</h3>
+<p>To verify that nvm has been installed, do:</p>
+<pre><code>$ command -v nvm
+</code></pre>
+<p>which should output <code>nvm</code> if the installation was successful.</p>
+<p>Please note that will<code>which nvm</code> not work, since <code>nvm</code> is a sourced shell function, not an executable binary.
+After running the install script, if you get <code>nvm: command not found</code> or see no feedback from your terminal, simply close your current terminal, open a new terminal, and try verifying again.</p>
+<h2 id="usage">Usage</h2>
+<p>With <code>nvm</code> installed, you can install isolated Node.js versions. For information about the versions of Node.js that are available, type:</p>
+<pre><code>$ nvm ls-remote
+</code></pre>
+<p>Which will give you something like</p>
+<pre><code> ...
+ v8.0.0
+ v8.1.0
+ v8.1.1
+ v8.1.2
+ v8.1.3
+ v8.1.4
+ v8.2.0
+ v8.2.1
+ v8.3.0
+ v8.4.0
+ v8.5.0
+ v8.6.0
+ v8.7.0
+ v8.8.0
+ v8.8.1
+ v8.9.0   (LTS: Carbon)
+ v8.9.1   (LTS: Carbon)
+ v8.9.2   (LTS: Carbon)
+ v8.9.3   (LTS: Carbon)
+ v8.9.4   (LTS: Carbon)
+v8.10.0   (LTS: Carbon)
+v8.11.0   (LTS: Carbon)
+v8.11.1   (LTS: Carbon)
+v8.11.2   (LTS: Carbon)
+v8.11.3   (Latest LTS: Carbon)
+ v9.0.0
+ v9.1.0
+ v9.2.0
+ v9.2.1
+ v9.3.0
+ v9.4.0
+ v9.5.0
+ v9.6.0
+ v9.6.1
+ v9.7.0
+ v9.7.1
+ v9.8.0
+ v9.9.0
+v9.10.0
+v9.10.1
+v9.11.0
+v9.11.1
+v9.11.2
+v10.0.0
+v10.1.0
+v10.2.0
+v10.2.1
+v10.3.0
+v10.4.0
+v10.4.1
+v10.5.0
+v10.6.0
+</code></pre>
+<p>As you can see, at the time of writing this article the current LTS version of <code>node</code> is <code>v8.11.3</code>. You can install that by typing:</p>
+<pre><code>$ nvm install 8.11.3
+</code></pre>
+<p>Usually, <code>nvm</code> will switch to use the most recently installed version. You can tell <code>nvm</code> to use the version you just downloaded by typing:</p>
+<pre><code>$ nvm use 8.11.3
+</code></pre>
+<p>To download, compile, and install the latest release of node, You can simply do this:</p>
+<pre><code>$ nvm install node
+</code></pre>
+<p>And then in any new shell just use the installed version:</p>
+<pre><code>$ nvm use node
+</code></pre>
+<p>Or you can just run it:</p>
+<pre><code>$ nvm run node --version
+</code></pre>
+<p>Or, you can run any arbitrary command in a sub shell with the desired version of node:</p>
+<pre><code>$ nvm 4.2 node --version
+</code></pre>
+<p>When you install Node.js using <code>nvm</code>, the executable is called <code>node</code>. You can see the version currently being used by the shell by typing:</p>
+<pre><code>$ node -v
+</code></pre>
+<p>If you have multiple Node.js versions, you can see what is installed by typing:</p>
+<pre><code>$ node ls
+</code></pre>
+<p>If you wish to default one of the versions, type:</p>
+<pre><code>$ nvm alias default 8.11.3
+</code></pre>
+<p>This version will be automatically selected when a new session spawns. You can also reference it by the alias like this:</p>
+<pre><code>$ nvm use default
+</code></pre>
+<p>Each version of Node.js will keep track of its own packages and has <code>npm</code> available to manage these.</p>
+<p>You can have <code>npm</code> install packages to the Node.js project&rsquo;s <code>./node_modules</code> directory. Use the following syntax to install the <code>express</code> module:</p>
+<pre><code>$ npm install express
+</code></pre>
+<p>If you&rsquo;d like to install the module globally, making it available to other projects using the same version of Node.js, you can add the <code>-g</code> flag:</p>
+<pre><code>$ npm install -g express
+</code></pre>
+<p>This will install the package in:</p>
+<pre><code>~/.nvm/versions/node/node_version/lib/node_modules/express
+</code></pre>
+<p>Installing the module globally will let you run the commands from the command line, but you&rsquo;ll have to link the package into your local sphere to require it from within a program:</p>
+<pre><code>$ npm link express
+</code></pre>
+<p>You can learn more about the options available to you with nvm by typing:</p>
+<pre><code>$ nvm help
+</code></pre>
+<h2 id="removing-nodejs">Removing Node.js</h2>
+<p>To uninstall a version of Node.js that you have enabled using <code>nvm</code>, first determine whether or not the version you would like to remove is the currently active version:</p>
+<pre><code>$ nvm current
+</code></pre>
+<p>If the version you are targeting is <strong>not</strong> the currently active version, you can run:</p>
+<pre><code>$ nvm uninstall node_version
+</code></pre>
+<p>This command will uninstall the selected version of Node.js.</p>
+<p>If the version you would like to remove <strong>is</strong> the currently active version, you must first deactivate <code>nvm</code> to enable your changes:</p>
+<pre><code>$ nvm deactivate
+</code></pre>
+<p>You can now uninstall the current version using the uninstall command above, which will remove all files associated with the targeted version of Node.js except the cached files that can be used for re-installment.</p>
+<h2 id="manual-uninstall">Manual Uninstall</h2>
+<p>To remove nvm manually, execute the following:</p>
+<pre><code>$ rm -rf &quot;$NVM_DIR&quot;
+</code></pre>
+<p>Edit <code>~/.bashrc</code> (or other shell resource configuration) and remove the lines below:</p>
+<pre><code>export NVM_DIR=&quot;$HOME/.nvm&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] &amp;&amp; \. $NVM_DIR/bash_completion
+</code></pre>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Install%20and%20Manage%20Node%20JS%20Using%20NVM&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2finstall-and-manage-node-js-using-nvm%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2finstall-and-manage-node-js-using-nvm%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2finstall-and-manage-node-js-using-nvm%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/install-and-manage-node-js-using-nvm\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/install-and-manage-node-js-using-nvm\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="background-image: url(/images/goodbye-wordpress-welcome-to-hugo-cover.jpeg)" href="/posts/goodbye-wordpress-welcome-to-hugo/">
+          <section class="post">
+              <h2>Goodbye Wordpress, Welcome to HUGO</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/posts/spring-bean-wiring-using-javaconfig/">
+          <section class="post">
+              <h2>Spring Bean Wiring Using Javaconfig</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

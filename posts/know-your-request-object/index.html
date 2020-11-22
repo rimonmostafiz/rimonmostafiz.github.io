@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Know Your Request Object"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Know Your Request Object &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/know-your-request-object/" />
+
+    
+        
+            <meta property="og:image" content="/images/pawn-mirror-chess-king.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-12-13T05:30:10Z" />
+
+    
+    <meta property="article:tag" content="javaee" />
+    
+    <meta property="article:tag" content="web-application" />
+    
+    <meta property="article:tag" content="servlet" />
+    
+    <meta property="article:tag" content="request" />
+    
+    
+
+    <title>Know Your Request Object &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="HTTPServletRequest The HServletRequestttp interface is an extension of ServletRequest that provides additional HTTP protocol-specific information about a receiv" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/know-your-request-object/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "Know Your Request Object",
+    "name": "Know Your Request Object",
+    "wordCount":  756 ,
+    "timeRequired": "PT4M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/know-your-request-object/",
+    "datePublished": "2017-12-13T05:30Z",
+    "dateModified": "2017-12-13T05:30Z",
+    
+    "keywords": "javaee, web-application, servlet, request",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/know-your-request-object/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Know Your Request Object</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/javaee/">#javaee</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/web-application/">#web-application</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/servlet/">#servlet</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/request/">#request</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <h2 id="httpservletrequest">HTTPServletRequest</h2>
+<p>The <code>HServletRequestttp</code> interface is an extension of <code>ServletRequest</code> that provides additional HTTP protocol-specific information about a received request.
+It specifies dozens of methods that you can use to obtain details about an HTTP request. It also permits you to set request attributes (different from request parameters).</p>
+<h3 id="request-param">Request Param</h3>
+<p>Request parameters come in two different forms:</p>
+<ol>
+<li>Query parameters (also called URI parameters)</li>
+<li>An application/x-www-form-urlencoded or multipart/form-data encoded request body(typically called post variables or form variables).</li>
+</ol>
+<h4 id="-query-parameters">➤ Query Parameters</h4>
+<p>Query parameters are supported with all request methods and are contained in the first line of data in an HTTP request
+<em><strong>Example:</strong></em></p>
+<pre><code>GET /index.jsp?productId=9854521&amp;category=Book HTTP/1.1
+</code></pre>
+<p>In the above example there are two query parameters one is <code>productId</code> and another one is the category.</p>
+<h4 id="-post-variables">➤ POST Variables</h4>
+<p>If we want to pass the same parameters in the request body as post variables
+<em>**Example: **</em></p>
+<pre><code>POST /index.jsp?returnTo=productPage HTTP/1.1
+HSOT: www.example.com
+Content-Length: 48
+Contest-Type: application/x-www-form-urlencoded
+
+addToCart&amp;productId=9854521&amp;category=Book
+</code></pre>
+<p>This post request has post variables and query parameter both.</p>
+<p>The Servlet API does not differentiate between the two types of parameters.
+If we call the parameter-related methods on a request object returns parameters whether they were delivered as query parameters or post variables.</p>
+<h3 id="get-params">Get Params</h3>
+<ul>
+<li>
+<p>The <code>getParameter</code> method returns a single value for a parameter. If the parameter has multiple values, it returns the first value</p>
+</li>
+<li>
+<p>The <code>getParameterValues</code> returns an array of values for a parameter.</p>
+</li>
+<li>
+<p>The <code>getParameterMap</code> method returns a <code>java.util.Map&lt;String, String[]&gt;</code> containing all the parameter names mapped to their values</p>
+</li>
+<li>
+<p>The <code>getParameterNames</code> method returns an enumeration of the names of all the available parameters</p>
+</li>
+</ul>
+<h5 id="-note-to-remember">➤➤ Note To Remember</h5>
+<p>When we call <code>getParameter</code>, <code>getParameterValues</code>, <code>getParameterMap</code> or <code>getParameterNames</code> for the first time on a request object, the web container determines whether the request contains post variables by obtaining the request&rsquo;s <code>InputStream</code>.
+Remember that the Request&rsquo;s <code>InputStream</code> can be read only once. If you call <code>getInputStream</code> or <code>getReader</code> request containing post variables and then later attempt to retrieve parameters in that request, the attempt to retrieve the parameters results in an <code>IllegalStateException</code>.
+Likewise, if you retrieve parameters on a request containing post variables and then later call <code>getInputStream</code> or <code>getReader</code>, IT will fail with an <code>IllegalStateException</code>.</p>
+<h3 id="know-request-content">Know Request Content</h3>
+<p>There are several methods that come in handy when you need help determine the type, length, and encoding of the content of the HTTP request.</p>
+<ul>
+<li>
+<p>The <code>getContentType</code> method returns the MIME content type of the request such as_ application/x-www-form-urlencoded_ , _application/json_ , _text/plain_.</p>
+</li>
+<li>
+<p>The <code>getContentLength</code>  method both return the number of bytes in the request body(the content length).</p>
+</li>
+<li>
+<p>The <code>getContentLengthLong</code>(Minimum servlet 3.1 specification in Java EE 7) method being useful for requests whose content might exceed gigabytes.</p>
+</li>
+<li>
+<p>The <code>getCharacterEncoding</code> method returns the character encoding (such as <em>UTF-8</em> or <em>ISO-8859-1</em>) of the request contents whenever the request contains character-type content.</p>
+</li>
+</ul>
+<h3 id="know-request-characteristics">Know Request Characteristics</h3>
+<ul>
+<li>
+<p>The <code>getRequestURL</code>: Returns the entire URL that the client used to make the request, including protocol( HTTP or HTTPS ), server name, port number, and server path but not including the
+query string.
+So, in a request to _<a href="http://www.example.org/application/index.jsp?category=Books_">http://www.example.org/application/index.jsp?category=Books_</a>
+<code>getRequestURL</code> returns _<a href="http://www.example.org/application/index.jsp_">http://www.example.org/application/index.jsp_</a></p>
+</li>
+<li>
+<p>The <code>getRequestURI</code>: This is slightly different from <code>getRequestURL</code> in that it returns only the server path part of the URL.
+As previous example, that would be <em>/application/index.jsp</em></p>
+</li>
+<li>
+<p>The <code>getServletPath</code>: Similar to <code>getRequestURI</code>, this returns even less of the URL.
+If the request is <em>/hello-world/greeting? foo=world</em>, the application is deployed as <em>/hello-world</em> on Tomcat, and the servlet-mappings are <em>/greeting</em>, <em>/hello</em>, and <em>/thank</em>, <code>getServletPath</code> returns only the part of the URL used to match the servlet mapping:_ /greeting._</p>
+</li>
+<li>
+<p>The <code>getHeader</code>: Returns the value of a header with the given name. The case of the header does not have to match the case of the string passed into the method, so <code>getHeader</code>( &quot; content-type &quot; ) can match the Content-Type header. If there are multiple headers with the same name, this returns only the first value. In such cases, you would want to use the <code>getHeaders</code> method to return an enumeration of all the values.</p>
+</li>
+<li>
+<p>The <code>getHeaderNames</code>: Returns an enumeration of the names of all the headers in the request. A great way to iterate over the available headers.</p>
+</li>
+<li>
+<p>The <code>getIntHeader</code>: If you have a particular header that you know is always a number, you can call this to return the value already converted to a number. It throws a <code>NumberFormatException</code> if the header cannot be converted to an integer.</p>
+</li>
+<li>
+<p>The <code>getDateHeader</code>: You can call this to return the (millisecond) Unix timestamp-equivalent of a header value that represents a valid timestamp. It throws an <code>IllegalArgumentException</code> if the header value is not recognized as a date.</p>
+</li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Know%20Your%20Request%20Object&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fknow-your-request-object%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fknow-your-request-object%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fknow-your-request-object%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/know-your-request-object\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/know-your-request-object\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/posts/know-your-response-object/">
+          <section class="post">
+              <h2>Know Your Response Object</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/posts/up-and-running-with-servlet-in-tomcat/">
+          <section class="post">
+              <h2>Up and Running With Servlet in Tomcat</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Sieve of Eratosthenes (Memory Efficient Implementation)"/>
+<meta name="twitter:description" content="A memory efficient technique for prime number generation"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Sieve of Eratosthenes (Memory Efficient Implementation) &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/sieve-of-eratosthenes-memory-efficient-implementation/" />
+
+    
+        
+            <meta property="og:image" content="/images/pawn-mirror-chess-king.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="A memory efficient technique for prime number generation" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-08-16T00:30:00Z" />
+
+    
+    <meta property="article:tag" content="algorithms" />
+    
+    <meta property="article:tag" content="math" />
+    
+    <meta property="article:tag" content="prime-number" />
+    
+    <meta property="article:tag" content="number-theory" />
+    
+    
+
+    <title>Sieve of Eratosthenes (Memory Efficient Implementation) &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="A memory efficient technique for prime number generation" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/sieve-of-eratosthenes-memory-efficient-implementation/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "Sieve of Eratosthenes (Memory Efficient Implementation)",
+    "name": "Sieve of Eratosthenes (Memory Efficient Implementation)",
+    "wordCount":  550 ,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/sieve-of-eratosthenes-memory-efficient-implementation/",
+    "datePublished": "2017-08-16T00:30Z",
+    "dateModified": "2017-08-16T00:30Z",
+    
+    "keywords": "algorithms, math, prime-number, number-theory",
+    "description": "A memory efficient technique for prime number generation",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/sieve-of-eratosthenes-memory-efficient-implementation/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Sieve of Eratosthenes (Memory Efficient Implementation)</h1>
+        <small>A memory efficient technique for prime number generation</small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/algorithms/">#algorithms</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/math/">#math</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/prime-number/">#prime-number</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/number-theory/">#number-theory</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>Say we want to find all prime numbers up to an integer <strong>N</strong> where <strong>N</strong> is <strong>10<!-- raw HTML omitted -->8<!-- raw HTML omitted --></strong>. If we write a regular implementation of <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve Of Eratosthenes</a> using a bool array for each integer in the range <code>[1:N]</code> then we could end up using <strong>N</strong> bytes of memory, which would roughly be <strong>95 MB</strong> which is a not a very small memory.</p>
+<p>Lets see how can we reduce the memory, the main idea here is we can store a Boolean value in a single bit, so we can store <strong>8 Boolean</strong> values in a single byte. Yet another idea is we know there is only one even prime number which is <strong>2</strong> so we don&rsquo;t need to calculate for other even numbers. With this in mind we can reduce the memory requirement half by simply not storing information for even numbers, but obviously we need to handle this only even number <strong>2</strong> on our own.</p>
+<p>With these If we store this information in <strong>4-byte</strong> integers, then we require only <strong>N/32</strong> integers.</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+
+using namespace std;
+
+#define MAX 100000000  // 10^8
+#define LMT 10000      // sqrt of MAX
+#define LEN 5800032    // maximum possible different primes
+
+unsigned flag[MAX&gt;&gt;6], primes[LEN];
+
+#define ifc(n) (flag[n&gt;&gt;6]&amp;(1&lt;&lt;((n&gt;&gt;1)&amp;31)))
+#define isc(n) (flag[n&gt;&gt;6]|=(1&lt;&lt;((n&gt;&gt;1)&amp;31)))
+
+void sieve() {
+    unsigned i, j, k;
+    for(i=3; i&lt;LMT; i+=2)
+        if(!ifc(i))
+            for(j=i*i, k=(i&lt;&lt;1); j&lt;MAX; j+=k)
+                isc(j);
+    primes[0] = 2;
+    for(i=3, k=1; i&lt;MAX; i+=2)
+        if(!ifc(i))
+            primes[k++] = i;
+}
+
+int main() {
+    sieve();
+    return 0;
+}
+</code></pre><h3 id="explanation">Explanation:</h3>
+<p>Lets talk about the these macros first</p>
+<pre><code>#define MAX 100000000 // 10^8
+#define LMT 10000 // sqrt of MAX
+#define LEN 5800032 // maximum possible different primes
+</code></pre><p><strong>MAX</strong> is the maximum range <strong>(10<!-- raw HTML omitted -->8<!-- raw HTML omitted -->)</strong>, we need to calculate our prime numbers up to MAX
+<strong>LMT</strong> is the <code>sqrt</code> of MAX, a number <strong>X</strong> is prime if it is not divisible by any prime number up to sqrt of <strong>X</strong>. this is the main idea of  <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve Of Eratosthenes</a>.
+<strong>LEN</strong> is size of Array we store out primes.</p>
+<p>The variable declaration </p>
+<pre><code>unsigned flag[MAX&gt;&gt;6], primes[LEN];
+</code></pre>
+<p><strong>flag[MAX&raquo;6]</strong> is actually <strong>flag[MAX/64]</strong> and And why we divide <strong>MAX</strong> by <strong>64</strong> ? <!-- raw HTML omitted -->
+Next the <strong>primes</strong> Array for storing all primes up to <strong>MAX</strong></p>
+<p>Now the super macro, which is doing all the things for us</p>
+<pre><code>#define ifc(n) (flag[n&gt;&gt;6]&amp;(1&lt;&lt;((n&gt;&gt;1)&amp;31)))
+#define isc(n) (flag[n&gt;&gt;6]|=(1&lt;&lt;((n&gt;&gt;1)&amp;31)))
+</code></pre><p><code>ifc</code> checks if a specific bit is 1 or 0 <!-- raw HTML omitted -->
+<code>isc</code> sets a specific bit 1 to mark it as composite in flag array.</p>
+<p>In bit-wise sieve a specific value <strong>N</strong> located in
+<strong>[N/32]<!-- raw HTML omitted -->th<!-- raw HTML omitted --></strong> index, and on that index <strong>[N%32]<!-- raw HTML omitted -->th<!-- raw HTML omitted --></strong> bit from <strong>LSB</strong>(Right to left). But as we are considering the odd numbers only, we can map <strong>N</strong> with <strong>N/2</strong>.</p>
+<p>Now if we replace <strong>N</strong> with <strong>N/2</strong>,</p>
+<p>The  <strong>[N/32]th</strong> index now becomes <strong>[N/2/32] = [N/64] = [N&raquo;6]</strong> <!-- raw HTML omitted --></p>
+<p>And <strong>[N%32]th</strong> bit position becomes <strong>((N/2)%32) = (N&raquo;1)&amp;31</strong></p>
+<p>We know, modding with a power of <strong>2</strong> is same as <strong>AND</strong> ing <strong>(&amp;)</strong> with <strong>(same power of 2)-1</strong>.</p>
+<p>But why we are using bit shifting/Operations? 😕 <!-- raw HTML omitted -->  Because bit is fun and faster. 😉</p>
+<p>This implementation reserves about <strong>[10<!-- raw HTML omitted -->8<!-- raw HTML omitted -->/64] = [MAX&raquo;64]</strong> integers for the flag array, which is about <strong>6MB</strong> of memory. Since there are <strong>5.8 Million</strong> primes under <strong>10<!-- raw HTML omitted -->8<!-- raw HTML omitted --></strong>, this would require an extra <strong>4 x 5.8 x 10<!-- raw HTML omitted -->6<!-- raw HTML omitted --></strong> bytes of array(primes array) which is roughly <strong>22 MB</strong> which is obviously far better than <strong>95 MB</strong> 😃</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Sieve%20of%20Eratosthenes%20%28Memory%20Efficient%20Implementation%29&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fsieve-of-eratosthenes-memory-efficient-implementation%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fsieve-of-eratosthenes-memory-efficient-implementation%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fsieve-of-eratosthenes-memory-efficient-implementation%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/sieve-of-eratosthenes-memory-efficient-implementation\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/sieve-of-eratosthenes-memory-efficient-implementation\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/posts/google-drive-in-ubuntu/">
+          <section class="post">
+              <h2>Google Drive in Ubuntu</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/posts/least-common-multiple-lcm/">
+          <section class="post">
+              <h2>Least Common Multiple (LCM)</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="/images/create-maven-project.gif"/>
+    
+
+
+
+<meta name="twitter:title" content="Auto Bean Wiring of Spring"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Auto Bean Wiring of Spring &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/auto-bean-wiring-of-spring/" />
+
+    
+       <meta property="og:image" content="/images/create-maven-project.gif"/>
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-05-28T07:44:03Z" />
+
+    
+    <meta property="article:tag" content="java" />
+    
+    <meta property="article:tag" content="spring" />
+    
+    
+
+    <title>Auto Bean Wiring of Spring &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="As we previously discussed that the Spring container is responsible for creating the beans in your application and coordinating the relationship between those o" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/auto-bean-wiring-of-spring/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "Auto Bean Wiring of Spring",
+    "name": "Auto Bean Wiring of Spring",
+    "wordCount":  850 ,
+    "timeRequired": "PT4M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/auto-bean-wiring-of-spring/",
+    "datePublished": "2018-05-28T07:44Z",
+    "dateModified": "2018-05-28T07:44Z",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://rimonmostafiz.github.io//images/create-maven-project.gif",
+        "width": 3000,
+        "height": 1445
+    },
+    
+    "keywords": "java, spring",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/auto-bean-wiring-of-spring/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+  
+  <header class="main-header post-head" style="background-image: url(/images/create-maven-project.gif)">
+  
+  <nav class="main-nav overlay clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Auto Bean Wiring of Spring</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/java/">#java</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/spring/">#spring</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>As we previously discussed that the Spring container is responsible for creating the beans in your application and coordinating the relationship between those objects vi DI. The act of creating these associations between application objects in the essence of dependency injection(DI) and is commonly referred to as wiring.</p>
+<h3 id="different-types-of-bean-wiring">Different Types of Bean Wiring</h3>
+<p>Spring Offers three primary wiring mechanism</p>
+<ul>
+<li>An explicit configuration in XML</li>
+<li>An explicit configuration in Java</li>
+<li>An Implicit bean discovery and automatic wiring</li>
+</ul>
+<p>In this post, I am going to write notes about Spring&rsquo;s automatic wiring, I will write about the other two in later posts.</p>
+<h3 id="automatically-wiring-beans">Automatically wiring beans</h3>
+<p>Spring attacks automatic wiring from two angles:</p>
+<ul>
+<li>
+<p><strong>Component scanning</strong> - Spring automatically discovers beans to be created in the application context</p>
+</li>
+<li>
+<p><strong>Autowiring</strong> - Spring automatically satisfies bean dependencies</p>
+</li>
+</ul>
+<p>To understand those concepts properly we will create a project for an online store, let&rsquo;s create a new maven project first</p>
+<p><img src="/images/create-maven-project.gif" alt="Create Maven Project"></p>
+<h3 id="add-dependency">Add Dependency</h3>
+<p>Now we need to add spring dependency to our <code>pom.xml</code> file</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.rimonmostafiz&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-diary&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-framework-bom&lt;/artifactId&gt;
+                &lt;version&gt;5.0.6.RELEASE&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;junit&lt;/groupId&gt;
+            &lt;artifactId&gt;junit&lt;/artifactId&gt;
+            &lt;version&gt;4.12&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+
+&lt;/project&gt;
+</code></pre>
+<p>We are adding <code>spring-core</code>, <code>spring-context</code>, <code>spring-test</code>, and <code>junit</code>for our dependency for now.</p>
+<p>Before going to the next part wait a minute and first think about an online store. Every online store has some items for sale, so the item is a dependency for a store.</p>
+<p>So we need an item for our store. The following listing shows Item, an interface that defines an item for the store.</p>
+<pre><code>package com.rimonmostafiz;
+
+public interface Item {
+    void readyForSell();
+}
+</code></pre>
+<p>As we added Item as an Interface we can have several Item implementations. Let&rsquo;s add one implementation of <code>Item</code> for now called <code>FoodItem</code></p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class FoodItem implements Item {
+
+    String name = &quot;Pizza&quot;;
+    String price = &quot;10.09$&quot;;
+
+    public void readyForSell() {
+        System.out.println(name + &quot; is ready for sell at &quot; + price);
+    }
+}
+</code></pre>
+<p><code>FoodItem</code> is a simple class which implements the Item interface. what is important is <code>FoodItem</code> is annotated with <code>@Component.</code></p>
+<h3 id="component">@Component</h3>
+<p><code>@Component</code> Indicates that the annotated class is a &ldquo;component&rdquo;. Such classes are considered as candidates for auto-detection when using annotation-based configuration and classpath scanning. This annotation tells spring container that a bean should be created for the class.</p>
+<p>Now we need to write an explicit configuration to tell Spring to seek out all classes that are annotated with <code>@Component</code> and to create beans from them.
+The configuration class in the following listing shows the minimal configuration to make this possible.</p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan
+public class StoreConfig { }
+</code></pre>
+<p>If we observe that <code>StoreConfig</code> doesn’t explicitly define any beans itself. Instead, it’s annotated with <code>@ComponentScan</code> to enable component scanning in Spring.</p>
+<h3 id="componentscan">@ComponentScan</h3>
+<p>The @ComponentScan annotation is used with the @Configuration annotation to tell Spring the packages to scan for annotated components.
+@ComponentScan also used to specify base packages and base package classes using basePackages or basePackageClasses attributes of @ComponentScan.
+@ComponentScan will default to scanning the same package as the configuration class.</p>
+<p>Therefore, because <code>StoreConfig</code> is in the <code>com.rimonmostafiz</code> package, Spring will scan that package and any sub-packages underneath it, looking for classes that are annotated with <code>@Component</code> . It should find the Item class and automatically create a bean for it in Spring.</p>
+<p>The above configuration class is same as the XML listed bellow</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+
+    &lt;context:component-scan base-package=&quot;soundsystem&quot; /&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<p>In the above XML we are using Spring&rsquo;s <code>context</code>namespace to turn on component scanning via XML configuration. Even though XML is an option for enabling component scanning, I’m going to focus on using the preferred Java-based configuration for the remainder of this discussion.</p>
+<p>To test that component scanning is working we can write a simple JUnit test that creates a Spring application context and asserts that the Item bean is, in fact, created.</p>
+<pre><code>package com.rimonmostafiz;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import static org.junit.Assert.assertNotNull;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = StoreConfig.class)
+public class StoreTest {
+
+    @Autowired
+    Item foodItem;
+
+    @Test
+    public void foodItemIsNotNull() {
+        assertNotNull(foodItem);
+    }
+}
+</code></pre>
+<p>Here the <code>@ContextConfiguration</code> annotation tells it to load its configuration from the <code>StoreConfig</code>class. Because that configuration class includes <code>@ComponentScan</code> ,  the resulting application context should include the <code>Item</code> bean. To prove that, the test has a property of type <code>Item</code> that is annotated with <code>@Autowired</code> to inject the <code>Item</code> bean into the test.
+Finally, a simple test method asserts that the foodItem property isn’t null. If it’s not null, that means Spring was able to discover the <code>Item</code> class, automatically create it as a bean in the Spring application context, and inject it into the test.</p>
+<h3 id="autowired">@Autowired</h3>
+<p>Aautowiring is a means of letting Spring automatically satisfy a bean’s dependencies by finding other beans in the application context that are a match to the bean’s needs. To indicate that autowiring should be performed, we can use <code>@Autowired</code> annotation.</p>
+<h3 id="test">Test</h3>
+<p>If you now run the test it will pass.</p>
+<!-- raw HTML omitted -->
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Auto%20Bean%20Wiring%20of%20Spring&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fauto-bean-wiring-of-spring%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fauto-bean-wiring-of-spring%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fauto-bean-wiring-of-spring%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/auto-bean-wiring-of-spring\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/auto-bean-wiring-of-spring\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/posts/spring-bean-wiring-using-javaconfig/">
+          <section class="post">
+              <h2>Spring Bean Wiring Using Javaconfig</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/posts/spring-application-context-and-configuration-metadata/">
+          <section class="post">
+              <h2>Spring Application Context and Configuration Metadata</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

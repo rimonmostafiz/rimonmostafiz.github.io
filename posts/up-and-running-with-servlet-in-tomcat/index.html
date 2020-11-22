@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Up and Running With Servlet in Tomcat"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Up and Running With Servlet in Tomcat &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/" />
+
+    
+        
+            <meta property="og:image" content="/images/pawn-mirror-chess-king.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-12-12T16:57:27Z" />
+
+    
+    <meta property="article:tag" content="javaee" />
+    
+    <meta property="article:tag" content="tomcat" />
+    
+    <meta property="article:tag" content="servlet" />
+    
+    <meta property="article:tag" content="web-application" />
+    
+    
+
+    <title>Up and Running With Servlet in Tomcat &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="First, let&amp;rsquo;s create a maven project and add the dependency. As a prerequisite, JDK 8 will be needed. If you are using Linux based operating system then I " />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "Up and Running With Servlet in Tomcat",
+    "name": "Up and Running With Servlet in Tomcat",
+    "wordCount":  750 ,
+    "timeRequired": "PT4M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/",
+    "datePublished": "2017-12-12T16:57Z",
+    "dateModified": "2017-12-12T16:57Z",
+    
+    "keywords": "javaee, tomcat, servlet, web-application",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Up and Running With Servlet in Tomcat</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/javaee/">#javaee</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/tomcat/">#tomcat</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/servlet/">#servlet</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/web-application/">#web-application</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/lTyAPWR6104" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>First, let&rsquo;s create a maven project and add the dependency.
+As a prerequisite, JDK 8 will be needed. If you are using Linux based operating system then I have written a post on how to install and manage different versions of JDK in your system. You can visit <a href="https://wp.me/p94Vft-cK">this post</a> if JDK 8 is not installed on your system.</p>
+<h3 id="maven-dependency">Maven Dependency</h3>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+    &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+    &lt;version&gt;3.1.0&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h3 id="creating-a-servlet-class">Creating a servlet Class</h3>
+<p>In Java, a Servlet is what receives and responds to requests from the end user. The Java EE API specification defines a Servlet as follows:</p>
+<!-- raw HTML omitted -->
+<p>Every Servlet implements the <code>javax.servlet.Servlet interface</code>, but usually not directly. In almost all cases, Servlets inherit from <code>javax.servlet.GenericServlet</code>GenericServlet is still a protocol-independent Servlet with the lone, abstract service method, but it contains several helper methods for logging and getting information about the application and Servlet configuration.</p>
+<p>For responding to HTTP-specific requests, <code>javax.servlet.http.HttpServlet</code> extends <code>GenericServlet</code> and implements the service method to accept only HTTP requests.</p>
+<pre><code>import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class StartingServlet extends HttpServlet { }
+</code></pre>
+<p>Above service is already prepared to accept an HTTP request and respond to it with an<code>405 Method Not Allowed</code> error.</p>
+<p>So let us override the <em><strong>doGet</strong></em> method to add support for the HTTP method GET:</p>
+<pre><code>import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class StartingServlet extends HttpServlet {
+   @Override
+   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       resp.getWriter().println(&quot;Hello&quot;);
+   }
+}
+</code></pre>
+<h3 id="initializer-and-destroyer">Initializer and Destroyer</h3>
+<p>When a web container first starts a Servlet, it calls that Servlet’s init method. Later when the web container shuts down the Servlet, it calls the Servlet’s destroy method.</p>
+<p>These methods are not the same as the Java constructor and finalizer, and they are not called at the same time as the constructor and finalizer. Normally, these methods do nothing, but you can override them to perform some action</p>
+<pre><code>@Override
+public void init() throws ServletException {
+     System.out.println(&quot;Servlet &quot; + this.getServletName() + &quot; has started.&quot;);
+}
+
+@Override
+public void destroy() {
+    System.out.println(&quot;Servlet &quot; + this.getServletName() + &quot; has stopped.&quot;);
+}
+</code></pre>
+<p>init is called after the Servlet is constructed but before it can respond to the first request. Unlike when the constructor is called, when init is called all the properties have been set on the Servlet, giving you access to the ServletConfig and <code>javax.servlet.ServletContext</code> objects.</p>
+<p>The init method is called when the Servlet starts. If the Servlet is configured to start automatically when the web application is deployed and started, that is when it is called. Otherwise, it is not called until the first request for that Servlet is received.
+Likewise, destroy is called immediately after the Servlet can no longer accept any requests. This typically happens either when the web application is stopped or un-deployed or when the web container shuts down.</p>
+<h3 id="adding-the-deployment-descriptorwebxml">Adding the Deployment Descriptor(web.xml)</h3>
+<p>It describes how the web application should be deployed.Its written In XML.
+The deployment descriptor is a file which will be used by Application Server/Web Container. It directs a deployment tool to deploy a module or application with the specified security settings and describes other specific configuration requirements and/or container options.
+The web application deployment descriptor is named <code>web.xml</code>, and when included with a web application, it must reside in a WEB-INF sub directory at the web application root.</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;web-app
+        xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;
+        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+        xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee
+                            http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;
+        version=&quot;3.1&quot;&gt;
+
+    &lt;display-name&gt;java-web-app&lt;/display-name&gt;
+
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;startingServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;StartingServlet&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;startingServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/hello&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+
+&lt;/web-app&gt;
+</code></pre>
+<p>In the above file, we instructed the web container to create an instance of the Servlet we wrote earlier, using the <code>&lt;servlet&gt;</code> tag. And we used <code>&lt;servlet-mapping&gt;</code> tag to mapped the servlet. All requests to the application-relative URL <em>/hello</em> will be handled by the startingServlet.</p>
+<h3 id="pomxml-file">pom.xml File</h3>
+<p>Final pom.xml file looks like this</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.rimonmostafiz&lt;/groupId&gt;
+    &lt;artifactId&gt;java-web-app&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+            &lt;version&gt;3.1.0&lt;/version&gt;
+            &lt;scope&gt;provided&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;build&gt;
+        &lt;sourceDirectory&gt;src/main/java&lt;/sourceDirectory&gt;
+        &lt;resources&gt;
+            &lt;resource&gt;
+                &lt;directory&gt;src/main/resources&lt;/directory&gt;
+            &lt;/resource&gt;
+        &lt;/resources&gt;
+
+        &lt;testSourceDirectory&gt;src/test/java&lt;/testSourceDirectory&gt;
+        &lt;testResources&gt;
+            &lt;testResource&gt;
+                &lt;directory&gt;src/test/resources&lt;/directory&gt;
+            &lt;/testResource&gt;
+        &lt;/testResources&gt;
+
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.0.0&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;warSourceDirectory&gt;web&lt;/warSourceDirectory&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.6.1&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;source&gt;1.8&lt;/source&gt;
+                    &lt;target&gt;1.8&lt;/target&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+
+&lt;/project&gt;
+</code></pre>
+<p>Now If you want to run this in tomcat then I have made a video how to create this whole project and configure tomcat in IntelliJ-IDEA to run this. Check the video from the top of the post.</p>
+<p>I am not an expert, I already told That I&rsquo;m just documenting my learning. So If you find any anomaly feel free to add a comment. Also, any queries, thoughts, and suggestions will be appreciated.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Up%20and%20Running%20With%20Servlet%20in%20Tomcat&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fup-and-running-with-servlet-in-tomcat%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fup-and-running-with-servlet-in-tomcat%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fup-and-running-with-servlet-in-tomcat%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/up-and-running-with-servlet-in-tomcat\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/up-and-running-with-servlet-in-tomcat\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/posts/know-your-request-object/">
+          <section class="post">
+              <h2>Know Your Request Object</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="background-image: url(/images/web-application-directory-structure-and-war-files-cover.jpg)" href="/posts/web-application-directory-structure-and-war-files/">
+          <section class="post">
+              <h2>Web Application Directory Structure and WAR Files</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

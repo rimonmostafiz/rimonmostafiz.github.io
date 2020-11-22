@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Git Notes"/>
+<meta name="twitter:description" content="Some useful git commands for developers"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Git Notes &middot; Rimon&#39;s Weblog" />
+  	<meta property="og:site_name" content="Rimon&#39;s Weblog" />
+  	<meta property="og:url" content="https://rimonmostafiz.github.io/posts/git-notes/" />
+
+    
+        
+            <meta property="og:image" content="/images/pawn-mirror-chess-king.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="Some useful git commands for developers" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-08-17T12:00:00Z" />
+
+    
+    <meta property="article:tag" content="git" />
+    
+    <meta property="article:tag" content="command" />
+    
+    <meta property="article:tag" content="notes" />
+    
+    
+
+    <title>Git Notes &middot; Rimon&#39;s Weblog</title>
+
+    
+    <meta name="description" content="Some useful git commands for developers" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Rimon&#39;s Weblog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.77.0" />
+
+    <link rel="canonical" href="https://rimonmostafiz.github.io/posts/git-notes/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://rimonmostafiz.github.io/images/author.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://rimonmostafiz.github.io/images/author.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "https://rimonmostafiz.github.io",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Software Engineer at Tiger IT Bangladesh Ltd."
+        
+    },
+    "headline": "Git Notes",
+    "name": "Git Notes",
+    "wordCount":  520 ,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://rimonmostafiz.github.io/posts/git-notes/",
+    "datePublished": "2017-08-17T12:00Z",
+    "dateModified": "2017-08-17T12:00Z",
+    
+    "keywords": "git, command, notes",
+    "description": "Some useful git commands for developers",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rimonmostafiz.github.io/posts/git-notes/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-127460370-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href=""></a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/pages/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/posts/">Posts</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://rimonmostafiz.github.io/"><img src="/images/author.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Git Notes</h1>
+        <small>Some useful git commands for developers</small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/git/">#git</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/command/">#command</a></span>
+         
+          <span class="post-tag small"><a href="https://rimonmostafiz.github.io//tags/notes/">#notes</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>Git cheat sheet for everyday life. Will update this in future&hellip;</p>
+<pre><code>$ git init
+# transform the current directory into a Git repository. This adds a .git folder to the current directory and makes it possible to start recording revisions
+
+$ git config --global user.email &quot;you@example.com&quot;
+$ git config --global user.name &quot;Your Name&quot;
+$ git config --global color.status auto
+$ git config --global color.diff auto
+$ git config --global color.branch auto
+
+$ git clone &lt;git host&gt;:/repo/&lt;project name&gt;.git
+# clone repository to local system
+
+$ git add &lt;file name&gt;
+# add file to local repository
+# the git add command moves changes from the working directory to staging area, staging area is virtual temporary area where we prepare a snapshot of a set of changes before committing them to the official history
+
+$ git add -A
+# stages All
+
+$ git add .
+# stages new and modified, without deleted
+
+$ git add -u
+# stages modified and deleted, without new
+
+$ git status
+# check the Status of the file
+# the git status command displays the state of the working directory and the staged snapshot
+
+$ git checkout -- &lt;file&gt;
+# reverts back the modified file to the one in the repository
+
+$ git commit -m &quot;commit message&quot;
+# the git commit takes the staged snapshot(think as all files) and commits it to the project history.
+
+$ git commit --amend
+# update the last commit message
+
+$ git push origin &lt;branch name&gt;
+# this command specifies that you are pushing to the a branch
+# a branch represents an independent line of development for your repository. Think of it as a brand-new working directory, staging area, and project history. Before you create any new branches, you automatically start out with the main branch (called master).
+
+$ git diff &lt;commit id 1&gt; &lt;commit id 2&gt;
+# show changes between two different commit
+
+$ git diff
+# with no arguments shows the difference between working directory and staging area *
+
+$ git diff --staged
+# show the difference between the staging area and latest commit in repository files which are not same
+
+$ git log
+# show log
+
+$ git log --stat
+# give some statistics about which file have changed in each commit
+
+$ git log --graph --oneline master coins.
+#see the visual representation of the commit history is
+
+$ git config --global color.ui auto
+
+$ git checkout &lt;commit id&gt;
+# go to specific version of code using commit id
+
+$ git checkout &lt;branch name&gt;
+# select the branch
+
+$ git checkout -b &lt;new branch name&gt;
+# combine of 2 command [git branch &lt;new branch name&gt;] &amp; [git checkout &lt;new branch name&gt;]
+
+$ git pull --all
+# the git pull command merges the file from your remote repository into your local repository with a single command
+
+$ git tag
+# normal tag
+
+$ git tag -a
+# anotated tag
+
+$ git reset --hard
+# discard any changes in the working directory or staging area (very careful for this command, its cant be reversible)
+
+$ git branch
+#show all branches
+
+$ git stash
+$ git stash list
+$ git stash pop
+</code></pre>
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://rimonmostafiz.github.io/" style="background-image: url(/images/author.jpg)"><span class="hidden">Rimon Mostafiz's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://rimonmostafiz.github.io/">Rimon Mostafiz</a></h4>
+  
+  <p>Software Engineer at Tiger IT Bangladesh Ltd.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Dhaka, Bangladesh</span>
+    <span class="author-link icon-link"><a href="https://rimonmostafiz.github.io">https://rimonmostafiz.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Git%20Notes&nbsp;-&nbsp;Rimon%27s%20Weblog&amp;url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fgit-notes%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fgit-notes%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2frimonmostafiz.github.io%2fposts%2fgit-notes%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+  
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/rimonmostafiz.github.io\/posts\/git-notes\/";  
+this.page.identifier = "https:\/\/rimonmostafiz.github.io\/posts\/git-notes\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://rimonmostafiz.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="/posts/oracle-sql-developer-in-ubuntu/">
+          <section class="post">
+              <h2>Oracle SQL Developer in Ubuntu</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/posts/google-drive-in-ubuntu/">
+          <section class="post">
+              <h2>Google Drive in Ubuntu</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Rimon&#39;s Weblog</a> © Creative Commons Attribution-ShareAlike 4.0 International License</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+
