@@ -1,0 +1,1034 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog",
+        "name" : "Uva 10311 - Goldbach and Euler",
+        "headline" : "Uva 10311 - Goldbach and Euler",
+        "description" : "Solution idea of Uva 10311 - Goldbach and Euler",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2017",
+        "datePublished": "2017-09-03 00:21:00 \u002b0000 \u002b0000",
+        "dateModified" : "2017-09-03 00:21:00 \u002b0000 \u002b0000",
+        "url" : "\/blog\/uva-10311-goldbach-and-euler\/",
+        "wordCount" : "596",
+        "keywords" : [ "uva","prime-number","problem-solving","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Uva 10311 - Goldbach and Euler</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.77.0" />
+        
+
+
+        
+            <meta name="author" content="Rimon Mostafiz">
+        
+        
+            <meta name="description" content="Solution idea of Uva 10311 - Goldbach and Euler">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Uva 10311 - Goldbach and Euler"/>
+<meta name="twitter:description" content="Solution idea of Uva 10311 - Goldbach and Euler"/>
+<meta name="twitter:site" content="@rimonmostafiz"/>
+
+        <meta property="og:title" content="Uva 10311 - Goldbach and Euler" />
+<meta property="og:description" content="Solution idea of Uva 10311 - Goldbach and Euler" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/uva-10311-goldbach-and-euler/" />
+<meta property="article:published_time" content="2017-09-03T00:21:00+00:00" />
+<meta property="article:modified_time" content="2017-09-03T00:21:00+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Uva 10311 - Goldbach and Euler">
+<meta itemprop="description" content="Solution idea of Uva 10311 - Goldbach and Euler">
+<meta itemprop="datePublished" content="2017-09-03T00:21:00+00:00" />
+<meta itemprop="dateModified" content="2017-09-03T00:21:00+00:00" />
+<meta itemprop="wordCount" content="596">
+
+
+
+<meta itemprop="keywords" content="uva,prime-number,problem-solving," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-127460370-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/pages/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/pages/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/get-insulted-by-sudo/">Get Insulted by sudo</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-30'>
+                                    July 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/manage-npm-global-packages/">Manage npm Global Packages</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-29'>
+                                    July 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/goodbye-wordpress-welcome-to-hugo/">Goodbye Wordpress, Welcome to HUGO</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-27'>
+                                    July 27, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/install-and-manage-node-js-using-nvm/">Install and Manage Node JS Using NVM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-07'>
+                                    July 7, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/spring-bean-wiring-using-javaconfig/">Spring Bean Wiring Using Javaconfig</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-05-29'>
+                                    May 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fuva-10311-goldbach-and-euler%2f&amp;text=Uva%2010311%20-%20Goldbach%20and%20Euler&amp;via=rimonmostafiz" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fuva-10311-goldbach-and-euler%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fuva-10311-goldbach-and-euler%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fuva-10311-goldbach-and-euler%2f&amp;title=Uva%2010311%20-%20Goldbach%20and%20Euler" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fuva-10311-goldbach-and-euler%2f&amp;title=Uva%2010311%20-%20Goldbach%20and%20Euler" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fuva-10311-goldbach-and-euler%2f&amp;title=Uva%2010311%20-%20Goldbach%20and%20Euler" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fuva-10311-goldbach-and-euler%2f&amp;description=Uva%2010311%20-%20Goldbach%20and%20Euler" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Rimon%20Mostafiz&amp;body=%2fblog%2fuva-10311-goldbach-and-euler%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/uva-10311-goldbach-and-euler/">Uva 10311 - Goldbach and Euler</a></h1>
+            
+        
+        
+            <p>Solution idea of Uva 10311 - Goldbach and Euler</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2017-09-03'>
+            September 3, 2017</time>
+        <span class="author">Rimon Mostafiz</span>
+        
+            <p>3 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fuva-10311-goldbach-and-euler%2f&amp;text=Uva%2010311%20-%20Goldbach%20and%20Euler&amp;via=rimonmostafiz" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fuva-10311-goldbach-and-euler%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fuva-10311-goldbach-and-euler%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fuva-10311-goldbach-and-euler%2f&amp;title=Uva%2010311%20-%20Goldbach%20and%20Euler" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fuva-10311-goldbach-and-euler%2f&amp;title=Uva%2010311%20-%20Goldbach%20and%20Euler" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fuva-10311-goldbach-and-euler%2f&amp;title=Uva%2010311%20-%20Goldbach%20and%20Euler" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fuva-10311-goldbach-and-euler%2f&amp;description=Uva%2010311%20-%20Goldbach%20and%20Euler" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Rimon%20Mostafiz&amp;body=%2fblog%2fuva-10311-goldbach-and-euler%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    <h3 id="problem-statement">Problem Statement:</h3>
+<p><a href="https://uva.onlinejudge.org/external/103/p10311.pdf">UVa 10311 - Goldbach and Euler</a></p>
+<p>We can express the problem statement like: Given an integer <code>N (0 &lt; N ≤ 108)</code>.</p>
+<p>we have to find(if exists) two number P1 and P2 where,</p>
+<ul>
+<li>P1 and P2 both prime</li>
+<li>P1 + P2 = n</li>
+<li>P1 &lt; P2</li>
+<li>P2 - P1  is minimized</li>
+</ul>
+<h3 id="solution-idea">Solution Idea:</h3>
+<p>First of all we need to find prime numbers between <strong>[0:10<!-- raw HTML omitted -->8<!-- raw HTML omitted -->]</strong>. We can use memory efficient C++ implementation of <a href="http://rimonmostafiz.com/posts/sieve-of-eratosthenes-memory-efficient-implementation">Sieve Of Eratosthenes</a> to generate prime numbers up to 10<!-- raw HTML omitted -->8<!-- raw HTML omitted --> and store it in an Array.</p>
+<p>Now we have to find the <code>P1</code> and <code>P2</code>, first idea come to mind is though we have the prime list of all number up to N we can normally iterate throw the prime list and find <code>P1</code> and <code>P2 = N - P1</code> and check if <code>P2</code> is also a prime and if yes then we can calculate and minimized the <code>P2 - P1</code>. if couldn&rsquo;t manage to find some <code>P1</code> for that <code>P2</code> is a prime also we can say <code>N</code> is not the sum of two primes! Definitely this idea is going to work for finding <code>P1</code> and <code>P2</code> but you will end up with a <code>TLE</code> for this IDEA 😟</p>
+<p>Since the Time limit of the problem <code>10s</code>, we need to find <code>P1</code> and <code>P2</code> more efficiently.</p>
+<p>If we consider <code>N</code> is an Odd Number, can&rsquo;t we find <code>P1</code> and <code>P2</code> more efficiently? <!-- raw HTML omitted -->
+Well, it turns out that for odd numbers we can find <code>P1</code> and <code>P2</code> in <code>O(1)</code> ! 😁 <!-- raw HTML omitted -->
+If N is odd, then one of the two primes <code>P1</code> and <code>P2</code> has to be even, while the other one has to be odd. got it? <!-- raw HTML omitted -->
+we know <strong>ODD = ODD + EVEN</strong>. If one of the primes has to be even, then that prime would have to be <code>2</code>. So, if <code>N</code> is odd we simply check if <code>N - 2</code> is prime or not, and if it is, then we know that <code>P1 = 2</code> and <code>P2 = N - 2</code>, otherwise there is no solution.</p>
+<p>We have concluded that for Odd numbers we can found <code>P1</code> and <code>P2</code> easily, now we have one possible case remaining and that if <code>N</code> is Even. There’s one thing that we could do that would improve significantly the complexity of the algorithm we can iterate only over the prime numbers. Since we already have a array full of primes below 10<!-- raw HTML omitted -->8<!-- raw HTML omitted -->, we can binary search the location of <code>N/2</code> and go down from it. Since there are <strong>5.8 x 10<!-- raw HTML omitted -->6<!-- raw HTML omitted --></strong> primes up to <strong>10<!-- raw HTML omitted -->8<!-- raw HTML omitted --></strong>. That would make for a worse case of <strong>5.8 x 10<!-- raw HTML omitted -->6<!-- raw HTML omitted --></strong> iterations instead of <strong>10<!-- raw HTML omitted -->8<!-- raw HTML omitted -->/2</strong>.</p>
+<p>Now We have improved things but, can we do even better? The discussion found in the problem statement about Goldbach’s conjecture and Euler’s ideas that there is a conjecture that an even number can always be expressed as the sum of two primes, though its a conjecture but we can assume it’s true for our purposes. This means that we can be reasonably confident that the process of finding <code>P1</code> will succeed for most even numbers, hopefully quickly enough that it doesn’t have to check millions of primes. Note that I said most even numbers, because we need two distinct primes <code>P1</code> and <code>P2</code> remember? For example, <code>14</code> can be expressed as the sum of two primes <code>7 + 7</code> but not as the sum of two distinct primes.</p>
+<h3 id="code">Code</h3>
+<p>Try to code it yourself, if you can&rsquo;t code it or need any help let me know in the comments.</p>
+<p>Happy Coding 😃</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/uva">uva</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/prime-number">prime-number</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/problem-solving">problem-solving</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "rimonmostafiz" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/uva-406-prime-cuts/"
+                class="button big previous">Uva 406 - Prime Cuts</a></li>
+    
+
+    
+        <li><a href="/blog/basics-and-key-concepts-of-elasticsearch/"
+                class="button big next">Basics and Key Concepts of Elasticsearch</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/author.jpg" class="intro-circle" width="128" alt="Rimon Mostafiz" /></a>
+      
+    
+    
+      <header>
+        <h2>Rimon Mostafiz</h2>
+        <p><i class='fa fa-hand-peace-o'></i></p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/rimonmostafiz" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+  <li><a href="//stackoverflow.com/users/4426099" target="_blank" title="Stack Overflow" class="fa fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/rimonmostafiz" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/rimonmostafiz" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+  <li><a href="//reddit.com/user/rimonmostafiz" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//api.whatsapp.com/send?phone=%2b8801711483387" target="_blank" title="WhatsApp" class="fa fa-whatsapp"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/rimonmostafiz" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:rimonmostafiz@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/get-insulted-by-sudo/">Get Insulted by sudo</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-30'>
+                July 30, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/manage-npm-global-packages/">Manage npm Global Packages</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-29'>
+                July 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/goodbye-wordpress-welcome-to-hugo/">Goodbye Wordpress, Welcome to HUGO</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-27'>
+                July 27, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/install-and-manage-node-js-using-nvm/">Install and Manage Node JS Using NVM</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-07'>
+                July 7, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/spring-bean-wiring-using-javaconfig/">Spring Bean Wiring Using Javaconfig</a>
+              </h3>
+              
+              <time class="published" datetime='2018-05-29'>
+                May 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>A software developer in love with java, golang</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/rimonmostafiz" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+  <li><a href="//stackoverflow.com/users/4426099" target="_blank" title="Stack Overflow" class="fa fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/rimonmostafiz" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/rimonmostafiz" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+  <li><a href="//reddit.com/user/rimonmostafiz" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//api.whatsapp.com/send?phone=%2b8801711483387" target="_blank" title="WhatsApp" class="fa fa-whatsapp"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/rimonmostafiz" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:rimonmostafiz@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Rimon Mostafiz
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

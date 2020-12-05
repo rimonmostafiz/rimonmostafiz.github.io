@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sdkman on Rimon&#39;s Weblog</title>
-    <link>https://rimonmostafiz.github.io/tags/sdkman/</link>
-    <description>Recent content in sdkman on Rimon&#39;s Weblog</description>
+    <title>sdkman on Rimon Mostafiz</title>
+    <link>/tags/sdkman/</link>
+    <description>Recent content in sdkman on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
-    <lastBuildDate>Fri, 20 Oct 2017 18:39:46 +0000</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/sdkman/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Oct 2017 18:39:46 +0000</lastBuildDate><atom:link href="/tags/sdkman/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Manage JDK Using SDKMAN</title>
-      <link>https://rimonmostafiz.github.io/posts/manage-jdk-using-sdkman/</link>
+      <link>/blog/manage-jdk-using-sdkman/</link>
       <pubDate>Fri, 20 Oct 2017 18:39:46 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/manage-jdk-using-sdkman/</guid>
+      <guid>/blog/manage-jdk-using-sdkman/</guid>
+      <description>What is SDKMAN? If you are a developer then its very common that you work on multiple projects which use different JDK version. Obviously, you can use update-alternatives to manage multiple JDK libraries on the same system to select which one you want to use as the main one.
+Did you ever tried the update-alternatives and then java -version was correct, but the link in $JAVA_HOME and javac -version was still wrong&amp;hellip; and you changed that one manually?</description>
+    </item>
+    
+    <item>
+      <title>Manage JDK Using SDKMAN</title>
+      <link>/posts/manage-jdk-using-sdkman/</link>
+      <pubDate>Fri, 20 Oct 2017 18:39:46 +0000</pubDate>
+      
+      <guid>/posts/manage-jdk-using-sdkman/</guid>
       <description>What is SDKMAN? If you are a developer then its very common that you work on multiple projects which use different JDK version. Obviously, you can use update-alternatives to manage multiple JDK libraries on the same system to select which one you want to use as the main one.
 Did you ever tried the update-alternatives and then java -version was correct, but the link in $JAVA_HOME and javac -version was still wrong&amp;hellip; and you changed that one manually?</description>
     </item>

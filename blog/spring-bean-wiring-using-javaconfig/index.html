@@ -1,0 +1,1122 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog",
+        "name" : "Spring Bean Wiring Using Javaconfig",
+        "headline" : "Spring Bean Wiring Using Javaconfig",
+        "description" : "In the previous post, I wrote about how can we implicitly wire beans automatically in Spring container. In my previous post I created a new maven project and started writing code so that we can understand the topics more clearly. In this post, I am documenting my learning of how we can wire bean using Explicit Java Configuration. I will work on the same project I have created earlier.\nExplicit wiring using Java When an automatic configuration isn’t an option then we must configure Spring explicitly.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-05-29 10:19:29 \u002b0000 \u002b0000",
+        "dateModified" : "2018-05-29 10:19:29 \u002b0000 \u002b0000",
+        "url" : "\/blog\/spring-bean-wiring-using-javaconfig\/",
+        "wordCount" : "893",
+        "keywords" : [ "java","spring","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Spring Bean Wiring Using Javaconfig</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.77.0" />
+        
+
+
+        
+            <meta name="author" content="Rimon Mostafiz">
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring Bean Wiring Using Javaconfig"/>
+<meta name="twitter:description" content="In the previous post, I wrote about how can we implicitly wire beans automatically in Spring container. In my previous post I created a new maven project and started writing code so that we can understand the topics more clearly. In this post, I am documenting my learning of how we can wire bean using Explicit Java Configuration. I will work on the same project I have created earlier.
+Explicit wiring using Java When an automatic configuration isn’t an option then we must configure Spring explicitly."/>
+<meta name="twitter:site" content="@rimonmostafiz"/>
+
+        <meta property="og:title" content="Spring Bean Wiring Using Javaconfig" />
+<meta property="og:description" content="In the previous post, I wrote about how can we implicitly wire beans automatically in Spring container. In my previous post I created a new maven project and started writing code so that we can understand the topics more clearly. In this post, I am documenting my learning of how we can wire bean using Explicit Java Configuration. I will work on the same project I have created earlier.
+Explicit wiring using Java When an automatic configuration isn’t an option then we must configure Spring explicitly." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/spring-bean-wiring-using-javaconfig/" />
+<meta property="article:published_time" content="2018-05-29T10:19:29+00:00" />
+<meta property="article:modified_time" content="2018-05-29T10:19:29+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Spring Bean Wiring Using Javaconfig">
+<meta itemprop="description" content="In the previous post, I wrote about how can we implicitly wire beans automatically in Spring container. In my previous post I created a new maven project and started writing code so that we can understand the topics more clearly. In this post, I am documenting my learning of how we can wire bean using Explicit Java Configuration. I will work on the same project I have created earlier.
+Explicit wiring using Java When an automatic configuration isn’t an option then we must configure Spring explicitly.">
+<meta itemprop="datePublished" content="2018-05-29T10:19:29+00:00" />
+<meta itemprop="dateModified" content="2018-05-29T10:19:29+00:00" />
+<meta itemprop="wordCount" content="893">
+
+
+
+<meta itemprop="keywords" content="java,spring," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-127460370-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/pages/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/pages/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/get-insulted-by-sudo/">Get Insulted by sudo</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-30'>
+                                    July 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/manage-npm-global-packages/">Manage npm Global Packages</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-29'>
+                                    July 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/goodbye-wordpress-welcome-to-hugo/">Goodbye Wordpress, Welcome to HUGO</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-27'>
+                                    July 27, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/install-and-manage-node-js-using-nvm/">Install and Manage Node JS Using NVM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-07'>
+                                    July 7, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/spring-bean-wiring-using-javaconfig/">Spring Bean Wiring Using Javaconfig</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-05-29'>
+                                    May 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f&amp;text=Spring%20Bean%20Wiring%20Using%20Javaconfig&amp;via=rimonmostafiz" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fspring-bean-wiring-using-javaconfig%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f&amp;title=Spring%20Bean%20Wiring%20Using%20Javaconfig" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f&amp;title=Spring%20Bean%20Wiring%20Using%20Javaconfig" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f&amp;title=Spring%20Bean%20Wiring%20Using%20Javaconfig" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f&amp;description=Spring%20Bean%20Wiring%20Using%20Javaconfig" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Rimon%20Mostafiz&amp;body=%2fblog%2fspring-bean-wiring-using-javaconfig%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/spring-bean-wiring-using-javaconfig/">Spring Bean Wiring Using Javaconfig</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-05-29'>
+            May 29, 2018</time>
+        <span class="author">Rimon Mostafiz</span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f&amp;text=Spring%20Bean%20Wiring%20Using%20Javaconfig&amp;via=rimonmostafiz" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fspring-bean-wiring-using-javaconfig%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f&amp;title=Spring%20Bean%20Wiring%20Using%20Javaconfig" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f&amp;title=Spring%20Bean%20Wiring%20Using%20Javaconfig" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f&amp;title=Spring%20Bean%20Wiring%20Using%20Javaconfig" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fspring-bean-wiring-using-javaconfig%2f&amp;description=Spring%20Bean%20Wiring%20Using%20Javaconfig" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Rimon%20Mostafiz&amp;body=%2fblog%2fspring-bean-wiring-using-javaconfig%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    <p>In the <a href="https://rimonmostafiz.com/post/auto-bean-wiring-of-spring/">previous post</a>, I wrote about how can we implicitly wire beans automatically in Spring container. In my previous post I created a new maven project and started writing code so that we can understand the topics more clearly. In this post, I am documenting my learning of how we can wire bean using Explicit Java Configuration. I will work on the same project I have created earlier.</p>
+<h3 id="explicit-wiring-using-java">Explicit wiring using Java</h3>
+<p>When an automatic configuration isn’t an option then we must configure Spring explicitly. Let’s say that we want to wire components from some third-party library into our application. Because we don’t have the source code for that library, there’s no opportunity to annotate its classes with <code>@Component</code> and <code>@Autowired</code> annotations. Therefore, automatic configuration isn’t an option.</p>
+<p>We have two choices for explicit configuration:</p>
+<ul>
+<li>Java</li>
+<li>XML</li>
+</ul>
+<p>JavaConfig is the preferred option for explicit configuration because it’s more powerful, type-safe, and refactor-friendly.</p>
+<h3 id="create-a-configuration-class">Create a configuration class</h3>
+<p>To wire bean in JavaConfig, we need to create a Configuration Class and mark that with <code>@Configuration</code> annotation.</p>
+<p>This annotation identifies this class as a configuration class, and it’s expected to contain details of beans that are to be created in the Spring application context.</p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StoreConfig { }
+</code></pre>
+<h3 id="declarea-bean">Declare A Bean</h3>
+<p>To declare a bean in JavaConfig, we should create a method in our configuration class and creates an instance of the desired class and annotate the method with <code>@Bean</code></p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StoreConfig {
+    @Bean
+    Item foodItem() {
+        return new FoodItem();
+    }
+}
+</code></pre>
+<p>Here the <code>@Bean</code> annotation tells spring that this method will return an object and that should be registered as a bean in the Spring application context.</p>
+<p>By default, the bean will be given an Id same as the method name annotated with <code>@Bean</code>. If we want to give the bean a different name then we can supply a name attribute in <code>@Bean</code> annotation like the example below</p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StoreConfig {
+    @Bean(name = &quot;myFoodItemBean&quot;)
+    Item foodItem() {
+        return new FoodItem();
+    }
+}
+</code></pre>
+<h3 id="inject-bean-in-javaconfig">Inject Bean in JavaConfig</h3>
+<p>So we Created a simple Item bean. It was simple and easy as It wasn&rsquo;t dependent on any other bean.<br>
+But now we are going to declare a Store bean which is dependent on Item bean. How to do it in JavaConfig?</p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StoreConfig {
+    @Bean(name = &quot;myFoodItemBean&quot;)
+    Item foodItem() {
+        return new FoodItem();
+    }
+
+    @Bean
+    Store store() {
+        return new Store(foodItem());
+    }
+}
+</code></pre>
+<p>Here our <code>store()</code>method is similarly annotated with <code>@Bean</code> to indicate that it will produce an instance of a bean to be registered in the Spring application context.
+As no name attribute is present in <code>@Bean</code> so by default the bean name will be store, the same as the method&rsquo;s name.</p>
+<p>The body of the method is different from the <code>foodItem()</code> method. The store instance is created by calling its constructor that takes a Item. It appears that the Item is provided by calling <code>foodItem</code> , but that’s not exactly true. Because the <code>foodItem()</code> method is annotated with <code>@Bean</code> , Spring will intercept any calls to it and ensure that the bean produced by that method is returned rather than allowing it to be invoked again.
+For example, we want to introduce another Store bean that is just like the first one.</p>
+<pre><code>@Bean
+Store store() {
+    return new Store(foodItem());
+}
+
+@Bean
+Store anotherStore() {
+    return new Store(foodItem());
+}
+</code></pre>
+<p>Now here things get little tricky. If the call to <code>foodItem()</code> was treated like any other call to a Java method, then each store would be given its own instance of <code>FoodItem</code>.
+If you have two Store, there’s no physical way for a single item to simultaneously be present in two stores. Right?
+In software, however, there’s no reason you couldn’t inject the same instance into as many other beans as you want. By default, all beans in Spring are singletons, and there’s no reason you need to create a duplicate instance for the second Store bean. So Spring intercepts the call to <code>foodItem()</code> and makes sure that what is returned is the Spring bean that was created when Spring itself called <code>foodItem()</code> to create the Store bean. Therefore, both our Store beans will be given the same instance of <code>FoodItem</code>.</p>
+<p>Referring to a bean by calling its method can be confusing. There’s another way that might be easier to digest:</p>
+<pre><code>@Bean
+Store store(Item foodItem) {
+    return new Store(foodItem);
+}
+</code></pre>
+<p>Here, the <code>store()</code> method asks for an Item as a parameter. When spring calls <code>sotre()</code> to create a Store bean, it autowire an Item into the configuration method. This approach is to refer to other beans is usually the best choice because it doesn&rsquo;t depend on the Item bean being declared in the same configuration class. In fact, you can even declare Item bean in XML configuration or automatically scanned and wired beans. No matter how its created spring will hand it to this configuration method to create the Store bean.</p>
+<h3 id="run-application">Run Application</h3>
+<p>Let&rsquo;s test all this java configuration by creating an <code>App</code> class.</p>
+<p><strong>App.class Code</strong></p>
+<pre><code>package com.rimonmostafiz;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class App {
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(StoreConfig.class);
+        Store store = (Store) context.getBean(&quot;store&quot;);
+        store.showNotice();
+    }
+}
+</code></pre>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/java">java</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/spring">spring</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "rimonmostafiz" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/auto-bean-wiring-of-spring/"
+                class="button big previous">Auto Bean Wiring of Spring</a></li>
+    
+
+    
+        <li><a href="/blog/install-and-manage-node-js-using-nvm/"
+                class="button big next">Install and Manage Node JS Using NVM</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/author.jpg" class="intro-circle" width="128" alt="Rimon Mostafiz" /></a>
+      
+    
+    
+      <header>
+        <h2>Rimon Mostafiz</h2>
+        <p><i class='fa fa-hand-peace-o'></i></p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/rimonmostafiz" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+  <li><a href="//stackoverflow.com/users/4426099" target="_blank" title="Stack Overflow" class="fa fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/rimonmostafiz" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/rimonmostafiz" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+  <li><a href="//reddit.com/user/rimonmostafiz" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//api.whatsapp.com/send?phone=%2b8801711483387" target="_blank" title="WhatsApp" class="fa fa-whatsapp"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/rimonmostafiz" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:rimonmostafiz@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/get-insulted-by-sudo/">Get Insulted by sudo</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-30'>
+                July 30, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/manage-npm-global-packages/">Manage npm Global Packages</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-29'>
+                July 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/goodbye-wordpress-welcome-to-hugo/">Goodbye Wordpress, Welcome to HUGO</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-27'>
+                July 27, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/install-and-manage-node-js-using-nvm/">Install and Manage Node JS Using NVM</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-07'>
+                July 7, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/spring-bean-wiring-using-javaconfig/">Spring Bean Wiring Using Javaconfig</a>
+              </h3>
+              
+              <time class="published" datetime='2018-05-29'>
+                May 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>A software developer in love with java, golang</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/rimonmostafiz" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+  <li><a href="//stackoverflow.com/users/4426099" target="_blank" title="Stack Overflow" class="fa fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/rimonmostafiz" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/rimonmostafiz" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+  <li><a href="//reddit.com/user/rimonmostafiz" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//api.whatsapp.com/send?phone=%2b8801711483387" target="_blank" title="WhatsApp" class="fa fa-whatsapp"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/rimonmostafiz" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:rimonmostafiz@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Rimon Mostafiz
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

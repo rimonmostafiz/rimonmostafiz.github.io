@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nvm on Rimon&#39;s Weblog</title>
-    <link>https://rimonmostafiz.github.io/tags/nvm/</link>
-    <description>Recent content in nvm on Rimon&#39;s Weblog</description>
+    <title>nvm on Rimon Mostafiz</title>
+    <link>/tags/nvm/</link>
+    <description>Recent content in nvm on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
-    <lastBuildDate>Sat, 07 Jul 2018 04:17:09 +0000</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/nvm/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Jul 2018 04:17:09 +0000</lastBuildDate><atom:link href="/tags/nvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install and Manage Node JS Using NVM</title>
-      <link>https://rimonmostafiz.github.io/posts/install-and-manage-node-js-using-nvm/</link>
+      <link>/blog/install-and-manage-node-js-using-nvm/</link>
       <pubDate>Sat, 07 Jul 2018 04:17:09 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/install-and-manage-node-js-using-nvm/</guid>
+      <guid>/blog/install-and-manage-node-js-using-nvm/</guid>
+      <description>Node Version Manager (NVM) is a simple bash script to manage multiple active node.js versions.
+Install NVM To install or update nvm, you can use the install script using cURL or Wget
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash $ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash  The script clones the nvm repository to ~/.nvm and adds the source line to your profile (~/.bash_profile, ~/.zshrc,~/.profile, or ~/.bashrc).
+export NVM_DIR=&amp;quot;$HOME/.nvm&amp;quot; [ -s &amp;quot;$NVM_DIR/nvm.sh&amp;quot; ] &amp;amp;&amp;amp; \.</description>
+    </item>
+    
+    <item>
+      <title>Install and Manage Node JS Using NVM</title>
+      <link>/posts/install-and-manage-node-js-using-nvm/</link>
+      <pubDate>Sat, 07 Jul 2018 04:17:09 +0000</pubDate>
+      
+      <guid>/posts/install-and-manage-node-js-using-nvm/</guid>
       <description>Node Version Manager (NVM) is a simple bash script to manage multiple active node.js versions.
 Install NVM To install or update nvm, you can use the install script using cURL or Wget
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash $ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash  The script clones the nvm repository to ~/.nvm and adds the source line to your profile (~/.bash_profile, ~/.zshrc,~/.profile, or ~/.bashrc).

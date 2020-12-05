@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Rimon&#39;s Weblog</title>
-    <link>https://rimonmostafiz.github.io/posts/</link>
-    <description>Recent content in Posts on Rimon&#39;s Weblog</description>
+    <title>Posts on Rimon Mostafiz</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
-    <lastBuildDate>Mon, 30 Jul 2018 14:35:07 +0600</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Jul 2018 14:35:07 +0600</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Get Insulted by sudo</title>
-      <link>https://rimonmostafiz.github.io/posts/get-insulted-by-sudo/</link>
+      <link>/posts/get-insulted-by-sudo/</link>
       <pubDate>Mon, 30 Jul 2018 14:35:07 +0600</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/get-insulted-by-sudo/</guid>
+      <guid>/posts/get-insulted-by-sudo/</guid>
       <description>Do you know sudo can insult you? wait, what ❓ 😕
 Take a look at what I&amp;rsquo;m talking about. sudo can insult you for typing incorrect password. 💥
 Enable insults in sudo Open a terminal and type:
@@ -22,10 +22,10 @@ Now you will have to find the section where the defaults are listed.</descriptio
     
     <item>
       <title>Manage npm Global Packages</title>
-      <link>https://rimonmostafiz.github.io/posts/manage-npm-global-packages/</link>
+      <link>/posts/manage-npm-global-packages/</link>
       <pubDate>Sun, 29 Jul 2018 15:35:41 +0600</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/manage-npm-global-packages/</guid>
+      <guid>/posts/manage-npm-global-packages/</guid>
       <description>This post is about how can we install, update, uninstall and list out installed global packages of NPM.
 The commands that start with $ are meant to be run in the terminal or command line.The output of the command will follow immediately. Comments will begin with #.
 Install Global Packages $ npm install -g &amp;lt;package&amp;gt;  For example, to install express globally, type
@@ -34,10 +34,10 @@ $ npm install -g express + express@4.16.3 added 50 packages from 47 contributors
     
     <item>
       <title>Goodbye Wordpress, Welcome to HUGO</title>
-      <link>https://rimonmostafiz.github.io/posts/goodbye-wordpress-welcome-to-hugo/</link>
+      <link>/posts/goodbye-wordpress-welcome-to-hugo/</link>
       <pubDate>Fri, 27 Jul 2018 20:01:41 +0600</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/goodbye-wordpress-welcome-to-hugo/</guid>
+      <guid>/posts/goodbye-wordpress-welcome-to-hugo/</guid>
       <description>Do you notice anything new? Of course not. No one follows my blog and theme does not matter. 😒
 A weeks ago, I moved this site over from WordPress to HUGO(a static site generator). Also its now hosted to Netlify(🆓)
 This is my attempt to making everything more simple and content-focused. In this post, I will talk about some of my reasons for switching away from WordPress to a static site generator.</description>
@@ -45,10 +45,10 @@ This is my attempt to making everything more simple and content-focused. In this
     
     <item>
       <title>Install and Manage Node JS Using NVM</title>
-      <link>https://rimonmostafiz.github.io/posts/install-and-manage-node-js-using-nvm/</link>
+      <link>/posts/install-and-manage-node-js-using-nvm/</link>
       <pubDate>Sat, 07 Jul 2018 04:17:09 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/install-and-manage-node-js-using-nvm/</guid>
+      <guid>/posts/install-and-manage-node-js-using-nvm/</guid>
       <description>Node Version Manager (NVM) is a simple bash script to manage multiple active node.js versions.
 Install NVM To install or update nvm, you can use the install script using cURL or Wget
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash $ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash  The script clones the nvm repository to ~/.nvm and adds the source line to your profile (~/.bash_profile, ~/.zshrc,~/.profile, or ~/.bashrc).
@@ -57,20 +57,20 @@ export NVM_DIR=&amp;quot;$HOME/.nvm&amp;quot; [ -s &amp;quot;$NVM_DIR/nvm.sh&amp
     
     <item>
       <title>Spring Bean Wiring Using Javaconfig</title>
-      <link>https://rimonmostafiz.github.io/posts/spring-bean-wiring-using-javaconfig/</link>
+      <link>/posts/spring-bean-wiring-using-javaconfig/</link>
       <pubDate>Tue, 29 May 2018 10:19:29 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/spring-bean-wiring-using-javaconfig/</guid>
+      <guid>/posts/spring-bean-wiring-using-javaconfig/</guid>
       <description>In the previous post, I wrote about how can we implicitly wire beans automatically in Spring container. In my previous post I created a new maven project and started writing code so that we can understand the topics more clearly. In this post, I am documenting my learning of how we can wire bean using Explicit Java Configuration. I will work on the same project I have created earlier.
 Explicit wiring using Java When an automatic configuration isn’t an option then we must configure Spring explicitly.</description>
     </item>
     
     <item>
       <title>Auto Bean Wiring of Spring</title>
-      <link>https://rimonmostafiz.github.io/posts/auto-bean-wiring-of-spring/</link>
+      <link>/posts/auto-bean-wiring-of-spring/</link>
       <pubDate>Mon, 28 May 2018 07:44:03 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/auto-bean-wiring-of-spring/</guid>
+      <guid>/posts/auto-bean-wiring-of-spring/</guid>
       <description>As we previously discussed that the Spring container is responsible for creating the beans in your application and coordinating the relationship between those objects vi DI. The act of creating these associations between application objects in the essence of dependency injection(DI) and is commonly referred to as wiring.
 Different Types of Bean Wiring Spring Offers three primary wiring mechanism
  An explicit configuration in XML An explicit configuration in Java An Implicit bean discovery and automatic wiring  In this post, I am going to write notes about Spring&amp;rsquo;s automatic wiring, I will write about the other two in later posts.</description>
@@ -78,10 +78,10 @@ Different Types of Bean Wiring Spring Offers three primary wiring mechanism
     
     <item>
       <title>Spring Application Context and Configuration Metadata</title>
-      <link>https://rimonmostafiz.github.io/posts/spring-application-context-and-configuration-metadata/</link>
+      <link>/posts/spring-application-context-and-configuration-metadata/</link>
       <pubDate>Sat, 26 May 2018 06:42:47 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/spring-application-context-and-configuration-metadata/</guid>
+      <guid>/posts/spring-application-context-and-configuration-metadata/</guid>
       <description>In the last post of Spring Diary, we discussed the basics of spring IoC Container and we saw a high-level view of how Spring Container works.
 In this post, we will learn about how can we Instantiate a Spring IoC container(using ApplicaitonContext Interface) and configure that container using configuration metadata.
 Spring IoC container consumes a form of configuration metadata. This configuration metadata represents how you as an application developer tell the Spring container to instantiate, configure, and assemble the objects in your application.</description>
@@ -89,10 +89,10 @@ Spring IoC container consumes a form of configuration metadata. This configura
     
     <item>
       <title>The Spring IoC Container</title>
-      <link>https://rimonmostafiz.github.io/posts/the-spring-ioc-container/</link>
+      <link>/posts/the-spring-ioc-container/</link>
       <pubDate>Thu, 15 Mar 2018 11:00:47 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/the-spring-ioc-container/</guid>
+      <guid>/posts/the-spring-ioc-container/</guid>
       <description>There is some confusion these days over the meaning of inversion of control due to the rise of IoC containers.
 An IoC container is a common characteristic of frameworks that implement Inversion of Control (IoC).
 Some people confuse the general principle here with the specific styles of inversion of control (such as dependency injection) that these containers use. It is a process whereby objects define their dependencies, that is, the other objects they work with, only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method.</description>
@@ -100,30 +100,30 @@ Some people confuse the general principle here with the specific styles of inver
     
     <item>
       <title>Inversion of Control and Dependency Injection</title>
-      <link>https://rimonmostafiz.github.io/posts/inversion-of-control-and-dependency-injection/</link>
+      <link>/posts/inversion-of-control-and-dependency-injection/</link>
       <pubDate>Wed, 14 Mar 2018 10:36:12 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/inversion-of-control-and-dependency-injection/</guid>
+      <guid>/posts/inversion-of-control-and-dependency-injection/</guid>
       <description>Inversion of control (IoC) In software engineering, inversion of control (IoC) is a design principle. It is used to invert different kinds of controls. More Specifically invert the control of your custom written program or objects of a program is transferred to a container or framework.
 In traditional programming, our custom code that expresses the purpose of the program calls reusable libraries to take care of generic tasks, but with inversion of control, it is the framework that calls into the custom, or task-specific, code.</description>
     </item>
     
     <item>
       <title>Know Your Response Object</title>
-      <link>https://rimonmostafiz.github.io/posts/know-your-response-object/</link>
+      <link>/posts/know-your-response-object/</link>
       <pubDate>Tue, 09 Jan 2018 06:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/know-your-response-object/</guid>
+      <guid>/posts/know-your-response-object/</guid>
       <description>HttpServletResponse The HttpServletResponse interface extends ServletResponse and provides access to the HTTP protocol-specific properties of a response.You can use the response object to do things such as
  Set response headers Write to the response body Redirect the request Set the HTTP status code Send cookies back to the client.  Writing to Response Body The most common thing you’ll do with a response object is written content to the response body.</description>
     </item>
     
     <item>
       <title>Know Your Request Object</title>
-      <link>https://rimonmostafiz.github.io/posts/know-your-request-object/</link>
+      <link>/posts/know-your-request-object/</link>
       <pubDate>Wed, 13 Dec 2017 05:30:10 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/know-your-request-object/</guid>
+      <guid>/posts/know-your-request-object/</guid>
       <description>HTTPServletRequest The HServletRequestttp interface is an extension of ServletRequest that provides additional HTTP protocol-specific information about a received request. It specifies dozens of methods that you can use to obtain details about an HTTP request. It also permits you to set request attributes (different from request parameters).
 Request Param Request parameters come in two different forms:
  Query parameters (also called URI parameters) An application/x-www-form-urlencoded or multipart/form-data encoded request body(typically called post variables or form variables).</description>
@@ -131,50 +131,50 @@ Request Param Request parameters come in two different forms:
     
     <item>
       <title>Up and Running With Servlet in Tomcat</title>
-      <link>https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/</link>
+      <link>/posts/up-and-running-with-servlet-in-tomcat/</link>
       <pubDate>Tue, 12 Dec 2017 16:57:27 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/</guid>
+      <guid>/posts/up-and-running-with-servlet-in-tomcat/</guid>
       <description>First, let&amp;rsquo;s create a maven project and add the dependency. As a prerequisite, JDK 8 will be needed. If you are using Linux based operating system then I have written a post on how to install and manage different versions of JDK in your system. You can visit this post if JDK 8 is not installed on your system.
 Maven Dependency &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;  Creating a servlet Class In Java, a Servlet is what receives and responds to requests from the end user.</description>
     </item>
     
     <item>
       <title>Web Application Directory Structure and WAR Files</title>
-      <link>https://rimonmostafiz.github.io/posts/web-application-directory-structure-and-war-files/</link>
+      <link>/posts/web-application-directory-structure-and-war-files/</link>
       <pubDate>Tue, 12 Dec 2017 11:30:40 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/web-application-directory-structure-and-war-files/</guid>
+      <guid>/posts/web-application-directory-structure-and-war-files/</guid>
       <description>Standard Java EE web applications are deployed as WAR files or exploded (unarchived) web application directories. All Java EE web application servers support WAR file application archives. Whether archived or exploded, the directory structure convention, as shown in Figure is the same.
   This structure contains classes and other application resources, the class files live in /WEB-INF/classes. The WEB-INF directory stores informational and instructional files that Java EE web application servers use to determine how to deploy and run the application.</description>
     </item>
     
     <item>
       <title>Basic Web Application Structure of JavaEE</title>
-      <link>https://rimonmostafiz.github.io/posts/basic-web-application-structure-of-javaee/</link>
+      <link>/posts/basic-web-application-structure-of-javaee/</link>
       <pubDate>Tue, 12 Dec 2017 10:08:51 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/basic-web-application-structure-of-javaee/</guid>
+      <guid>/posts/basic-web-application-structure-of-javaee/</guid>
       <description>Basic Web Application Structure A lot of components go into making a Java EE application.
  Application Code and Third Party Libraries it depends on Deployment Descriptor, which includes instructions for deploying and starting the application ClassLoders which is responsible for isolating your application form other web applications on the same server Finally the WAR and EAR files  Servlets, Filters, Listeners, and JSPs   Servlets are a key component of any Java EE applications.</description>
     </item>
     
     <item>
       <title>Command Aliases in Ubuntu Linux</title>
-      <link>https://rimonmostafiz.github.io/posts/command-aliases-in-linux/</link>
+      <link>/posts/command-aliases-in-linux/</link>
       <pubDate>Thu, 30 Nov 2017 11:50:41 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/command-aliases-in-linux/</guid>
+      <guid>/posts/command-aliases-in-linux/</guid>
       <description>How to set up alias in Linux Every time I need to see different projects logs from application servers logs folder from different terminal window, I have to go to Weblogic&amp;rsquo;s logs folder and then open the log file using less or tail -f project-name.log 
 cd /home/rimonmostafiz/Applications/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain/logs/ less project-name.log or tail -f project-name.log  I don&amp;rsquo;t want to write this long string Everytime, Wouldn’t it be easier to just type something like the following?</description>
     </item>
     
     <item>
       <title>A Bit of Spring</title>
-      <link>https://rimonmostafiz.github.io/posts/a-bit-of-spring-part-one/</link>
+      <link>/posts/a-bit-of-spring-part-one/</link>
       <pubDate>Mon, 30 Oct 2017 09:19:54 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/a-bit-of-spring-part-one/</guid>
+      <guid>/posts/a-bit-of-spring-part-one/</guid>
       <description>Spring MVC Java Configuration Spring traditionally supports two types of configurations:
  XML based configuration Annotation-based configuration  This post is about a bare minimum annotation-based configuration of spring MVC.
 1. Maven Dependencies &amp;lt;dependencyManagement&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-framework-bom&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.0.1.RELEASE&amp;lt;/version&amp;gt; &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt; &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;/dependencyManagement&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.0.0-b02&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;  2. Configure DispatcherServlet package com.rimonmostafiz.config; import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer; public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer { protected String[] getServletMappings() { return new String[] {&amp;quot;/&amp;quot;}; } protected Class&amp;lt;?</description>
@@ -182,30 +182,30 @@ cd /home/rimonmostafiz/Applications/Oracle/Middleware/Oracle_Home/user_projects/
     
     <item>
       <title>Manage JDK Using SDKMAN</title>
-      <link>https://rimonmostafiz.github.io/posts/manage-jdk-using-sdkman/</link>
+      <link>/posts/manage-jdk-using-sdkman/</link>
       <pubDate>Fri, 20 Oct 2017 18:39:46 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/manage-jdk-using-sdkman/</guid>
+      <guid>/posts/manage-jdk-using-sdkman/</guid>
       <description>What is SDKMAN? If you are a developer then its very common that you work on multiple projects which use different JDK version. Obviously, you can use update-alternatives to manage multiple JDK libraries on the same system to select which one you want to use as the main one.
 Did you ever tried the update-alternatives and then java -version was correct, but the link in $JAVA_HOME and javac -version was still wrong&amp;hellip; and you changed that one manually?</description>
     </item>
     
     <item>
       <title>Installing and Running Kibana</title>
-      <link>https://rimonmostafiz.github.io/posts/installing-and-running-kibana/</link>
+      <link>/posts/installing-and-running-kibana/</link>
       <pubDate>Sat, 16 Sep 2017 09:19:51 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/installing-and-running-kibana/</guid>
+      <guid>/posts/installing-and-running-kibana/</guid>
       <description>Installing Kibana and Console Kibana is an open source analytics and visualization platform designed to work with Elasticsearch and Console (Previously its name was Sence, Sence was renamed to Console and it is available on Kibana 5) Kibana provides an interactive console for submitting requests to Elasticsearch directly from your browser.
 The Console plugin provides a UI to interact with the REST API of Elasticsearch. The console has two main areas: the editor, where you compose requests to Elasticsearch, and the response pane, which displays the responses to the request.</description>
     </item>
     
     <item>
       <title>Installing and Running Elasticsearch</title>
-      <link>https://rimonmostafiz.github.io/posts/installing-and-running-elasticsearch/</link>
+      <link>/posts/installing-and-running-elasticsearch/</link>
       <pubDate>Fri, 15 Sep 2017 12:36:35 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/installing-and-running-elasticsearch/</guid>
+      <guid>/posts/installing-and-running-elasticsearch/</guid>
       <description>The easiest way to understand what Elasticsearch is to play with it, so let’s get started. Elastic search is easy to install. In this tutorial, I will walk you through the elasticsearch installation process in Ubuntu 16.04. Elasticsearch requires a recent version of java. Oracle JDK version 1.8 is recommended. I am using JDK 1.8.0_131.
 Before you install Elasticsearch, please check your Java version first by running:
 java -version echo $JAVA_HOME  We can download Elasticsearch from www.</description>
@@ -213,20 +213,20 @@ java -version echo $JAVA_HOME  We can download Elasticsearch from www.</descript
     
     <item>
       <title>Basics and Key Concepts of Elasticsearch</title>
-      <link>https://rimonmostafiz.github.io/posts/basics-and-key-concepts-of-elasticsearch/</link>
+      <link>/posts/basics-and-key-concepts-of-elasticsearch/</link>
       <pubDate>Fri, 15 Sep 2017 10:26:28 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/basics-and-key-concepts-of-elasticsearch/</guid>
+      <guid>/posts/basics-and-key-concepts-of-elasticsearch/</guid>
       <description>Getting Started with Elasticsearch Basics This week finally I started learning Elasticsearch, I decided to keep some notes and share my concepts and understanding on this blog. So that if anyone wants to learn Elasticsearch he/she can learn with me.
 In this part, I will write about the some Elasticsearch theory and basic concepts anyone needs to understand. Most of them I learned form Elasticsearch official site and some videos on youtube.</description>
     </item>
     
     <item>
       <title>Uva 10311 - Goldbach and Euler</title>
-      <link>https://rimonmostafiz.github.io/posts/uva-10311-goldbach-and-euler/</link>
+      <link>/posts/uva-10311-goldbach-and-euler/</link>
       <pubDate>Sun, 03 Sep 2017 00:21:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/uva-10311-goldbach-and-euler/</guid>
+      <guid>/posts/uva-10311-goldbach-and-euler/</guid>
       <description>Problem Statement: UVa 10311 - Goldbach and Euler
 We can express the problem statement like: Given an integer N (0 &amp;lt; N ≤ 108).
 we have to find(if exists) two number P1 and P2 where,
@@ -235,10 +235,10 @@ we have to find(if exists) two number P1 and P2 where,
     
     <item>
       <title>Uva 406 - Prime Cuts</title>
-      <link>https://rimonmostafiz.github.io/posts/uva-406-prime-cuts/</link>
+      <link>/posts/uva-406-prime-cuts/</link>
       <pubDate>Tue, 29 Aug 2017 21:39:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/uva-406-prime-cuts/</guid>
+      <guid>/posts/uva-406-prime-cuts/</guid>
       <description>Problem Statement: UVa 406 – Prime Cuts
 Before beginning I want to say the problem description seems quite awkward to me, for me it took a time to understand what is actually asked by the problem. but when I found out its very easy to code.
 Solution Idea: First of all use Sieve of Eratosthenes to generate primes between 1000. You will be given two numbers N and C, then you need to make a list of primes between 1 to N(inclusive).</description>
@@ -246,60 +246,60 @@ Solution Idea: First of all use Sieve of Eratosthenes to generate primes betwe
     
     <item>
       <title>Oracle SQL Developer in Ubuntu</title>
-      <link>https://rimonmostafiz.github.io/posts/oracle-sql-developer-in-ubuntu/</link>
+      <link>/posts/oracle-sql-developer-in-ubuntu/</link>
       <pubDate>Mon, 28 Aug 2017 15:13:24 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/oracle-sql-developer-in-ubuntu/</guid>
+      <guid>/posts/oracle-sql-developer-in-ubuntu/</guid>
       <description>You will need a free Oracle account to log in and download SQL Developer from Oracle Technology Network site. For ubuntu download the Other Platforms version.At the time of writing this post, I download version is sqldeveloper-17.2.0.188.1159-no-jre.zip. You will also need Java to run Oracle SQL developer. After download, I moved the download file to /home/rimonmostafiz/Applications (you can choose any other location you prefer).
 Move the download file to /home/rimonmostafiz/Applications. you can choose any other location you prefer.</description>
     </item>
     
     <item>
       <title>Git Notes</title>
-      <link>https://rimonmostafiz.github.io/posts/git-notes/</link>
+      <link>/posts/git-notes/</link>
       <pubDate>Thu, 17 Aug 2017 12:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/git-notes/</guid>
+      <guid>/posts/git-notes/</guid>
       <description>Git cheat sheet for everyday life. Will update this in future&amp;hellip;
 $ git init # transform the current directory into a Git repository. This adds a .git folder to the current directory and makes it possible to start recording revisions $ git config --global user.email &amp;quot;you@example.com&amp;quot; $ git config --global user.name &amp;quot;Your Name&amp;quot; $ git config --global color.status auto $ git config --global color.diff auto $ git config --global color.branch auto $ git clone &amp;lt;git host&amp;gt;:/repo/&amp;lt;project name&amp;gt;.</description>
     </item>
     
     <item>
       <title>Google Drive in Ubuntu</title>
-      <link>https://rimonmostafiz.github.io/posts/google-drive-in-ubuntu/</link>
+      <link>/posts/google-drive-in-ubuntu/</link>
       <pubDate>Wed, 16 Aug 2017 22:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/google-drive-in-ubuntu/</guid>
+      <guid>/posts/google-drive-in-ubuntu/</guid>
       <description>At the time of writing, there is no official Google Drive client for Ubuntu or Linux Mint but if you need to use it then there is an unofficial client called Grive2. Grive is a Google Drive client for GNU/Linux systems. It allows the synchronization of all your files on the cloud with a directory of your choice and the upload of new files to Google Drive.
 Those of you used Google Drive client on Windows or Mac, Grive2 will do the same for you in Ubuntu or Linux Mint.</description>
     </item>
     
     <item>
       <title>Sieve of Eratosthenes (Memory Efficient Implementation)</title>
-      <link>https://rimonmostafiz.github.io/posts/sieve-of-eratosthenes-memory-efficient-implementation/</link>
+      <link>/posts/sieve-of-eratosthenes-memory-efficient-implementation/</link>
       <pubDate>Wed, 16 Aug 2017 00:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/sieve-of-eratosthenes-memory-efficient-implementation/</guid>
+      <guid>/posts/sieve-of-eratosthenes-memory-efficient-implementation/</guid>
       <description>Say we want to find all prime numbers up to an integer N where N is 108. If we write a regular implementation of Sieve Of Eratosthenes using a bool array for each integer in the range [1:N] then we could end up using N bytes of memory, which would roughly be 95 MB which is a not a very small memory.
 Lets see how can we reduce the memory, the main idea here is we can store a Boolean value in a single bit, so we can store 8 Boolean values in a single byte.</description>
     </item>
     
     <item>
       <title>Least Common Multiple (LCM)</title>
-      <link>https://rimonmostafiz.github.io/posts/least-common-multiple-lcm/</link>
+      <link>/posts/least-common-multiple-lcm/</link>
       <pubDate>Tue, 15 Aug 2017 18:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/least-common-multiple-lcm/</guid>
+      <guid>/posts/least-common-multiple-lcm/</guid>
       <description>Least Common Multiple (LCM) of two number a and b is the smallest positive integer that is divisible by both a and b. Since division of integers by zero is undefined, this definition has meaning only if a and b are both different from zero.
 int lcm(int a, int b) { for ( int i = 1; ; i ) { if ( i % a == 0 &amp;amp;&amp;amp; i % b == 0 ) { return i; } } } There is an another technique for LCM finding called Reduction by the greatest common divisor</description>
     </item>
     
     <item>
       <title>Greatest Common Divisor (GCD)</title>
-      <link>https://rimonmostafiz.github.io/posts/greatest-common-divisor-gcd/</link>
+      <link>/posts/greatest-common-divisor-gcd/</link>
       <pubDate>Tue, 15 Aug 2017 16:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/greatest-common-divisor-gcd/</guid>
+      <guid>/posts/greatest-common-divisor-gcd/</guid>
       <description>Greatest Common Divisor (GCD) of two number a and b is the largest number that divides both a and b evenly.
 if g = gcd(a, b), then g divides both a and b when at least one of them is non zero.
 when gcd(a, b) == 1 then we said a and b is co-prime or relatively prime numbers.

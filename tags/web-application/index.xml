@@ -1,28 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>web-application on Rimon&#39;s Weblog</title>
-    <link>https://rimonmostafiz.github.io/tags/web-application/</link>
-    <description>Recent content in web-application on Rimon&#39;s Weblog</description>
+    <title>web-application on Rimon Mostafiz</title>
+    <link>/tags/web-application/</link>
+    <description>Recent content in web-application on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
-    <lastBuildDate>Tue, 09 Jan 2018 06:30:00 +0000</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/web-application/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Jan 2018 06:30:00 +0000</lastBuildDate><atom:link href="/tags/web-application/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Know Your Response Object</title>
-      <link>https://rimonmostafiz.github.io/posts/know-your-response-object/</link>
+      <link>/blog/know-your-response-object/</link>
       <pubDate>Tue, 09 Jan 2018 06:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/know-your-response-object/</guid>
+      <guid>/blog/know-your-response-object/</guid>
+      <description>HttpServletResponse The HttpServletResponse interface extends ServletResponse and provides access to the HTTP protocol-specific properties of a response.You can use the response object to do things such as
+ Set response headers Write to the response body Redirect the request Set the HTTP status code Send cookies back to the client.  Writing to Response Body The most common thing you’ll do with a response object is written content to the response body.</description>
+    </item>
+    
+    <item>
+      <title>Know Your Response Object</title>
+      <link>/posts/know-your-response-object/</link>
+      <pubDate>Tue, 09 Jan 2018 06:30:00 +0000</pubDate>
+      
+      <guid>/posts/know-your-response-object/</guid>
       <description>HttpServletResponse The HttpServletResponse interface extends ServletResponse and provides access to the HTTP protocol-specific properties of a response.You can use the response object to do things such as
  Set response headers Write to the response body Redirect the request Set the HTTP status code Send cookies back to the client.  Writing to Response Body The most common thing you’ll do with a response object is written content to the response body.</description>
     </item>
     
     <item>
       <title>Know Your Request Object</title>
-      <link>https://rimonmostafiz.github.io/posts/know-your-request-object/</link>
+      <link>/blog/know-your-request-object/</link>
       <pubDate>Wed, 13 Dec 2017 05:30:10 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/know-your-request-object/</guid>
+      <guid>/blog/know-your-request-object/</guid>
+      <description>HTTPServletRequest The HServletRequestttp interface is an extension of ServletRequest that provides additional HTTP protocol-specific information about a received request. It specifies dozens of methods that you can use to obtain details about an HTTP request. It also permits you to set request attributes (different from request parameters).
+Request Param Request parameters come in two different forms:
+ Query parameters (also called URI parameters) An application/x-www-form-urlencoded or multipart/form-data encoded request body(typically called post variables or form variables).</description>
+    </item>
+    
+    <item>
+      <title>Know Your Request Object</title>
+      <link>/posts/know-your-request-object/</link>
+      <pubDate>Wed, 13 Dec 2017 05:30:10 +0000</pubDate>
+      
+      <guid>/posts/know-your-request-object/</guid>
       <description>HTTPServletRequest The HServletRequestttp interface is an extension of ServletRequest that provides additional HTTP protocol-specific information about a received request. It specifies dozens of methods that you can use to obtain details about an HTTP request. It also permits you to set request attributes (different from request parameters).
 Request Param Request parameters come in two different forms:
  Query parameters (also called URI parameters) An application/x-www-form-urlencoded or multipart/form-data encoded request body(typically called post variables or form variables).</description>
@@ -30,30 +51,60 @@ Request Param Request parameters come in two different forms:
     
     <item>
       <title>Up and Running With Servlet in Tomcat</title>
-      <link>https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/</link>
+      <link>/blog/up-and-running-with-servlet-in-tomcat/</link>
       <pubDate>Tue, 12 Dec 2017 16:57:27 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/up-and-running-with-servlet-in-tomcat/</guid>
+      <guid>/blog/up-and-running-with-servlet-in-tomcat/</guid>
+      <description>First, let&amp;rsquo;s create a maven project and add the dependency. As a prerequisite, JDK 8 will be needed. If you are using Linux based operating system then I have written a post on how to install and manage different versions of JDK in your system. You can visit this post if JDK 8 is not installed on your system.
+Maven Dependency &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;  Creating a servlet Class In Java, a Servlet is what receives and responds to requests from the end user.</description>
+    </item>
+    
+    <item>
+      <title>Up and Running With Servlet in Tomcat</title>
+      <link>/posts/up-and-running-with-servlet-in-tomcat/</link>
+      <pubDate>Tue, 12 Dec 2017 16:57:27 +0000</pubDate>
+      
+      <guid>/posts/up-and-running-with-servlet-in-tomcat/</guid>
       <description>First, let&amp;rsquo;s create a maven project and add the dependency. As a prerequisite, JDK 8 will be needed. If you are using Linux based operating system then I have written a post on how to install and manage different versions of JDK in your system. You can visit this post if JDK 8 is not installed on your system.
 Maven Dependency &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;  Creating a servlet Class In Java, a Servlet is what receives and responds to requests from the end user.</description>
     </item>
     
     <item>
       <title>Web Application Directory Structure and WAR Files</title>
-      <link>https://rimonmostafiz.github.io/posts/web-application-directory-structure-and-war-files/</link>
+      <link>/blog/web-application-directory-structure-and-war-files/</link>
       <pubDate>Tue, 12 Dec 2017 11:30:40 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/web-application-directory-structure-and-war-files/</guid>
+      <guid>/blog/web-application-directory-structure-and-war-files/</guid>
+      <description>Standard Java EE web applications are deployed as WAR files or exploded (unarchived) web application directories. All Java EE web application servers support WAR file application archives. Whether archived or exploded, the directory structure convention, as shown in Figure is the same.
+  This structure contains classes and other application resources, the class files live in /WEB-INF/classes. The WEB-INF directory stores informational and instructional files that Java EE web application servers use to determine how to deploy and run the application.</description>
+    </item>
+    
+    <item>
+      <title>Web Application Directory Structure and WAR Files</title>
+      <link>/posts/web-application-directory-structure-and-war-files/</link>
+      <pubDate>Tue, 12 Dec 2017 11:30:40 +0000</pubDate>
+      
+      <guid>/posts/web-application-directory-structure-and-war-files/</guid>
       <description>Standard Java EE web applications are deployed as WAR files or exploded (unarchived) web application directories. All Java EE web application servers support WAR file application archives. Whether archived or exploded, the directory structure convention, as shown in Figure is the same.
   This structure contains classes and other application resources, the class files live in /WEB-INF/classes. The WEB-INF directory stores informational and instructional files that Java EE web application servers use to determine how to deploy and run the application.</description>
     </item>
     
     <item>
       <title>Basic Web Application Structure of JavaEE</title>
-      <link>https://rimonmostafiz.github.io/posts/basic-web-application-structure-of-javaee/</link>
+      <link>/blog/basic-web-application-structure-of-javaee/</link>
       <pubDate>Tue, 12 Dec 2017 10:08:51 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/basic-web-application-structure-of-javaee/</guid>
+      <guid>/blog/basic-web-application-structure-of-javaee/</guid>
+      <description>Basic Web Application Structure A lot of components go into making a Java EE application.
+ Application Code and Third Party Libraries it depends on Deployment Descriptor, which includes instructions for deploying and starting the application ClassLoders which is responsible for isolating your application form other web applications on the same server Finally the WAR and EAR files  Servlets, Filters, Listeners, and JSPs   Servlets are a key component of any Java EE applications.</description>
+    </item>
+    
+    <item>
+      <title>Basic Web Application Structure of JavaEE</title>
+      <link>/posts/basic-web-application-structure-of-javaee/</link>
+      <pubDate>Tue, 12 Dec 2017 10:08:51 +0000</pubDate>
+      
+      <guid>/posts/basic-web-application-structure-of-javaee/</guid>
       <description>Basic Web Application Structure A lot of components go into making a Java EE application.
  Application Code and Third Party Libraries it depends on Deployment Descriptor, which includes instructions for deploying and starting the application ClassLoders which is responsible for isolating your application form other web applications on the same server Finally the WAR and EAR files  Servlets, Filters, Listeners, and JSPs   Servlets are a key component of any Java EE applications.</description>
     </item>

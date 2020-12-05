@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>oracle on Rimon&#39;s Weblog</title>
-    <link>https://rimonmostafiz.github.io/tags/oracle/</link>
-    <description>Recent content in oracle on Rimon&#39;s Weblog</description>
+    <title>oracle on Rimon Mostafiz</title>
+    <link>/tags/oracle/</link>
+    <description>Recent content in oracle on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
-    <lastBuildDate>Mon, 28 Aug 2017 15:13:24 +0000</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Aug 2017 15:13:24 +0000</lastBuildDate><atom:link href="/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Oracle SQL Developer in Ubuntu</title>
-      <link>https://rimonmostafiz.github.io/posts/oracle-sql-developer-in-ubuntu/</link>
+      <link>/blog/oracle-sql-developer-in-ubuntu/</link>
       <pubDate>Mon, 28 Aug 2017 15:13:24 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/oracle-sql-developer-in-ubuntu/</guid>
+      <guid>/blog/oracle-sql-developer-in-ubuntu/</guid>
+      <description>You will need a free Oracle account to log in and download SQL Developer from Oracle Technology Network site. For ubuntu download the Other Platforms version.At the time of writing this post, I download version is sqldeveloper-17.2.0.188.1159-no-jre.zip. You will also need Java to run Oracle SQL developer. After download, I moved the download file to /home/rimonmostafiz/Applications (you can choose any other location you prefer).
+Move the download file to /home/rimonmostafiz/Applications. you can choose any other location you prefer.</description>
+    </item>
+    
+    <item>
+      <title>Oracle SQL Developer in Ubuntu</title>
+      <link>/posts/oracle-sql-developer-in-ubuntu/</link>
+      <pubDate>Mon, 28 Aug 2017 15:13:24 +0000</pubDate>
+      
+      <guid>/posts/oracle-sql-developer-in-ubuntu/</guid>
       <description>You will need a free Oracle account to log in and download SQL Developer from Oracle Technology Network site. For ubuntu download the Other Platforms version.At the time of writing this post, I download version is sqldeveloper-17.2.0.188.1159-no-jre.zip. You will also need Java to run Oracle SQL developer. After download, I moved the download file to /home/rimonmostafiz/Applications (you can choose any other location you prefer).
 Move the download file to /home/rimonmostafiz/Applications. you can choose any other location you prefer.</description>
     </item>

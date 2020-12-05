@@ -1,0 +1,1120 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog",
+        "name" : "Spring Application Context and Configuration Metadata",
+        "headline" : "Spring Application Context and Configuration Metadata",
+        "description" : "In the last post of Spring Diary, we discussed the basics of spring IoC Container and we saw a high-level view of how Spring Container works.\nIn this post, we will learn about how can we Instantiate a Spring IoC container(using ApplicaitonContext Interface) and configure that container using configuration metadata.\nSpring IoC container consumes a form of configuration metadata. This configuration metadata represents how you as an application developer tell the Spring container to instantiate, configure, and assemble the objects in your application.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-05-26 06:42:47 \u002b0000 \u002b0000",
+        "dateModified" : "2018-05-26 06:42:47 \u002b0000 \u002b0000",
+        "url" : "\/blog\/spring-application-context-and-configuration-metadata\/",
+        "wordCount" : "694",
+        "keywords" : [ "java","spring","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Spring Application Context and Configuration Metadata</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.77.0" />
+        
+
+
+        
+            <meta name="author" content="Rimon Mostafiz">
+        
+        
+            
+                <meta name="description" content="HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring Application Context and Configuration Metadata"/>
+<meta name="twitter:description" content="In the last post of Spring Diary, we discussed the basics of spring IoC Container and we saw a high-level view of how Spring Container works.
+In this post, we will learn about how can we Instantiate a Spring IoC container(using ApplicaitonContext Interface) and configure that container using configuration metadata.
+Spring IoC container consumes a form of configuration metadata. This configuration metadata represents how you as an application developer tell the Spring container to instantiate, configure, and assemble the objects in your application."/>
+<meta name="twitter:site" content="@rimonmostafiz"/>
+
+        <meta property="og:title" content="Spring Application Context and Configuration Metadata" />
+<meta property="og:description" content="In the last post of Spring Diary, we discussed the basics of spring IoC Container and we saw a high-level view of how Spring Container works.
+In this post, we will learn about how can we Instantiate a Spring IoC container(using ApplicaitonContext Interface) and configure that container using configuration metadata.
+Spring IoC container consumes a form of configuration metadata. This configuration metadata represents how you as an application developer tell the Spring container to instantiate, configure, and assemble the objects in your application." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/spring-application-context-and-configuration-metadata/" />
+<meta property="article:published_time" content="2018-05-26T06:42:47+00:00" />
+<meta property="article:modified_time" content="2018-05-26T06:42:47+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Spring Application Context and Configuration Metadata">
+<meta itemprop="description" content="In the last post of Spring Diary, we discussed the basics of spring IoC Container and we saw a high-level view of how Spring Container works.
+In this post, we will learn about how can we Instantiate a Spring IoC container(using ApplicaitonContext Interface) and configure that container using configuration metadata.
+Spring IoC container consumes a form of configuration metadata. This configuration metadata represents how you as an application developer tell the Spring container to instantiate, configure, and assemble the objects in your application.">
+<meta itemprop="datePublished" content="2018-05-26T06:42:47+00:00" />
+<meta itemprop="dateModified" content="2018-05-26T06:42:47+00:00" />
+<meta itemprop="wordCount" content="694">
+
+
+
+<meta itemprop="keywords" content="java,spring," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-127460370-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/pages/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/pages/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/get-insulted-by-sudo/">Get Insulted by sudo</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-30'>
+                                    July 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/manage-npm-global-packages/">Manage npm Global Packages</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-29'>
+                                    July 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/goodbye-wordpress-welcome-to-hugo/">Goodbye Wordpress, Welcome to HUGO</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-27'>
+                                    July 27, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/install-and-manage-node-js-using-nvm/">Install and Manage Node JS Using NVM</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-07'>
+                                    July 7, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/spring-bean-wiring-using-javaconfig/">Spring Bean Wiring Using Javaconfig</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-05-29'>
+                                    May 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f&amp;text=Spring%20Application%20Context%20and%20Configuration%20Metadata&amp;via=rimonmostafiz" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fspring-application-context-and-configuration-metadata%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f&amp;title=Spring%20Application%20Context%20and%20Configuration%20Metadata" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f&amp;title=Spring%20Application%20Context%20and%20Configuration%20Metadata" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f&amp;title=Spring%20Application%20Context%20and%20Configuration%20Metadata" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f&amp;description=Spring%20Application%20Context%20and%20Configuration%20Metadata" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Rimon%20Mostafiz&amp;body=%2fblog%2fspring-application-context-and-configuration-metadata%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/spring-application-context-and-configuration-metadata/">Spring Application Context and Configuration Metadata</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-05-26'>
+            May 26, 2018</time>
+        <span class="author">Rimon Mostafiz</span>
+        
+            <p>4 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f&amp;text=Spring%20Application%20Context%20and%20Configuration%20Metadata&amp;via=rimonmostafiz" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fspring-application-context-and-configuration-metadata%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f&amp;title=Spring%20Application%20Context%20and%20Configuration%20Metadata" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f&amp;title=Spring%20Application%20Context%20and%20Configuration%20Metadata" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f&amp;title=Spring%20Application%20Context%20and%20Configuration%20Metadata" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fspring-application-context-and-configuration-metadata%2f&amp;description=Spring%20Application%20Context%20and%20Configuration%20Metadata" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Rimon%20Mostafiz&amp;body=%2fblog%2fspring-application-context-and-configuration-metadata%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    <p>In the <a href="https://rimonmostafiz.com/post/auto-bean-wiring-of-spring/">last post</a> of Spring Diary, we discussed the basics of spring IoC Container and we saw a high-level view of how Spring Container works.</p>
+<p>In this post, we will learn about how can we Instantiate a Spring IoC container(using <code>ApplicaitonContext</code> Interface) and configure that container using configuration metadata.</p>
+<p>Spring IoC container consumes a form of configuration metadata. This configuration metadata represents how you as an application developer tell the Spring container to instantiate, configure, and assemble the objects in your application.</p>
+<p>We have three choices to configure container using configuration metadata</p>
+<ul>
+<li>
+<p><strong>XML-based configuration:</strong> Configuration metadata is traditionally supplied in a simple and intuitive XML format. Spring configuration consists of at least one and typically more than one bean definition that the container must manage. XML-based configuration metadata shows these beans configured as <code>&lt;bean/&gt;</code> elements inside a top-level <code>&lt;beans/&gt;</code> element.</p>
+</li>
+<li>
+<p><strong><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-annotation-config">Annotation-based configuration</a>:</strong> Spring 2.5 introduced support for annotation-based configuration metadata.</p>
+</li>
+<li>
+<p><strong><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-java">Java-based configuration</a>:</strong> Starting with Spring 3.0, many features provided by the Spring JavaConfig project became part of the core Spring Framework. Thus you can define beans external to your application classes by using Java rather than XML files.</p>
+</li>
+</ul>
+<h2 id="basic-structure-of-xml-based-configuration">Basic Structure of XML-based Configuration</h2>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;bean id=&quot;...&quot; class=&quot;...&quot;&gt;
+    &lt;!-- collaborators and configuration for this bean go here --&gt;
+    &lt;/bean&gt;  
+
+    &lt;bean id=&quot;...&quot; class=&quot;...&quot;&gt;
+    &lt;!-- collaborators and configuration for this bean go here --&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- more bean definitions go here --&gt;
+&lt;/beans&gt;
+</code></pre>
+<p>The above example shows the basic structure of XML-based configuration metadata, where The attribute<code>id</code> is a string that you use to identify the individual bean definition. The attribute<code>class</code> defines the type of the bean and uses the fully qualified class name. The value of the id attribute refers to collaborating objects.</p>
+<h2 id="instantiating-a-container-using-the-application-context">Instantiating a container using the application context</h2>
+<p>Spring comes with several flavors of the application context. Here are a few that you’ll most likely encounter:</p>
+<ul>
+<li>
+<p><strong>AnnotationConfigApplicationContext:</strong> Loads a Spring application context from one or more Java-based configuration classes</p>
+</li>
+<li>
+<p><strong>AnnotationConfigWebApplicationContext:</strong>  Loads a Spring web application context from one or more Java-based configuration classes</p>
+</li>
+<li>
+<p><strong>ClassPathXmlApplicationContext:</strong> Loads a context definition from one or more XML files located in the classpath, treating context-definition files as class-path resources</p>
+</li>
+<li>
+<p><strong>FileSystemXmlApplicationContext:</strong> Loads a context definition from one or more XML files in the filesystem</p>
+</li>
+<li>
+<p><strong>XmlWebApplicationContext:</strong> Loads context definitions from one or more XML files contained in a web application</p>
+</li>
+</ul>
+<p>Let&rsquo;s see first how can we load beans from <code>FileSystemXmlApplicationContest</code> and from the application’s <code>classpath</code> using <code>ClassPathXmlApplicationContext</code>, both of them are quite similar</p>
+<pre><code>ApplicationContext context = new FileSystemXmlApplicationContext(&quot;/home/rimonmostafiz/Projects/spring-diary/beans.xml&quot;);
+
+ApplicationContext context = new ClassPathXmlApplicationContext(&quot;service.xml&quot;, &quot;daos.xml&quot;);
+</code></pre>
+<p>The following example shows the service layer objects <code>(services.xml)</code> configuration file:</p>
+<pre><code>    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+    &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+      xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+      xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+      &lt;!-- services --&gt;
+
+      &lt;bean id=&quot;petStore&quot; class=&quot;org.rimonmostafiz.samples.jpetstore.services.PetStoreServiceImpl&quot;&gt;
+          &lt;property name=&quot;accountDao&quot; ref=&quot;accountDao&quot;/&gt;
+          &lt;property name=&quot;itemDao&quot; ref=&quot;itemDao&quot;/&gt;
+          &lt;!-- additional collaborators and configuration for this bean go here --&gt;
+      &lt;/bean&gt;
+
+      &lt;!-- more bean definitions for services go here --&gt;
+
+    &lt;/beans&gt;
+</code></pre>
+<p>The following example shows the data access objects <code>daos.xml</code> file:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+  &lt;bean id=&quot;accountDao&quot;
+      class=&quot;org.rimonmostafiz.samples.jpetstore.dao.jpa.JpaAccountDao&quot;&gt;
+      &lt;!-- additional collaborators and configuration for this bean go here --&gt;
+  &lt;/bean&gt;
+
+  &lt;bean id=&quot;itemDao&quot; class=&quot;org.rimonmostafiz.samples.jpetstore.dao.jpa.JpaItemDao&quot;&gt;
+      &lt;!-- additional collaborators and configuration for this bean go here --&gt;
+  &lt;/bean&gt;
+
+  &lt;!-- more bean definitions for data access objects go here --&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<p>In the preceding example, the service layer consists of the class <code>PetStoreServiceImpl</code>, and two data access objects of the type <code>JpaAccountDao</code> and <code>JpaItemDao</code> (based on the JPA Object/Relational mapping standard). The <code>property name</code> element refers to the name of the JavaBean property, and the <code>ref</code> element refers to the name of another bean definition. This linkage between <code>id</code> and <code>ref</code> elements expresses the dependency between collaborating objects.</p>
+<p>Now if we want to load application context from a Java configuration, we can use <code>AnnotationConfigApplicationContext</code>, Instead of specifying an XML file from which to load the Spring application context, <code>AnnotationConfigApplicationContext</code> loads configuration metadata from a configuration class</p>
+<pre><code>ApplicationContext context = new AnnotationConfigApplicationContext(com.rimonmostafiz.springdiary.config.AppConfig.class);
+</code></pre>
+<p>Instead of specifying an XML file from which to load the Spring application context,
+<code>AnnotationConfigApplicationContext</code> has been given a configuration class from
+which to load beans. With an application context in hand, we can retrieve beans from the Spring container by calling the context’s <code>getBean()</code> method.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/java">java</a></li>
+                
+                
+                <li><a class="article-category-link" href="/tags/spring">spring</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "rimonmostafiz" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/the-spring-ioc-container/"
+                class="button big previous">The Spring IoC Container</a></li>
+    
+
+    
+        <li><a href="/blog/auto-bean-wiring-of-spring/"
+                class="button big next">Auto Bean Wiring of Spring</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/author.jpg" class="intro-circle" width="128" alt="Rimon Mostafiz" /></a>
+      
+    
+    
+      <header>
+        <h2>Rimon Mostafiz</h2>
+        <p><i class='fa fa-hand-peace-o'></i></p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/rimonmostafiz" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+  <li><a href="//stackoverflow.com/users/4426099" target="_blank" title="Stack Overflow" class="fa fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/rimonmostafiz" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/rimonmostafiz" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+  <li><a href="//reddit.com/user/rimonmostafiz" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//api.whatsapp.com/send?phone=%2b8801711483387" target="_blank" title="WhatsApp" class="fa fa-whatsapp"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/rimonmostafiz" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:rimonmostafiz@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/get-insulted-by-sudo/">Get Insulted by sudo</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-30'>
+                July 30, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/manage-npm-global-packages/">Manage npm Global Packages</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-29'>
+                July 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/goodbye-wordpress-welcome-to-hugo/">Goodbye Wordpress, Welcome to HUGO</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-27'>
+                July 27, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/install-and-manage-node-js-using-nvm/">Install and Manage Node JS Using NVM</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-07'>
+                July 7, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/spring-bean-wiring-using-javaconfig/">Spring Bean Wiring Using Javaconfig</a>
+              </h3>
+              
+              <time class="published" datetime='2018-05-29'>
+                May 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>A software developer in love with java, golang</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/rimonmostafiz" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+  <li><a href="//stackoverflow.com/users/4426099" target="_blank" title="Stack Overflow" class="fa fa-stack-overflow"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/rimonmostafiz" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/rimonmostafiz" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+  <li><a href="//reddit.com/user/rimonmostafiz" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//api.whatsapp.com/send?phone=%2b8801711483387" target="_blank" title="WhatsApp" class="fa fa-whatsapp"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/rimonmostafiz" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:rimonmostafiz@gmail.com" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Rimon Mostafiz
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

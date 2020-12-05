@@ -1,38 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>number-theory on Rimon&#39;s Weblog</title>
-    <link>https://rimonmostafiz.github.io/tags/number-theory/</link>
-    <description>Recent content in number-theory on Rimon&#39;s Weblog</description>
+    <title>number-theory on Rimon Mostafiz</title>
+    <link>/tags/number-theory/</link>
+    <description>Recent content in number-theory on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
-    <lastBuildDate>Wed, 16 Aug 2017 00:30:00 +0000</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/number-theory/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Aug 2017 00:30:00 +0000</lastBuildDate><atom:link href="/tags/number-theory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sieve of Eratosthenes (Memory Efficient Implementation)</title>
-      <link>https://rimonmostafiz.github.io/posts/sieve-of-eratosthenes-memory-efficient-implementation/</link>
+      <link>/blog/sieve-of-eratosthenes-memory-efficient-implementation/</link>
       <pubDate>Wed, 16 Aug 2017 00:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/sieve-of-eratosthenes-memory-efficient-implementation/</guid>
+      <guid>/blog/sieve-of-eratosthenes-memory-efficient-implementation/</guid>
+      <description>Say we want to find all prime numbers up to an integer N where N is 108. If we write a regular implementation of Sieve Of Eratosthenes using a bool array for each integer in the range [1:N] then we could end up using N bytes of memory, which would roughly be 95 MB which is a not a very small memory.
+Lets see how can we reduce the memory, the main idea here is we can store a Boolean value in a single bit, so we can store 8 Boolean values in a single byte.</description>
+    </item>
+    
+    <item>
+      <title>Sieve of Eratosthenes (Memory Efficient Implementation)</title>
+      <link>/posts/sieve-of-eratosthenes-memory-efficient-implementation/</link>
+      <pubDate>Wed, 16 Aug 2017 00:30:00 +0000</pubDate>
+      
+      <guid>/posts/sieve-of-eratosthenes-memory-efficient-implementation/</guid>
       <description>Say we want to find all prime numbers up to an integer N where N is 108. If we write a regular implementation of Sieve Of Eratosthenes using a bool array for each integer in the range [1:N] then we could end up using N bytes of memory, which would roughly be 95 MB which is a not a very small memory.
 Lets see how can we reduce the memory, the main idea here is we can store a Boolean value in a single bit, so we can store 8 Boolean values in a single byte.</description>
     </item>
     
     <item>
       <title>Least Common Multiple (LCM)</title>
-      <link>https://rimonmostafiz.github.io/posts/least-common-multiple-lcm/</link>
+      <link>/blog/least-common-multiple-lcm/</link>
       <pubDate>Tue, 15 Aug 2017 18:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/least-common-multiple-lcm/</guid>
+      <guid>/blog/least-common-multiple-lcm/</guid>
+      <description>Least Common Multiple (LCM) of two number a and b is the smallest positive integer that is divisible by both a and b. Since division of integers by zero is undefined, this definition has meaning only if a and b are both different from zero.
+int lcm(int a, int b) { for ( int i = 1; ; i ) { if ( i % a == 0 &amp;amp;&amp;amp; i % b == 0 ) { return i; } } } There is an another technique for LCM finding called Reduction by the greatest common divisor</description>
+    </item>
+    
+    <item>
+      <title>Least Common Multiple (LCM)</title>
+      <link>/posts/least-common-multiple-lcm/</link>
+      <pubDate>Tue, 15 Aug 2017 18:00:00 +0000</pubDate>
+      
+      <guid>/posts/least-common-multiple-lcm/</guid>
       <description>Least Common Multiple (LCM) of two number a and b is the smallest positive integer that is divisible by both a and b. Since division of integers by zero is undefined, this definition has meaning only if a and b are both different from zero.
 int lcm(int a, int b) { for ( int i = 1; ; i ) { if ( i % a == 0 &amp;amp;&amp;amp; i % b == 0 ) { return i; } } } There is an another technique for LCM finding called Reduction by the greatest common divisor</description>
     </item>
     
     <item>
       <title>Greatest Common Divisor (GCD)</title>
-      <link>https://rimonmostafiz.github.io/posts/greatest-common-divisor-gcd/</link>
+      <link>/blog/greatest-common-divisor-gcd/</link>
       <pubDate>Tue, 15 Aug 2017 16:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/posts/greatest-common-divisor-gcd/</guid>
+      <guid>/blog/greatest-common-divisor-gcd/</guid>
+      <description>Greatest Common Divisor (GCD) of two number a and b is the largest number that divides both a and b evenly.
+if g = gcd(a, b), then g divides both a and b when at least one of them is non zero.
+when gcd(a, b) == 1 then we said a and b is co-prime or relatively prime numbers.
+int gcd (int a, int b) { int g; for (int i = 1; i &amp;lt;= min(a, b); i++) { if (a%i == 0 &amp;amp;&amp;amp; b%i == 0) { g = i; } } return g; } Now there is a much more efficient algorithm for finding GCD which is called Subtraction-based Euclidean algorithm.</description>
+    </item>
+    
+    <item>
+      <title>Greatest Common Divisor (GCD)</title>
+      <link>/posts/greatest-common-divisor-gcd/</link>
+      <pubDate>Tue, 15 Aug 2017 16:00:00 +0000</pubDate>
+      
+      <guid>/posts/greatest-common-divisor-gcd/</guid>
       <description>Greatest Common Divisor (GCD) of two number a and b is the largest number that divides both a and b evenly.
 if g = gcd(a, b), then g divides both a and b when at least one of them is non zero.
 when gcd(a, b) == 1 then we said a and b is co-prime or relatively prime numbers.

@@ -1,369 +1,369 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Rimon&#39;s Weblog</title>
-    <link>https://rimonmostafiz.github.io/tags/</link>
-    <description>Recent content in Tags on Rimon&#39;s Weblog</description>
+    <title>Tags on Rimon Mostafiz</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>© Creative Commons Attribution-ShareAlike 4.0 International License</copyright>
-    <lastBuildDate>Mon, 30 Jul 2018 14:35:07 +0600</lastBuildDate><atom:link href="https://rimonmostafiz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Jul 2018 14:35:07 +0600</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux</title>
-      <link>https://rimonmostafiz.github.io/tags/linux/</link>
+      <link>/tags/linux/</link>
       <pubDate>Mon, 30 Jul 2018 14:35:07 +0600</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/linux/</guid>
+      <guid>/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>terminal</title>
-      <link>https://rimonmostafiz.github.io/tags/terminal/</link>
+      <link>/tags/terminal/</link>
       <pubDate>Mon, 30 Jul 2018 14:35:07 +0600</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/terminal/</guid>
+      <guid>/tags/terminal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nodejs</title>
-      <link>https://rimonmostafiz.github.io/tags/nodejs/</link>
+      <link>/tags/nodejs/</link>
       <pubDate>Sun, 29 Jul 2018 15:35:41 +0600</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/nodejs/</guid>
+      <guid>/tags/nodejs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>npm</title>
-      <link>https://rimonmostafiz.github.io/tags/npm/</link>
+      <link>/tags/npm/</link>
       <pubDate>Sun, 29 Jul 2018 15:35:41 +0600</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/npm/</guid>
+      <guid>/tags/npm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://rimonmostafiz.github.io/tags/hugo/</link>
+      <link>/tags/hugo/</link>
       <pubDate>Fri, 27 Jul 2018 20:01:41 +0600</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/hugo/</guid>
+      <guid>/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>smart-and-simple</title>
-      <link>https://rimonmostafiz.github.io/tags/smart-and-simple/</link>
+      <link>/tags/smart-and-simple/</link>
       <pubDate>Fri, 27 Jul 2018 20:01:41 +0600</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/smart-and-simple/</guid>
+      <guid>/tags/smart-and-simple/</guid>
       <description></description>
     </item>
     
     <item>
       <title>static-site</title>
-      <link>https://rimonmostafiz.github.io/tags/static-site/</link>
+      <link>/tags/static-site/</link>
       <pubDate>Fri, 27 Jul 2018 20:01:41 +0600</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/static-site/</guid>
+      <guid>/tags/static-site/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nvm</title>
-      <link>https://rimonmostafiz.github.io/tags/nvm/</link>
+      <link>/tags/nvm/</link>
       <pubDate>Sat, 07 Jul 2018 04:17:09 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/nvm/</guid>
+      <guid>/tags/nvm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>java</title>
-      <link>https://rimonmostafiz.github.io/tags/java/</link>
+      <link>/tags/java/</link>
       <pubDate>Tue, 29 May 2018 10:19:29 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/java/</guid>
+      <guid>/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>spring</title>
-      <link>https://rimonmostafiz.github.io/tags/spring/</link>
+      <link>/tags/spring/</link>
       <pubDate>Tue, 29 May 2018 10:19:29 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/spring/</guid>
+      <guid>/tags/spring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ioc</title>
-      <link>https://rimonmostafiz.github.io/tags/ioc/</link>
+      <link>/tags/ioc/</link>
       <pubDate>Thu, 15 Mar 2018 11:00:47 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/ioc/</guid>
+      <guid>/tags/ioc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dependency-injection</title>
-      <link>https://rimonmostafiz.github.io/tags/dependency-injection/</link>
+      <link>/tags/dependency-injection/</link>
       <pubDate>Wed, 14 Mar 2018 10:36:12 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/dependency-injection/</guid>
+      <guid>/tags/dependency-injection/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javaee</title>
-      <link>https://rimonmostafiz.github.io/tags/javaee/</link>
+      <link>/tags/javaee/</link>
       <pubDate>Tue, 09 Jan 2018 06:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/javaee/</guid>
+      <guid>/tags/javaee/</guid>
       <description></description>
     </item>
     
     <item>
       <title>response</title>
-      <link>https://rimonmostafiz.github.io/tags/response/</link>
+      <link>/tags/response/</link>
       <pubDate>Tue, 09 Jan 2018 06:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/response/</guid>
+      <guid>/tags/response/</guid>
       <description></description>
     </item>
     
     <item>
       <title>servlet</title>
-      <link>https://rimonmostafiz.github.io/tags/servlet/</link>
+      <link>/tags/servlet/</link>
       <pubDate>Tue, 09 Jan 2018 06:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/servlet/</guid>
+      <guid>/tags/servlet/</guid>
       <description></description>
     </item>
     
     <item>
       <title>web-application</title>
-      <link>https://rimonmostafiz.github.io/tags/web-application/</link>
+      <link>/tags/web-application/</link>
       <pubDate>Tue, 09 Jan 2018 06:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/web-application/</guid>
+      <guid>/tags/web-application/</guid>
       <description></description>
     </item>
     
     <item>
       <title>request</title>
-      <link>https://rimonmostafiz.github.io/tags/request/</link>
+      <link>/tags/request/</link>
       <pubDate>Wed, 13 Dec 2017 05:30:10 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/request/</guid>
+      <guid>/tags/request/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tomcat</title>
-      <link>https://rimonmostafiz.github.io/tags/tomcat/</link>
+      <link>/tags/tomcat/</link>
       <pubDate>Tue, 12 Dec 2017 16:57:27 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/tomcat/</guid>
+      <guid>/tags/tomcat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>alias</title>
-      <link>https://rimonmostafiz.github.io/tags/alias/</link>
+      <link>/tags/alias/</link>
       <pubDate>Thu, 30 Nov 2017 11:50:41 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/alias/</guid>
+      <guid>/tags/alias/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jdk</title>
-      <link>https://rimonmostafiz.github.io/tags/jdk/</link>
+      <link>/tags/jdk/</link>
       <pubDate>Fri, 20 Oct 2017 18:39:46 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/jdk/</guid>
+      <guid>/tags/jdk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sdkman</title>
-      <link>https://rimonmostafiz.github.io/tags/sdkman/</link>
+      <link>/tags/sdkman/</link>
       <pubDate>Fri, 20 Oct 2017 18:39:46 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/sdkman/</guid>
+      <guid>/tags/sdkman/</guid>
       <description></description>
     </item>
     
     <item>
       <title>elasticsearch</title>
-      <link>https://rimonmostafiz.github.io/tags/elasticsearch/</link>
+      <link>/tags/elasticsearch/</link>
       <pubDate>Sat, 16 Sep 2017 09:19:51 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/elasticsearch/</guid>
+      <guid>/tags/elasticsearch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kibana</title>
-      <link>https://rimonmostafiz.github.io/tags/kibana/</link>
+      <link>/tags/kibana/</link>
       <pubDate>Sat, 16 Sep 2017 09:19:51 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/kibana/</guid>
+      <guid>/tags/kibana/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nosql</title>
-      <link>https://rimonmostafiz.github.io/tags/nosql/</link>
+      <link>/tags/nosql/</link>
       <pubDate>Fri, 15 Sep 2017 10:26:28 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/nosql/</guid>
+      <guid>/tags/nosql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>restful</title>
-      <link>https://rimonmostafiz.github.io/tags/restful/</link>
+      <link>/tags/restful/</link>
       <pubDate>Fri, 15 Sep 2017 10:26:28 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/restful/</guid>
+      <guid>/tags/restful/</guid>
       <description></description>
     </item>
     
     <item>
       <title>prime-number</title>
-      <link>https://rimonmostafiz.github.io/tags/prime-number/</link>
+      <link>/tags/prime-number/</link>
       <pubDate>Sun, 03 Sep 2017 00:21:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/prime-number/</guid>
+      <guid>/tags/prime-number/</guid>
       <description></description>
     </item>
     
     <item>
       <title>problem-solving</title>
-      <link>https://rimonmostafiz.github.io/tags/problem-solving/</link>
+      <link>/tags/problem-solving/</link>
       <pubDate>Sun, 03 Sep 2017 00:21:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/problem-solving/</guid>
+      <guid>/tags/problem-solving/</guid>
       <description></description>
     </item>
     
     <item>
       <title>uva</title>
-      <link>https://rimonmostafiz.github.io/tags/uva/</link>
+      <link>/tags/uva/</link>
       <pubDate>Sun, 03 Sep 2017 00:21:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/uva/</guid>
+      <guid>/tags/uva/</guid>
       <description></description>
     </item>
     
     <item>
       <title>oracle</title>
-      <link>https://rimonmostafiz.github.io/tags/oracle/</link>
+      <link>/tags/oracle/</link>
       <pubDate>Mon, 28 Aug 2017 15:13:24 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/oracle/</guid>
+      <guid>/tags/oracle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sqldeveloper</title>
-      <link>https://rimonmostafiz.github.io/tags/sqldeveloper/</link>
+      <link>/tags/sqldeveloper/</link>
       <pubDate>Mon, 28 Aug 2017 15:13:24 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/sqldeveloper/</guid>
+      <guid>/tags/sqldeveloper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ubuntu</title>
-      <link>https://rimonmostafiz.github.io/tags/ubuntu/</link>
+      <link>/tags/ubuntu/</link>
       <pubDate>Mon, 28 Aug 2017 15:13:24 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/ubuntu/</guid>
+      <guid>/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>command</title>
-      <link>https://rimonmostafiz.github.io/tags/command/</link>
+      <link>/tags/command/</link>
       <pubDate>Thu, 17 Aug 2017 12:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/command/</guid>
+      <guid>/tags/command/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://rimonmostafiz.github.io/tags/git/</link>
+      <link>/tags/git/</link>
       <pubDate>Thu, 17 Aug 2017 12:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/git/</guid>
+      <guid>/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>notes</title>
-      <link>https://rimonmostafiz.github.io/tags/notes/</link>
+      <link>/tags/notes/</link>
       <pubDate>Thu, 17 Aug 2017 12:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/notes/</guid>
+      <guid>/tags/notes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>google-drive</title>
-      <link>https://rimonmostafiz.github.io/tags/google-drive/</link>
+      <link>/tags/google-drive/</link>
       <pubDate>Wed, 16 Aug 2017 22:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/google-drive/</guid>
+      <guid>/tags/google-drive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>algorithms</title>
-      <link>https://rimonmostafiz.github.io/tags/algorithms/</link>
+      <link>/tags/algorithms/</link>
       <pubDate>Wed, 16 Aug 2017 00:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/algorithms/</guid>
+      <guid>/tags/algorithms/</guid>
       <description></description>
     </item>
     
     <item>
       <title>math</title>
-      <link>https://rimonmostafiz.github.io/tags/math/</link>
+      <link>/tags/math/</link>
       <pubDate>Wed, 16 Aug 2017 00:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/math/</guid>
+      <guid>/tags/math/</guid>
       <description></description>
     </item>
     
     <item>
       <title>number-theory</title>
-      <link>https://rimonmostafiz.github.io/tags/number-theory/</link>
+      <link>/tags/number-theory/</link>
       <pubDate>Wed, 16 Aug 2017 00:30:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/number-theory/</guid>
+      <guid>/tags/number-theory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gcd</title>
-      <link>https://rimonmostafiz.github.io/tags/gcd/</link>
+      <link>/tags/gcd/</link>
       <pubDate>Tue, 15 Aug 2017 18:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/gcd/</guid>
+      <guid>/tags/gcd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lcm</title>
-      <link>https://rimonmostafiz.github.io/tags/lcm/</link>
+      <link>/tags/lcm/</link>
       <pubDate>Tue, 15 Aug 2017 18:00:00 +0000</pubDate>
       
-      <guid>https://rimonmostafiz.github.io/tags/lcm/</guid>
+      <guid>/tags/lcm/</guid>
       <description></description>
     </item>
     
