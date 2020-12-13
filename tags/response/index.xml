@@ -6,6 +6,7 @@
     <description>Recent content in response on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Tue, 09 Jan 2018 06:30:00 +0000</lastBuildDate><atom:link href="/tags/response/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Know Your Response Object</title>
@@ -13,16 +14,6 @@
       <pubDate>Tue, 09 Jan 2018 06:30:00 +0000</pubDate>
       
       <guid>/blog/know-your-response-object/</guid>
-      <description>HttpServletResponse The HttpServletResponse interface extends ServletResponse and provides access to the HTTP protocol-specific properties of a response.You can use the response object to do things such as
- Set response headers Write to the response body Redirect the request Set the HTTP status code Send cookies back to the client.  Writing to Response Body The most common thing you’ll do with a response object is written content to the response body.</description>
-    </item>
-    
-    <item>
-      <title>Know Your Response Object</title>
-      <link>/posts/know-your-response-object/</link>
-      <pubDate>Tue, 09 Jan 2018 06:30:00 +0000</pubDate>
-      
-      <guid>/posts/know-your-response-object/</guid>
       <description>HttpServletResponse The HttpServletResponse interface extends ServletResponse and provides access to the HTTP protocol-specific properties of a response.You can use the response object to do things such as
  Set response headers Write to the response body Redirect the request Set the HTTP status code Send cookies back to the client.  Writing to Response Body The most common thing you’ll do with a response object is written content to the response body.</description>
     </item>

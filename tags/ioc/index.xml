@@ -6,6 +6,7 @@
     <description>Recent content in ioc on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Thu, 15 Mar 2018 11:00:47 +0000</lastBuildDate><atom:link href="/tags/ioc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Spring IoC Container</title>
@@ -19,32 +20,11 @@ Some people confuse the general principle here with the specific styles of inver
     </item>
     
     <item>
-      <title>The Spring IoC Container</title>
-      <link>/posts/the-spring-ioc-container/</link>
-      <pubDate>Thu, 15 Mar 2018 11:00:47 +0000</pubDate>
-      
-      <guid>/posts/the-spring-ioc-container/</guid>
-      <description>There is some confusion these days over the meaning of inversion of control due to the rise of IoC containers.
-An IoC container is a common characteristic of frameworks that implement Inversion of Control (IoC).
-Some people confuse the general principle here with the specific styles of inversion of control (such as dependency injection) that these containers use. It is a process whereby objects define their dependencies, that is, the other objects they work with, only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method.</description>
-    </item>
-    
-    <item>
       <title>Inversion of Control and Dependency Injection</title>
       <link>/blog/inversion-of-control-and-dependency-injection/</link>
       <pubDate>Wed, 14 Mar 2018 10:36:12 +0000</pubDate>
       
       <guid>/blog/inversion-of-control-and-dependency-injection/</guid>
-      <description>Inversion of control (IoC) In software engineering, inversion of control (IoC) is a design principle. It is used to invert different kinds of controls. More Specifically invert the control of your custom written program or objects of a program is transferred to a container or framework.
-In traditional programming, our custom code that expresses the purpose of the program calls reusable libraries to take care of generic tasks, but with inversion of control, it is the framework that calls into the custom, or task-specific, code.</description>
-    </item>
-    
-    <item>
-      <title>Inversion of Control and Dependency Injection</title>
-      <link>/posts/inversion-of-control-and-dependency-injection/</link>
-      <pubDate>Wed, 14 Mar 2018 10:36:12 +0000</pubDate>
-      
-      <guid>/posts/inversion-of-control-and-dependency-injection/</guid>
       <description>Inversion of control (IoC) In software engineering, inversion of control (IoC) is a design principle. It is used to invert different kinds of controls. More Specifically invert the control of your custom written program or objects of a program is transferred to a container or framework.
 In traditional programming, our custom code that expresses the purpose of the program calls reusable libraries to take care of generic tasks, but with inversion of control, it is the framework that calls into the custom, or task-specific, code.</description>
     </item>

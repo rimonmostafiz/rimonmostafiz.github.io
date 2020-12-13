@@ -13,17 +13,7 @@
   </url>
   
   <url>
-    <loc>/posts/get-insulted-by-sudo/</loc>
-    <lastmod>2018-07-30T14:35:07+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/linux/</loc>
-    <lastmod>2018-07-30T14:35:07+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
     <lastmod>2018-07-30T14:35:07+06:00</lastmod>
   </url>
   
@@ -48,11 +38,6 @@
   </url>
   
   <url>
-    <loc>/posts/manage-npm-global-packages/</loc>
-    <lastmod>2018-07-29T15:35:41+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/nodejs/</loc>
     <lastmod>2018-07-29T15:35:41+06:00</lastmod>
   </url>
@@ -64,11 +49,6 @@
   
   <url>
     <loc>/blog/goodbye-wordpress-welcome-to-hugo/</loc>
-    <lastmod>2018-07-27T20:01:41+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/goodbye-wordpress-welcome-to-hugo/</loc>
     <lastmod>2018-07-27T20:01:41+06:00</lastmod>
   </url>
   
@@ -93,11 +73,6 @@
   </url>
   
   <url>
-    <loc>/posts/install-and-manage-node-js-using-nvm/</loc>
-    <lastmod>2018-07-07T04:17:09+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/nvm/</loc>
     <lastmod>2018-07-07T04:17:09+00:00</lastmod>
   </url>
@@ -118,27 +93,12 @@
   </url>
   
   <url>
-    <loc>/posts/spring-bean-wiring-using-javaconfig/</loc>
-    <lastmod>2018-05-29T10:19:29+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/auto-bean-wiring-of-spring/</loc>
     <lastmod>2018-05-28T07:44:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/auto-bean-wiring-of-spring/</loc>
-    <lastmod>2018-05-28T07:44:03+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/spring-application-context-and-configuration-metadata/</loc>
-    <lastmod>2018-05-26T06:42:47+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/spring-application-context-and-configuration-metadata/</loc>
     <lastmod>2018-05-26T06:42:47+00:00</lastmod>
   </url>
   
@@ -153,11 +113,6 @@
   </url>
   
   <url>
-    <loc>/posts/the-spring-ioc-container/</loc>
-    <lastmod>2018-03-15T11:00:47+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/dependency-injection/</loc>
     <lastmod>2018-03-14T10:36:12+00:00</lastmod>
   </url>
@@ -168,22 +123,12 @@
   </url>
   
   <url>
-    <loc>/posts/inversion-of-control-and-dependency-injection/</loc>
-    <lastmod>2018-03-14T10:36:12+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/javaee/</loc>
     <lastmod>2018-01-09T06:30:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/know-your-response-object/</loc>
-    <lastmod>2018-01-09T06:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/know-your-response-object/</loc>
     <lastmod>2018-01-09T06:30:00+00:00</lastmod>
   </url>
   
@@ -208,11 +153,6 @@
   </url>
   
   <url>
-    <loc>/posts/know-your-request-object/</loc>
-    <lastmod>2017-12-13T05:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/request/</loc>
     <lastmod>2017-12-13T05:30:10+00:00</lastmod>
   </url>
@@ -228,27 +168,12 @@
   </url>
   
   <url>
-    <loc>/posts/up-and-running-with-servlet-in-tomcat/</loc>
-    <lastmod>2017-12-12T16:57:27+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/web-application-directory-structure-and-war-files/</loc>
     <lastmod>2017-12-12T11:30:40+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/web-application-directory-structure-and-war-files/</loc>
-    <lastmod>2017-12-12T11:30:40+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/basic-web-application-structure-of-javaee/</loc>
-    <lastmod>2017-12-12T10:08:51+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/basic-web-application-structure-of-javaee/</loc>
     <lastmod>2017-12-12T10:08:51+00:00</lastmod>
   </url>
   
@@ -263,17 +188,7 @@
   </url>
   
   <url>
-    <loc>/posts/command-aliases-in-linux/</loc>
-    <lastmod>2017-11-30T11:50:41+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/a-bit-of-spring-part-one/</loc>
-    <lastmod>2017-10-30T09:19:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/a-bit-of-spring-part-one/</loc>
     <lastmod>2017-10-30T09:19:54+00:00</lastmod>
   </url>
   
@@ -284,11 +199,6 @@
   
   <url>
     <loc>/blog/manage-jdk-using-sdkman/</loc>
-    <lastmod>2017-10-20T18:39:46+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/manage-jdk-using-sdkman/</loc>
     <lastmod>2017-10-20T18:39:46+00:00</lastmod>
   </url>
   
@@ -308,11 +218,6 @@
   </url>
   
   <url>
-    <loc>/posts/installing-and-running-kibana/</loc>
-    <lastmod>2017-09-16T09:19:51+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/kibana/</loc>
     <lastmod>2017-09-16T09:19:51+00:00</lastmod>
   </url>
@@ -323,17 +228,7 @@
   </url>
   
   <url>
-    <loc>/posts/installing-and-running-elasticsearch/</loc>
-    <lastmod>2017-09-15T12:36:35+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/basics-and-key-concepts-of-elasticsearch/</loc>
-    <lastmod>2017-09-15T10:26:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/basics-and-key-concepts-of-elasticsearch/</loc>
     <lastmod>2017-09-15T10:26:28+00:00</lastmod>
   </url>
   
@@ -368,17 +263,7 @@
   </url>
   
   <url>
-    <loc>/posts/uva-10311-goldbach-and-euler/</loc>
-    <lastmod>2017-09-03T00:21:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/uva-406-prime-cuts/</loc>
-    <lastmod>2017-08-29T21:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/uva-406-prime-cuts/</loc>
     <lastmod>2017-08-29T21:39:00+00:00</lastmod>
   </url>
   
@@ -389,11 +274,6 @@
   
   <url>
     <loc>/blog/oracle-sql-developer-in-ubuntu/</loc>
-    <lastmod>2017-08-28T15:13:24+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/oracle-sql-developer-in-ubuntu/</loc>
     <lastmod>2017-08-28T15:13:24+00:00</lastmod>
   </url>
   
@@ -423,22 +303,12 @@
   </url>
   
   <url>
-    <loc>/posts/git-notes/</loc>
-    <lastmod>2017-08-17T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/notes/</loc>
     <lastmod>2017-08-17T12:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/google-drive-in-ubuntu/</loc>
-    <lastmod>2017-08-16T22:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/google-drive-in-ubuntu/</loc>
     <lastmod>2017-08-16T22:00:00+00:00</lastmod>
   </url>
   
@@ -468,11 +338,6 @@
   </url>
   
   <url>
-    <loc>/posts/sieve-of-eratosthenes-memory-efficient-implementation/</loc>
-    <lastmod>2017-08-16T00:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/gcd/</loc>
     <lastmod>2017-08-15T18:00:00+00:00</lastmod>
   </url>
@@ -488,17 +353,7 @@
   </url>
   
   <url>
-    <loc>/posts/least-common-multiple-lcm/</loc>
-    <lastmod>2017-08-15T18:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/greatest-common-divisor-gcd/</loc>
-    <lastmod>2017-08-15T16:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/greatest-common-divisor-gcd/</loc>
     <lastmod>2017-08-15T16:00:00+00:00</lastmod>
   </url>
   
@@ -514,6 +369,10 @@
   
   <url>
     <loc>/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/series/</loc>
   </url>
   
 </urlset>

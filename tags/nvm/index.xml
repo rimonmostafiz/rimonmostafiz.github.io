@@ -6,6 +6,7 @@
     <description>Recent content in nvm on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 07 Jul 2018 04:17:09 +0000</lastBuildDate><atom:link href="/tags/nvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install and Manage Node JS Using NVM</title>
@@ -13,18 +14,6 @@
       <pubDate>Sat, 07 Jul 2018 04:17:09 +0000</pubDate>
       
       <guid>/blog/install-and-manage-node-js-using-nvm/</guid>
-      <description>Node Version Manager (NVM) is a simple bash script to manage multiple active node.js versions.
-Install NVM To install or update nvm, you can use the install script using cURL or Wget
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash $ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash  The script clones the nvm repository to ~/.nvm and adds the source line to your profile (~/.bash_profile, ~/.zshrc,~/.profile, or ~/.bashrc).
-export NVM_DIR=&amp;quot;$HOME/.nvm&amp;quot; [ -s &amp;quot;$NVM_DIR/nvm.sh&amp;quot; ] &amp;amp;&amp;amp; \.</description>
-    </item>
-    
-    <item>
-      <title>Install and Manage Node JS Using NVM</title>
-      <link>/posts/install-and-manage-node-js-using-nvm/</link>
-      <pubDate>Sat, 07 Jul 2018 04:17:09 +0000</pubDate>
-      
-      <guid>/posts/install-and-manage-node-js-using-nvm/</guid>
       <description>Node Version Manager (NVM) is a simple bash script to manage multiple active node.js versions.
 Install NVM To install or update nvm, you can use the install script using cURL or Wget
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash $ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash  The script clones the nvm repository to ~/.nvm and adds the source line to your profile (~/.bash_profile, ~/.zshrc,~/.profile, or ~/.bashrc).

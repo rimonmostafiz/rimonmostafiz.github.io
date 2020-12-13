@@ -6,6 +6,7 @@
     <description>Recent content in request on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 13 Dec 2017 05:30:10 +0000</lastBuildDate><atom:link href="/tags/request/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Know Your Request Object</title>
@@ -13,17 +14,6 @@
       <pubDate>Wed, 13 Dec 2017 05:30:10 +0000</pubDate>
       
       <guid>/blog/know-your-request-object/</guid>
-      <description>HTTPServletRequest The HServletRequestttp interface is an extension of ServletRequest that provides additional HTTP protocol-specific information about a received request. It specifies dozens of methods that you can use to obtain details about an HTTP request. It also permits you to set request attributes (different from request parameters).
-Request Param Request parameters come in two different forms:
- Query parameters (also called URI parameters) An application/x-www-form-urlencoded or multipart/form-data encoded request body(typically called post variables or form variables).</description>
-    </item>
-    
-    <item>
-      <title>Know Your Request Object</title>
-      <link>/posts/know-your-request-object/</link>
-      <pubDate>Wed, 13 Dec 2017 05:30:10 +0000</pubDate>
-      
-      <guid>/posts/know-your-request-object/</guid>
       <description>HTTPServletRequest The HServletRequestttp interface is an extension of ServletRequest that provides additional HTTP protocol-specific information about a received request. It specifies dozens of methods that you can use to obtain details about an HTTP request. It also permits you to set request attributes (different from request parameters).
 Request Param Request parameters come in two different forms:
  Query parameters (also called URI parameters) An application/x-www-form-urlencoded or multipart/form-data encoded request body(typically called post variables or form variables).</description>

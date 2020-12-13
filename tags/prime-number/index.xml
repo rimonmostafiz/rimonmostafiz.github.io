@@ -6,6 +6,7 @@
     <description>Recent content in prime-number on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sun, 03 Sep 2017 00:21:00 +0000</lastBuildDate><atom:link href="/tags/prime-number/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Uva 10311 - Goldbach and Euler</title>
@@ -13,18 +14,6 @@
       <pubDate>Sun, 03 Sep 2017 00:21:00 +0000</pubDate>
       
       <guid>/blog/uva-10311-goldbach-and-euler/</guid>
-      <description>Problem Statement: UVa 10311 - Goldbach and Euler
-We can express the problem statement like: Given an integer N (0 &amp;lt; N ≤ 108).
-we have to find(if exists) two number P1 and P2 where,
- P1 and P2 both prime P1 + P2 = n P1 &amp;lt; P2 P2 - P1 is minimized  Solution Idea: First of all we need to find prime numbers between [0:108]. We can use memory efficient C++ implementation of Sieve Of Eratosthenes to generate prime numbers up to 108and store it in an Array.</description>
-    </item>
-    
-    <item>
-      <title>Uva 10311 - Goldbach and Euler</title>
-      <link>/posts/uva-10311-goldbach-and-euler/</link>
-      <pubDate>Sun, 03 Sep 2017 00:21:00 +0000</pubDate>
-      
-      <guid>/posts/uva-10311-goldbach-and-euler/</guid>
       <description>Problem Statement: UVa 10311 - Goldbach and Euler
 We can express the problem statement like: Given an integer N (0 &amp;lt; N ≤ 108).
 we have to find(if exists) two number P1 and P2 where,
@@ -43,32 +32,11 @@ Solution Idea: First of all use Sieve of Eratosthenes to generate primes betwe
     </item>
     
     <item>
-      <title>Uva 406 - Prime Cuts</title>
-      <link>/posts/uva-406-prime-cuts/</link>
-      <pubDate>Tue, 29 Aug 2017 21:39:00 +0000</pubDate>
-      
-      <guid>/posts/uva-406-prime-cuts/</guid>
-      <description>Problem Statement: UVa 406 – Prime Cuts
-Before beginning I want to say the problem description seems quite awkward to me, for me it took a time to understand what is actually asked by the problem. but when I found out its very easy to code.
-Solution Idea: First of all use Sieve of Eratosthenes to generate primes between 1000. You will be given two numbers N and C, then you need to make a list of primes between 1 to N(inclusive).</description>
-    </item>
-    
-    <item>
       <title>Sieve of Eratosthenes (Memory Efficient Implementation)</title>
       <link>/blog/sieve-of-eratosthenes-memory-efficient-implementation/</link>
       <pubDate>Wed, 16 Aug 2017 00:30:00 +0000</pubDate>
       
       <guid>/blog/sieve-of-eratosthenes-memory-efficient-implementation/</guid>
-      <description>Say we want to find all prime numbers up to an integer N where N is 108. If we write a regular implementation of Sieve Of Eratosthenes using a bool array for each integer in the range [1:N] then we could end up using N bytes of memory, which would roughly be 95 MB which is a not a very small memory.
-Lets see how can we reduce the memory, the main idea here is we can store a Boolean value in a single bit, so we can store 8 Boolean values in a single byte.</description>
-    </item>
-    
-    <item>
-      <title>Sieve of Eratosthenes (Memory Efficient Implementation)</title>
-      <link>/posts/sieve-of-eratosthenes-memory-efficient-implementation/</link>
-      <pubDate>Wed, 16 Aug 2017 00:30:00 +0000</pubDate>
-      
-      <guid>/posts/sieve-of-eratosthenes-memory-efficient-implementation/</guid>
       <description>Say we want to find all prime numbers up to an integer N where N is 108. If we write a regular implementation of Sieve Of Eratosthenes using a bool array for each integer in the range [1:N] then we could end up using N bytes of memory, which would roughly be 95 MB which is a not a very small memory.
 Lets see how can we reduce the memory, the main idea here is we can store a Boolean value in a single bit, so we can store 8 Boolean values in a single byte.</description>
     </item>
