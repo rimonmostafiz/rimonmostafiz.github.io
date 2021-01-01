@@ -14,11 +14,11 @@
       <pubDate>Fri, 01 Jan 2021 11:35:48 +0600</pubDate>
       
       <guid>/blog/haproxy-on-macos/</guid>
-      <description>Install Homebrew Open your terminal and then run command bellow to install homebrew
-$ /bin/bash -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;quot; Visit Homebrew official site for more details
-Install haproxy using Homebrew brew install haproxy Add Configuration Update haproxy configution file located in /usr/local/etc/haproxy.cfg.
+      <description>Install Homebrew Open your terminal and then run command bellow to install homebrew.
+$ /bin/bash -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;quot; Visit Homebrew official Website for more details.
+Install haproxy Using Homebrew brew install haproxy Add Configuration Update haproxy configution file located in /usr/local/etc/haproxy.cfg.
 Create if dosen&amp;rsquo;t exists already.
-Here is an initial configuration for you to start with
+Here is an initial configuration for you 🙂
 global log 127.0.0.1 local0 log 127.0.0.1 local1 debug maxconn 4096 user rimonmostafiz group admin daemon pidfile /var/run/haproxy.</description>
     </item>
     
