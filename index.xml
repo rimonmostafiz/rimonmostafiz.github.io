@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 30 Jul 2018 14:35:07 +0600</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jan 2021 11:35:48 +0600</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Haproxy on Macosx</title>
+      <link>/blog/haproxy-on-macos/</link>
+      <pubDate>Fri, 01 Jan 2021 11:35:48 +0600</pubDate>
+      
+      <guid>/blog/haproxy-on-macos/</guid>
+      <description>Install Homebrew Open your terminal and then run command bellow to install homebrew
+$ /bin/bash -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;quot; Visit Homebrew official site for more details
+Install haproxy using Homebrew brew install haproxy Add Configuration Update haproxy configution file located in /usr/local/etc/haproxy.cfg.
+Create if dosen&amp;rsquo;t exists already.
+Here is an initial configuration for you to start with
+global log 127.0.0.1 local0 log 127.0.0.1 local1 debug maxconn 4096 user rimonmostafiz group admin daemon pidfile /var/run/haproxy.</description>
+    </item>
+    
     <item>
       <title>Get Insulted by sudo</title>
       <link>/blog/get-insulted-by-sudo/</link>
@@ -107,16 +121,6 @@ Some people confuse the general principle here with the specific styles of inver
       <guid>/blog/inversion-of-control-and-dependency-injection/</guid>
       <description>Inversion of control (IoC) In software engineering, inversion of control (IoC) is a design principle. It is used to invert different kinds of controls. More Specifically invert the control of your custom written program or objects of a program is transferred to a container or framework.
 In traditional programming, our custom code that expresses the purpose of the program calls reusable libraries to take care of generic tasks, but with inversion of control, it is the framework that calls into the custom, or task-specific, code.</description>
-    </item>
-    
-    <item>
-      <title>Know Your Response Object</title>
-      <link>/blog/know-your-response-object/</link>
-      <pubDate>Tue, 09 Jan 2018 06:30:00 +0000</pubDate>
-      
-      <guid>/blog/know-your-response-object/</guid>
-      <description>HttpServletResponse The HttpServletResponse interface extends ServletResponse and provides access to the HTTP protocol-specific properties of a response.You can use the response object to do things such as
- Set response headers Write to the response body Redirect the request Set the HTTP status code Send cookies back to the client.  Writing to Response Body The most common thing you’ll do with a response object is written content to the response body.</description>
     </item>
     
   </channel>
