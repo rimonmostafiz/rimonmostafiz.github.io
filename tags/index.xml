@@ -7,7 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 01 Jan 2021 11:35:48 +0600</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jan 2021 01:31:33 +0600</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>java</title>
+      <link>/tags/java/</link>
+      <pubDate>Sun, 10 Jan 2021 01:31:33 +0600</pubDate>
+      
+      <guid>/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>junit</title>
+      <link>/tags/junit/</link>
+      <pubDate>Sun, 10 Jan 2021 01:31:33 +0600</pubDate>
+      
+      <guid>/tags/junit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>notes</title>
+      <link>/tags/notes/</link>
+      <pubDate>Sun, 10 Jan 2021 01:31:33 +0600</pubDate>
+      
+      <guid>/tags/notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>/tags/test/</link>
+      <pubDate>Sun, 10 Jan 2021 01:31:33 +0600</pubDate>
+      
+      <guid>/tags/test/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>haproxy</title>
       <link>/tags/haproxy/</link>
@@ -59,42 +95,6 @@
       <pubDate>Sun, 29 Jul 2018 15:35:41 +0600</pubDate>
       
       <guid>/tags/npm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>/tags/hugo/</link>
-      <pubDate>Fri, 27 Jul 2018 20:01:41 +0600</pubDate>
-      
-      <guid>/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>smart-and-simple</title>
-      <link>/tags/smart-and-simple/</link>
-      <pubDate>Fri, 27 Jul 2018 20:01:41 +0600</pubDate>
-      
-      <guid>/tags/smart-and-simple/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>static-site</title>
-      <link>/tags/static-site/</link>
-      <pubDate>Fri, 27 Jul 2018 20:01:41 +0600</pubDate>
-      
-      <guid>/tags/static-site/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nvm</title>
-      <link>/tags/nvm/</link>
-      <pubDate>Sat, 07 Jul 2018 04:17:09 +0000</pubDate>
-      
-      <guid>/tags/nvm/</guid>
       <description></description>
     </item>
     

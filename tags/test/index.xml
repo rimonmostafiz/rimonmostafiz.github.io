@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>notes on Rimon Mostafiz</title>
-    <link>/tags/notes/</link>
-    <description>Recent content in notes on Rimon Mostafiz</description>
+    <title>test on Rimon Mostafiz</title>
+    <link>/tags/test/</link>
+    <description>Recent content in test on Rimon Mostafiz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 10 Jan 2021 01:31:33 +0600</lastBuildDate><atom:link href="/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jan 2021 01:31:33 +0600</lastBuildDate><atom:link href="/tags/test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes on Junit 5 Basics</title>
       <link>/blog/2021-01-09-notes-on-junit-5-basics/</link>
@@ -18,16 +18,6 @@
 Import dependency to pom.xml &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.junit.jupiter&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit-jupiter&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;RELEASE&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; General   @Test annotation is to mark a method as test
   assertEquals(expected, actual) methods to test equality
 @Test private void testAdd() { int actual = mathUtils.</description>
-    </item>
-    
-    <item>
-      <title>Git Notes</title>
-      <link>/blog/git-notes/</link>
-      <pubDate>Thu, 17 Aug 2017 12:00:00 +0000</pubDate>
-      
-      <guid>/blog/git-notes/</guid>
-      <description>Git cheat sheet for everyday life. Will update this in future&amp;hellip;
-$ git init # transform the current directory into a Git repository. This adds a .git folder to the current directory and makes it possible to start recording revisions $ git config --global user.email &amp;quot;you@example.com&amp;quot; $ git config --global user.name &amp;quot;Your Name&amp;quot; $ git config --global color.status auto $ git config --global color.diff auto $ git config --global color.branch auto $ git clone &amp;lt;git host&amp;gt;:/repo/&amp;lt;project name&amp;gt;.</description>
     </item>
     
   </channel>

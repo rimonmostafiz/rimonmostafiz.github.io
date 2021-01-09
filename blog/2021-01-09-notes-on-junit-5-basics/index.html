@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="[Rimon Mostafiz]">
+<meta name="description" content="Junit 5 Architecture  Junit Engine/Junit Jupiter Engine (core engine of Junit)  Junit Jupiter API Junit Vintage (For legacy versions) Junit Extentions    JUnit 5 = JUnit Platform &#43; JUnit Jupiter &#43; JUnit Vintage
+Import dependency to pom.xml &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.junit.jupiter&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit-jupiter&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;RELEASE&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; General   @Test annotation is to mark a method as test
+  assertEquals(expected, actual) methods to test equality
+@Test private void testAdd() { int actual = mathUtils." />
+<meta name="keywords" content=", java, junit, test, notes" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="/blog/2021-01-09-notes-on-junit-5-basics/" />
+
+
+    <title>
+        
+            Notes on Junit 5 Basics :: Rimon Mostafiz  — English
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.393856bf2c430bb6c01d7af07c6fe966e7cce8073435cfbbc46e590bab7405ef.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Notes on Junit 5 Basics">
+<meta itemprop="description" content="Junit 5 Architecture  Junit Engine/Junit Jupiter Engine (core engine of Junit)  Junit Jupiter API Junit Vintage (For legacy versions) Junit Extentions    JUnit 5 = JUnit Platform &#43; JUnit Jupiter &#43; JUnit Vintage
+Import dependency to pom.xml &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt; &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt; &lt;version&gt;RELEASE&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;/dependencies&gt; General   @Test annotation is to mark a method as test
+  assertEquals(expected, actual) methods to test equality
+@Test private void testAdd() { int actual = mathUtils.">
+<meta itemprop="datePublished" content="2021-01-10T01:31:33+06:00" />
+<meta itemprop="dateModified" content="2021-01-10T01:31:33+06:00" />
+<meta itemprop="wordCount" content="812">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="java,junit,test,notes," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Notes on Junit 5 Basics"/>
+<meta name="twitter:description" content="Junit 5 Architecture  Junit Engine/Junit Jupiter Engine (core engine of Junit)  Junit Jupiter API Junit Vintage (For legacy versions) Junit Extentions    JUnit 5 = JUnit Platform &#43; JUnit Jupiter &#43; JUnit Vintage
+Import dependency to pom.xml &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt; &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt; &lt;version&gt;RELEASE&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;/dependencies&gt; General   @Test annotation is to mark a method as test
+  assertEquals(expected, actual) methods to test equality
+@Test private void testAdd() { int actual = mathUtils."/>
+
+
+
+    <meta property="og:title" content="Notes on Junit 5 Basics" />
+<meta property="og:description" content="Junit 5 Architecture  Junit Engine/Junit Jupiter Engine (core engine of Junit)  Junit Jupiter API Junit Vintage (For legacy versions) Junit Extentions    JUnit 5 = JUnit Platform &#43; JUnit Jupiter &#43; JUnit Vintage
+Import dependency to pom.xml &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt; &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt; &lt;version&gt;RELEASE&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;/dependencies&gt; General   @Test annotation is to mark a method as test
+  assertEquals(expected, actual) methods to test equality
+@Test private void testAdd() { int actual = mathUtils." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/2021-01-09-notes-on-junit-5-basics/" />
+<meta property="og:image" content="/"/>
+<meta property="article:published_time" content="2021-01-10T01:31:33+06:00" />
+<meta property="article:modified_time" content="2021-01-10T01:31:33+06:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-01-10 01:31:33 &#43;0600 &#43;06" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/rimonmostafiz</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#67a2c9;
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/pages/about">About</a></li><li><a href="/blog">Blog</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/blog/2021-01-09-notes-on-junit-5-basics/">Notes on Junit 5 Basics</a></h2>
+
+            
+
+            
+
+            <div class="post-content">
+                <h3 id="junit-5-architecture">Junit 5 Architecture</h3>
+<ul>
+<li>Junit Engine/Junit Jupiter Engine (core engine of Junit)
+<ul>
+<li>Junit Jupiter API</li>
+<li>Junit Vintage (For legacy versions)</li>
+<li>Junit Extentions</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage</strong></em></p>
+<h3 id="import-dependency-to-pomxml">Import dependency to <code>pom.xml</code></h3>
+<pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+      &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+      &lt;version&gt;RELEASE&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt; 
+</code></pre><h3 id="general">General</h3>
+<ul>
+<li>
+<p><code>@Test</code> annotation is to mark a method as test</p>
+</li>
+<li>
+<p><code>assertEquals(expected, actual)</code> methods to test equality</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testAdd</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">int</span> actual <span style="color:#f92672">=</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 1<span style="color:#f92672">);</span>
+    assertEquals<span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> actual<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Should add two numbers&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p><code>public static &lt;T extends Throwable&gt; T assertThrows(Class&lt;T&gt; expectedType, Executable executable)</code> method to check for exception thrown by a method</p>
+<ul>
+<li>Here <code>Executable</code> is a <code>@FunctionalInterface</code> with one method <code>void execute() throws Throwable;</code></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testDivide</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    Executable executable <span style="color:#f92672">=</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">divide</span><span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+    assertThrows<span style="color:#f92672">(</span>ArithmeticException<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> executable<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Divide by 0 should return excpetion&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p><code>fail()</code> method will mark a test as fail.</p>
+</li>
+<li>
+<p>New instance created per test</p>
+<ul>
+<li>By default Junit creates new instance of the call for every test, before running every method that marked as <code>@Test</code> of that particular class</li>
+<li>But this can be changed using <code>@TestInstance(TestInstance.Lifecycle.PER_CLASS)</code> which is not suggested ❌
+<ul>
+<li><code>@TestInstance(TestInstance.Lifecycle.PER_CLASS)</code> doesn&rsquo;t guarantee order though ‼️</li>
+<li>we don&rsquo;t need to use static for <code>@BeforeAll</code> when using <code>PER_CLASS</code> strategy 🤦🏻‍♂️</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="life-cycle-hooks-">Life Cycle Hooks ♻️</h3>
+<ul>
+<li><strong>Junit provides 4 lifecycle hooks</strong>
+<ul>
+<li><code>@BeforeAll</code> - Runs before the instance is created to must be a <code>static</code> method</li>
+<li><code>@BeforeEach</code> - Runs before every <code>@Test</code> method, helpful for initializing method variables</li>
+<li><code>@AfterAll</code> - Tear down method, runs after every <code>@Test</code> method</li>
+<li><code>@AfterEach</code> - It is used to signal that the annotated method should be executed after each <code>@Test</code> method in the current class.</li>
+</ul>
+</li>
+</ul>
+<h3 id="useful-annotations-good-to-know">Useful Annotations (Good to know)</h3>
+<ul>
+<li>
+<p><code>@DisplayName</code> - Change the name of the test instead showing method name</p>
+</li>
+<li>
+<p><code>@Dsiabled</code> - Skip test method</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#a6e22e">@Disabled</span>
+<span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Woring on TDD, Shoud skipped for now&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">incompleMethod</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">double</span> actual <span style="color:#f92672">=</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">calculateCircleArea</span><span style="color:#f92672">(</span>10<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">double</span> expected <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">PI</span> <span style="color:#f92672">*</span> 100<span style="color:#f92672">;</span>
+    assertEquals<span style="color:#f92672">(</span>expected<span style="color:#f92672">,</span> actual<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+</ul>
+<h3 id="conditional-execution">Conditional Execution</h3>
+<ul>
+<li>
+<p><code>@EnableOnOs(OS.LINUX)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#a6e22e">@EnabledOnOs</span><span style="color:#f92672">(</span>OS<span style="color:#f92672">.</span><span style="color:#a6e22e">LINUX</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Should Skip as I&#39;m not using Linux&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">enableONLinux</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    fail<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;On Linux this test should fail&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p><code>@EnableOrJre(JRE.JAVA_11)</code></p>
+</li>
+<li>
+<p><code>@EnableIf</code></p>
+</li>
+<li>
+<p><code>@EanbleIfSystemProperty</code></p>
+</li>
+<li>
+<p><code>@EnableIfEnvironmentVariable</code></p>
+</li>
+</ul>
+<h3 id="handling-external-factors">Handling external factors</h3>
+<ul>
+<li>
+<p><code>@assumeTrue</code> - Run when an assumption is true otherwise skip this method</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">runIfServerIsUp</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    assumeTrue<span style="color:#f92672">(</span>serverIsUp<span style="color:#f92672">);</span>
+    <span style="color:#75715e">// write your test here;
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div></li>
+</ul>
+<h3 id="using-nested-">Using <code>@Nested</code> 🎁</h3>
+<p>Group multiple tests for a method with <code>@Nested</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Nested</span>
+<span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;add method&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddTest</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;when adding two positive numbers&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testAddPositive</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> actual <span style="color:#f92672">=</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 1<span style="color:#f92672">);</span>
+        assertEquals<span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> actual<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;should return right sum&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;when adding two negative numbers&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testAddNegative</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> actual <span style="color:#f92672">=</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(-</span>10<span style="color:#f92672">,</span> <span style="color:#f92672">-</span>10<span style="color:#f92672">);</span>
+        assertEquals<span style="color:#f92672">(-</span>20<span style="color:#f92672">,</span> actual<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;should return right sum&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="using-assertall">Using <code>assertAll</code></h3>
+<p>Multiple assertions inside a method. Can group multiple test without create separate methods.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Test Multiply method using assertAll&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testMultiply</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    assertAll<span style="color:#f92672">(</span>
+            <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> assertEquals<span style="color:#f92672">(</span>4<span style="color:#f92672">,</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">multiply</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span> 2<span style="color:#f92672">)),</span>
+            <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> assertEquals<span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">multiply</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span> 0<span style="color:#f92672">)),</span>
+            <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> assertEquals<span style="color:#f92672">(-</span>9<span style="color:#f92672">,</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">multiply</span><span style="color:#f92672">(-</span>3<span style="color:#f92672">,</span> 3<span style="color:#f92672">))</span>
+    <span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="lazy-loading-message-using-supplier">Lazy loading message using <code>supplier</code></h3>
+<p>a supplier can be passed to assert methods, it will run only when the test fails. Can save time for complex message construction.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Calculate Circle Area will fail&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">circleAreaWithWrongValueOfPI</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">double</span> actual <span style="color:#f92672">=</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">calculateCircleArea</span><span style="color:#f92672">(</span>10<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">double</span> rightExpected <span style="color:#f92672">=</span> 3<span style="color:#f92672">.</span><span style="color:#a6e22e">1417</span> <span style="color:#f92672">*</span> 100<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">double</span> wrongExpected <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">PI</span> <span style="color:#f92672">*</span> 100<span style="color:#f92672">;</span>
+    assertEquals<span style="color:#f92672">(</span>rightExpected<span style="color:#f92672">,</span> actual<span style="color:#f92672">,</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;Supplier will construct this message lazily if test fails&#34;</span><span style="color:#f92672">);</span>
+    assertEquals<span style="color:#f92672">(</span>wrongExpected<span style="color:#f92672">,</span> actual<span style="color:#f92672">,</span> <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;Supplier will construct this message lazily, fails at &#34;</span> <span style="color:#f92672">+</span> Instant<span style="color:#f92672">.</span><span style="color:#a6e22e">now</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="repeat-test-with-repetedtest-">Repeat test with <code>@RepetedTest</code> 🔄</h3>
+<p><code>@ReptedTest()</code> can run a single test multiple times, the test will successful if all the repeated test is successful.</p>
+<p>Junit will inject a <code>RepetitionInfo</code> object to the method marked as <code>@RepetedTest()</code> where information of repetition will reside.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RepeatedTest</span><span style="color:#f92672">(</span>3<span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Test Multiply method should be tested 3 times&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testMultiplyMultipleTimes</span><span style="color:#f92672">(</span>RepetitionInfo repetitionInfo<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    assertEquals<span style="color:#f92672">(</span>4<span style="color:#f92672">,</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">multiply</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span> 2<span style="color:#f92672">));</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="use-tag-for-tagging-test-methods">Use <code>@Tag</code> for tagging test methods</h3>
+<p>When there is lots of test then <code>@Tag</code> can be helpful. Tagging different test and run them based on tag.
+Then Change run configuration to run test for certain tag.</p>
+<p><img src="/images/junit-tag-configuration.png" alt="Junit tag configuration"></p>
+<p>Also <code>maven-surefire-plugin</code> can be configured to group and run test by tags.</p>
+<pre><code>&lt;plugin&gt;
+    &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+    &lt;version&gt;3.0.0-M1&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;groups&gt;math&lt;/groups&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre><h3 id="testinfo-and-testreporter">TestInfo and TestReporter</h3>
+<p>Junit can inject two handy class call <code>TestInfo</code> and <code>TestReporter</code> that can be used to print details about the test.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> TestInfo testInfo<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">private</span> TestReporter testReporter<span style="color:#f92672">;</span>
+
+<span style="color:#a6e22e">@BeforeEach</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span><span style="color:#f92672">(</span>TestInfo testInfo<span style="color:#f92672">,</span> TestReporter testReporter<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Before Each Method&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">testInfo</span> <span style="color:#f92672">=</span> testInfo<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">testReporter</span> <span style="color:#f92672">=</span> testReporter<span style="color:#f92672">;</span>
+    mathUtils <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MathUtils<span style="color:#f92672">();</span>
+    serverIsUp <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#a6e22e">@Test</span>
+<span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Test Multiply method using assertAll&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@Tag</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;math&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testMultiply</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    testReporter<span style="color:#f92672">.</span><span style="color:#a6e22e">publishEntry</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Running &#34;</span> <span style="color:#f92672">+</span> testInfo<span style="color:#f92672">.</span><span style="color:#a6e22e">getDisplayName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; with tag &#34;</span> <span style="color:#f92672">+</span> testInfo<span style="color:#f92672">.</span><span style="color:#a6e22e">getTags</span><span style="color:#f92672">());</span>
+    assertAll<span style="color:#f92672">(</span>
+            <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> assertEquals<span style="color:#f92672">(</span>4<span style="color:#f92672">,</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">multiply</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span> 2<span style="color:#f92672">)),</span>
+            <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> assertEquals<span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">multiply</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span> 0<span style="color:#f92672">)),</span>
+            <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> assertEquals<span style="color:#f92672">(-</span>9<span style="color:#f92672">,</span> mathUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">multiply</span><span style="color:#f92672">(-</span>3<span style="color:#f92672">,</span> 3<span style="color:#f92672">))</span>
+    <span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="avoid-">Avoid ☠️</h3>
+<ul>
+<li>Do not order your test methods, It is not logics to order test methods. Every test should be independent.</li>
+<li>Dont modify member variable inside a test, it will not work as JUnit by default create instance of test class before running every test.</li>
+</ul>
+<h3 id="source-code">Source Code</h3>
+<ul>
+<li><a href="https://github.com/rimonmostafiz/practice-java/blob/master/src/main/java/io/github/rimonmostafiz/junit/basic/MathUtils.java">MathUtils.class</a></li>
+<li><a href="https://github.com/rimonmostafiz/practice-java/blob/master/src/test/java/io/github/rimonmostafiz/junit/basic/MathUtilsTest.java">MathUtilsTest.class</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="/tags/java/">java</a></span>
+        <span class="tag"><a href="/tags/junit/">junit</a></span>
+        <span class="tag"><a href="/tags/test/">test</a></span>
+        <span class="tag"><a href="/tags/notes/">notes</a></span>
+        
+    </p>
+
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="/">Rimon Mostafiz</a></span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span><a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rimonmostafiz">Rimon Mostafiz</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', '256715065', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>
