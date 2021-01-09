@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 10 Jan 2021 01:31:33 +0600</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes on Junit 5 Basics</title>
-      <link>/blog/2021-01-09-notes-on-junit-5-basics/</link>
+      <link>/blog/notes-on-junit-5-basics/</link>
       <pubDate>Sun, 10 Jan 2021 01:31:33 +0600</pubDate>
       
-      <guid>/blog/2021-01-09-notes-on-junit-5-basics/</guid>
+      <guid>/blog/notes-on-junit-5-basics/</guid>
       <description>Junit 5 Architecture  Junit Engine/Junit Jupiter Engine (core engine of Junit)  Junit Jupiter API Junit Vintage (For legacy versions) Junit Extentions    JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
 Import dependency to pom.xml &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.junit.jupiter&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit-jupiter&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;RELEASE&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; General   @Test annotation is to mark a method as test
   assertEquals(expected, actual) methods to test equality
